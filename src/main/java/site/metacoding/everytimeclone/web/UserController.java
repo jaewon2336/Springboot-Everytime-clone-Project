@@ -47,6 +47,6 @@ public class UserController {
 
     @GetMapping("/user/password-reset-form")
     public String passwordResetForm() {
-        return "/user/passwordResetForm";
+        return "/user/findPasswordForm";
     }
 }

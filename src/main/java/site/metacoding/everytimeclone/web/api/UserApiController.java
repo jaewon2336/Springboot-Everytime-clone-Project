@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -19,6 +20,7 @@ import site.metacoding.everytimeclone.util.Script;
 import site.metacoding.everytimeclone.util.UtilValid;
 import site.metacoding.everytimeclone.util.email.EmailUtil;
 import site.metacoding.everytimeclone.web.api.dto.user.LoginDto;
+import site.metacoding.everytimeclone.web.api.dto.user.PasswordResetReqDto;
 
 @RequiredArgsConstructor
 @RestController
@@ -73,15 +75,17 @@ public class UserApiController {
         return Script.href("/user/login-form", "안내 이메일을 발송하였습니다. 만약 메일이 오지 않는다면, 스팸 편지함을 확인해주세요.");
     }
 
-    // @PostMapping("/user/password-reset")
-    // public String passwordReset(@Valid PasswordResetReqDto passwordResetReqDto,
-    // BindingResult bindingResult) {
+    @PutMapping("/user/password-reset")
+    public ResponseEntity<?> passwordReset(@RequestBody User user) {
 
-    // UtilValid.요청에러처리(bindingResult);
+        System.out.println(user);
 
-    // userService.패스워드초기화(passwordResetReqDto);
+        User userEntity = userService.패스워드초기화(user.getUsername(), user.getEmail());
 
-    // return "redirect:/user/loginForm";
-    // }
+        emailUtil.sendEmail(userEntity.getEmail(), "비밀번호가 초기화 되었습니다",
+                "초기화된 비밀번호는 " + userEntity.getPassword() + " 입니다. 로그인 후 비밀번호를 재설정하십시오.");
+
+        return new ResponseEntity<>(1, HttpStatus.OK);
+    }
 
 }
