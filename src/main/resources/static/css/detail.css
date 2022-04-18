@@ -1,0 +1,202 @@
+.my_post_border {
+    border: 1px solid #d6d6d6;
+    margin: 10px 0;
+}
+
+.my_post_border_top {
+    border-top: 1px solid #d6d6d6;
+}
+
+.main {
+    margin: 10px 0;
+}
+
+.my_post_detail_flex_space_between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.my_post_detail_flex_center {
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.my_post_detail_flex_left {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.my_post_detail_flex {
+    display: flex;
+    align-items: center;
+}
+
+.my_board_title {
+    color: #444444;
+    font-size: 23px;
+    font-weight: bold;
+}
+
+.my_board_user img {
+    border-radius: 8px;
+    width: 40px;
+    height: 40px;
+    margin-right: 15px;
+}
+
+.my_board_username {
+    color: #444444;
+    font-size: 16px;
+    font-weight: bold;
+    height: 20px;
+}
+
+.my_board_content {
+    padding-bottom: 15px;
+    color: #444444;
+    font-size: 16px;
+}
+
+.my_post_buttons {
+    display: flex;
+    padding: 15px 0 0 0;
+}
+
+.my_btn_vote {
+    margin-right: 5px;
+    padding: 0 12px 0 27px;
+    line-height: 30px;
+    border-radius: 8px;
+    color: #737373;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    background-image: url("/images/buttons.posvote.png");
+    background-repeat: no-repeat;
+    background-position: left 12px center;
+    background-color: #f8f8f8;
+    background-size: 11px 11px;
+}
+
+.my_btn_scrap {
+    margin-right: 5px;
+    padding: 0 12px 0 27px;
+    line-height: 30px;
+    border-radius: 8px;
+    color: #737373;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    background-image: url("/images/buttons.scrap.png");
+    background-repeat: no-repeat;
+    background-position: left 12px center;
+    background-color: #f8f8f8;
+    background-size: 11px 11px;
+}
+
+.my_post_count_vote {
+    background-image: url("/images/vote.png");
+    padding-left: 15px;
+    width: 40px;
+    height: 20px;
+    line-height: 20px;
+    font-size: 12px;
+    list-style: none;
+    color: #c62917;
+    background-repeat: no-repeat;
+    background-size: 11px 11px;
+    background-position: left center;
+}
+
+.my_post_count_comment {
+    background-image: url("/images/comment.png");
+    padding-left: 15px;
+    width: 40px;
+    height: 20px;
+    line-height: 20px;
+    font-size: 12px;
+    list-style: none;
+    color: #0ca5af;
+    background-repeat: no-repeat;
+    background-size: 11px 11px;
+    background-position: left center;
+}
+
+.my_post_count_scrap {
+    background-image: url("/images/myscrap.png");
+    padding-left: 15px;
+    width: 40px;
+    height: 20px;
+    line-height: 20px;
+    font-size: 12px;
+    list-style: none;
+    color: #ffcc1c;
+    background-repeat: no-repeat;
+    background-size: 11px 11px;
+    background-position: left center;
+}
+
+.my_comment_form {
+    padding: 0;
+    background-color: #f8f8f8;
+}
+
+.my_comment_input {
+    margin: 0;
+    padding: 10px 85px 10px 10px;
+    border: 0;
+    width: 100%;
+    height: 40px;
+    line-height: 20px;
+    color: #444444;
+    font-size: 12px;
+    overflow: hidden;
+    resize: none;
+    background-color: transparent;
+    outline: none;
+}
+
+.my_comment_buttons {
+    list-style: none;
+    margin: 0;
+}
+
+.my_comment_buttons > li.anony {
+    margin-right: 5px;
+    background-image: url("/images/anonym.png");
+    display: inline-block;
+    width: 50px;
+    height: 40px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 40px 40px;
+    cursor: pointer;
+}
+
+.my_comment_buttons > li.submit {
+    background-color: #c62917;
+    background-image: url("images/write.submit.png");
+    display: inline-block;
+    width: 50px;
+    height: 40px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 40px 40px;
+    cursor: pointer;
+}
+
+.my_post_list_btn {
+    margin-top: 5px;
+    padding: 10px 10px 10px 15px;
+    height: 35px;
+    line-height: 35px;
+    border: 1px solid #c62917;
+    border-radius: 8px;
+    color: #c62917;
+    font-size: 14px;
+    font-weight: bold;
+    background-size: 10px 10px;
+    cursor: pointer;
+}

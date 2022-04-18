@@ -1,0 +1,66 @@
+{{> /layout/header}}
+
+<div class="my_info_box">
+    <div class="my_info_section">
+        <div>
+            <div class="my_section_title my_flex">
+                <h1>내 정보</h1>
+                <a href="#">로그아웃</a>
+            </div>
+        </div>
+        <div class="my_profile">
+            <div>
+                <img src="/images/profileImg.png">
+            </div>
+            <div class="my_profile_info">
+                <h3>username</h3>
+                <p>
+                    <span>name</span> /
+                    <span>nickname</span>
+                </p>
+                <p>
+                    <span>school</span>
+                    <span>studentNo</span> 학번
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="my_info_section">
+        <div class="my_section_title">
+            <h2>계정</h2>
+        </div>
+        <a href="#">학교 인증</a>
+        <a href="/update/password">비밀번호 변경</a>
+        <a href="/update/email">이메일 변경</a>
+    </div>
+
+    <div class="my_info_section">
+        <div class="my_section_title">
+            <h2>커뮤니티</h2>
+        </div>
+        <a href="/update/nickname">닉네임 설정</a>
+        <a href="#">이용 제한 내역</a>
+        <a href="#">커뮤니티 이용규칙</a>
+    </div>
+
+    <div class="my_info_section">
+        <div class="my_section_title">
+            <h2>이용 안내</h2>
+        </div>
+        <a href="#">문의하기</a>
+        <a href="#">공지사항</a>
+        <a href="#">서비스 이용약관</a>
+        <a href="#">개인정보 처리방침</a>
+    </div>
+
+    <div class="my_info_section mb-5">
+        <div class="my_section_title">
+            <h2>기타</h2>
+        </div>
+        <a href="#">정보 동의 설정</a>
+        <a href="/user/delete">회원 탈퇴</a>
+    </div>
+</div>
+
+{{> /layout/footer}}

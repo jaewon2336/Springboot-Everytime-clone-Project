@@ -1,0 +1,123 @@
+{{> /layout/header}}
+{{> /layout/subMenu}}
+<div class="my_post_detail_flex_center my_m_md_2">
+    <!-- 글 상세보기 시작 -->
+    <div style="margin-top: 10px;">
+        <div>
+            <div class="my_post_border my_p_md_1">
+                <!-- 게시판타이틀박스 -->
+                <div class="my_board_title">자유게시판</div>
+            </div>
+
+            <div class="my_post_border">
+                <div class="main my_p_md_1">
+                    <!-- 메인박스 -->
+                    <div>
+                        <div class="my_post_detail_flex">
+                            <div class="my_board_user">
+                                <img src="/images/profileImg.png">
+                            </div>
+                            <div style="width: 100%;">
+                                <div class="my_post_detail_flex_space_between">
+                                    <div class="my_board_username">유저네임</div>
+                                    <div class="my_post_detail_flex_center">
+                                        <a class="my_m_sm_2" href="#">쪽지</a>
+                                        <a class="my_m_sm_2" href="#">신고</a>
+                                    </div>
+                                </div>
+                                <div>time</div>
+                            </div>
+                        </div>
+                        <div class="my_board_title my_mb_md_1 my_mt_md_1">제목</div>
+                        <div class="my_board_content">내용</div>
+                        <ul class="my_post_detail_flex_left my_p_0">
+                            <li class="my_post_count_vote">0</li>
+                            <li class="my_post_count_comment">0</li>
+                            <li class="my_post_count_scrap">0</li>
+                        </ul>
+                        <div class="my_post_buttons">
+                            <span class="my_btn_vote">공감</span>
+                            <span class="my_btn_scrap">스크랩</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="my_post_border_top">
+                    <form action="#" class="my_comment_form">
+                        <div class="my_post_detail_flex_space_between">
+                            <!-- flex space-between -->
+                            <input class="my_comment_input" type="text" maxlength="300" placeholder="댓글을 입력하세요.">
+                            <ul class="my_comment_buttons my_post_detail_flex_center">
+                                <li class="anony"></li>
+                                <li class="submit"></li>
+                            </ul>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div>
+                <a href="#" class="my_post_list_btn">
+                    <i class="fa-solid fa-bars"></i>
+                    <span>글 목록</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- 오른쪽 메뉴 시작 -->
+    <div class="my_m_md_2">
+
+        <div class="box_rightside">
+            <div class="rightside_title_box">
+                <h3 class="color_secondary rightside_title">실시간 인기 글</h3>
+            </div>
+            <a class="box_popular_list column color_secondary" href="">
+                <div class="popular_title mv_5 ">밖에서 노래 소리가 들린다. 광고 트럭이 지나가는건가? 이 소리는 무슨 소리일까</div>
+                <div class="popular_content">왜일까? 나도 모르는 사이에 벌써 야구 시즌이 온건가? 날씨가 참 좋구나.</div>
+                <div class="popular_status">
+                    <time>자유게시판</time>
+                    <div class="status">
+                        <li class="vote active">3</li>
+                        <li class="comment active">4</li>
+                    </div>
+                </div>
+            </a>
+            <a class="box_popular_list column color_secondary " href="">
+                <div class="popular_title mv_5">밖에서 노래 소리가 들린다. 광고 트럭이 지나가는건가? 이 소리는 무슨 소리일까</div>
+                <div class="popular_content">왜일까? 나도 모르는 사이에 벌써 야구 시즌이 온건가? 날씨가 참 좋구나. </div>
+                <div class="popular_status">
+                    <time>자유게시판</time>
+                    <div class="status">
+                        <li class="vote active">3</li>
+                        <li class="comment active">4</li>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="box_rightside">
+            <div class="rightside_title_box">
+                <h3 class="color_secondary rightside_title">HOT 게시물</h3>
+            </div>
+            <a class="box_hot_list color_secondary" href="">
+                <div class="hot_content">프랭클린 자서전 나의 라임오렌지 나무 악마와 미스 프랭 선택 말테의 수기</div>
+                <time class="hot_time">04/03 17:52</time>
+            </a>
+            <a class="box_hot_list color_secondary" href="">
+                <div class="hot_content">프랭클린 자서전 나의 라임오렌지 나무 악마와 미스 프랭 선택 말테의 수기</div>
+                <time class="hot_time">10분 전</time>
+            </a>
+            <a class="box_hot_list color_secondary" href="">
+                <div class="hot_content">프랭클린 자서전 나의 라임오렌지 나무 악마와 미스 프랭 선택 말테의 수기</div>
+                <time class="hot_time">04/03 17:52</time>
+            </a>
+            <a class="box_hot_list color_secondary" href="">
+                <div class="hot_content">프랭클린 자서전 나의 라임오렌지 나무 악마와 미스 프랭 선택 말테의 수기</div>
+                <time class="hot_time">04/03 17:52</time>
+            </a>
+
+        </div>
+    </div>
+    <!-- 오른쪽 메뉴 끝 -->
+</div>
+{{> /layout/footer}}

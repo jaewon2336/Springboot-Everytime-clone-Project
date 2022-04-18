@@ -1,0 +1,85 @@
+.my_list_board_box {
+    width: 600px;
+    height: 100%;
+    margin-top: 10px;
+}
+
+.write {
+    font-size: 15px;
+    color: #737373;
+    background-color: transparent;
+    outline: none;
+    width: 100%;
+}
+
+.clubboard {
+    border: 1px solid #d6d6d6;
+    font-size: 15px;
+    margin: 5px 0 0 0;
+    justify-content: left;
+}
+
+.clubbody {
+    border-bottom: 1px solid #d6d6d6;
+    font-size: 15px;
+    width: 100%;
+    height: 100px;
+}
+
+.boardtitle {
+    font-weight: bold;
+    margin: 13px 5px 5px 5px;
+    padding: 5px;
+}
+
+.boardcontent {
+    margin: 5px 5px 5px 5px;
+    padding: 5px;
+    color: #444444;
+}
+
+.boardbottom {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+}
+
+.vote_comment {
+    display: flex;
+    justify-content: right;
+}
+
+.clubvote {
+    display: flex;
+    color: #c62917;
+}
+
+.clubcomment {
+    display: flex;
+    color: #0ca5af;
+}
+
+.secret {
+    display: flex;
+    margin-left: 6px;
+    color: #444444;
+}
+
+.bottom {
+    display: flex;
+}
+
+.pencil {
+    display: flex;
+    justify-content: space-between;
+    font-size: 19px;
+    align-items: flex-end;
+}
+
+.club_top {
+    border: 3px solid #d6d6d6;
+    display: flex;
+    background-color: #f8f8f8;
+    justify-content: space-between;
+    padding: 10px;
+}

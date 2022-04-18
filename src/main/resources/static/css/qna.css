@@ -1,0 +1,153 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    letter-spacing: -0.5px;
+    list-style: none;
+    /* border: 1px solid black; */
+}
+
+.my_qna_box {
+    margin-top: 100px;
+    padding: 24px;
+    margin: 24px auto 0 auto;
+    width: 780px;
+    border: 1px solid #d6d6d6;
+    border-radius: 12px;
+}
+
+.my_qna_box h1 {
+    margin-bottom: 24px;
+    line-height: 30px;
+    color: #444444;
+    font-size: 23px;
+    font-weight: bold;
+}
+
+.my_qna_box h3 {
+    margin: 48px 0 8px 0;
+    line-height: 26px;
+    color: #444444;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.my_qna_box p {
+    margin-top: 8px;
+    line-height: 22px;
+    color: #444444;
+    font-size: 16px;
+}
+
+.my_qna_box ol {
+    list-style-type: disc;
+    margin-top: 8px;
+    line-height: 22px;
+    color: #444444;
+    font-size: 16px;
+}
+
+.my_qna_box li {
+    list-style-type: decimal;
+    margin-top: 8px;
+    line-height: 22px;
+    color: #444444;
+    font-size: 16px;
+}
+
+
+.my_ph_md_2 {
+    padding: 0px 20px;
+}
+
+
+.my_border_secondary {
+    border-top: 1px solid #e3e3e3;
+}
+
+.my_qna_menu_font {
+    font-size: 15px;
+    color: #737373;
+}
+
+.my_active {
+    font-weight: bold;
+    color: #c62917;
+}
+
+
+.qna_container {
+    display: flex;
+    padding: 10px;
+}
+
+.qna_menu {
+    display: flex;
+    width: 330px;
+    height: 290px;
+    flex-direction: column;
+}
+
+.qna_menu_title {
+    width: 100%;
+    height: 75px;
+    padding: 25px;
+    border: 1px solid #d6d6d6;
+    font-size: 18px;
+    font-weight: bold;
+    color: #262626;
+}
+
+.qna_menu_lists {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #d6d6d6;
+}
+
+.qna_menu_list {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    background-color: white;
+    text-decoration: none;
+}
+
+.qna_menu_list:hover {
+    background-color: #f8f8f8;
+}
+
+.qna_wrap {
+    display: flex;
+    flex-direction: column;
+    width: 780px;
+    height: 710px;
+    background-color: white;
+    border: 1px solid #e3e3e3;
+}
+
+.qna_wrap_list {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    background-image: url("/images/faqIcon.png");
+    background-repeat: no-repeat;
+    background-position: 98% 50%;
+    text-decoration: none;
+}
+
+.qna_wrap_list:hover {
+    background-color: #f8f8f8;
+}
+
+.qna_wrap_list_title {
+    font-size: 15px;
+    font-weight: bold;
+    color: #262626;
+}
+
+.qna_wrap_list_sub {
+    font-size: 13px;
+    color: #737373;
+    margin-top: 4px;
+}

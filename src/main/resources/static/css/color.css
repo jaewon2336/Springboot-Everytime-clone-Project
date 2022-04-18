@@ -1,0 +1,44 @@
+/* Background Color */
+.my_bg_primary {
+    background-color: white;
+}
+
+.my_bg_secondary {
+    background-color: #f8f8f8;
+}
+
+.my_bg_secondary_active {
+    background-color: #0ca5af;
+}
+
+.my_bg_active {
+    background-color: #c62917;
+}
+
+
+
+/* Text Color */
+.my_text_primary {
+    color: #737373;
+}
+
+.my_text_bold {
+    color: #444444;
+}
+
+.my_text_secondary {
+    color: #a6a6a6;
+}
+
+.my_text_title {
+    color: #3643a2;
+}
+
+.my_text_scrap {
+    color: #ffcc1c;
+}
+
+/* Border Color */
+.my_border_primary {
+    border: 1px solid #d6d6d6;
+}
