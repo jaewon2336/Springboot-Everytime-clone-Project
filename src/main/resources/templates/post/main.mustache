@@ -8,17 +8,19 @@
         <div class="leftside">
 
             <!-- 로그인 -->
+            {{#principal}}
             <div class="box_profile color_secondary mb_5">
-                <img class="img_profile" src="/images/profileImg.png" alt="">
-                <div class="nickname">닉네임</div>
-                <div class="name">이름</div>
-                <div class="name">username</div>
+                <img class="img_profile" src="/images/profileImg.png">
+                <div class="nickname">{{nickname}}</div>
+                <div class="name">{{name}}</div>
+                <div class="name">{{username}}</div>
                 <div class="btns mt_15">
                     <a class="btn_profile btn_myinfo" href="">내 정보</a>
-                    <a class="btn_profile btn_logout" href="">로그아웃</a>
+                    <a class="btn_profile btn_logout" href="/logout">로그아웃</a>
                 </div>
             </div>
-
+            {{/principal}}
+            {{^principal}}
             <!-- 비로그인 -->
             <div class="box_profile color_secondary mb_5">
                 <div class="txt_auth_info">
@@ -30,6 +32,7 @@
                     <a class="btn_profile_join" href="/user/join-form">에브리타임 회원가입</a>
                 </div>
             </div>
+            {{/principal}}
 
             <div class="box_small color_secondary mb_5">
                 <div class="box_small_list"><a class="myarticle" href="">내가 쓴

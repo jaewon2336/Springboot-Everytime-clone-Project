@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import lombok.RequiredArgsConstructor;
 import site.metacoding.everytimeclone.domain.user.User;
 import site.metacoding.everytimeclone.service.UserService;
+import site.metacoding.everytimeclone.util.Script;
 import site.metacoding.everytimeclone.web.api.dto.user.LoginDto;
 
 @RequiredArgsConstructor
@@ -50,6 +51,12 @@ public class UserApiController {
         }
 
         return new ResponseEntity<>(1, HttpStatus.OK);
+    }
+
+    @GetMapping("/logout")
+    public String logout() {
+        session.invalidate();
+        return Script.href("/", "로그아웃 되었습니다.");
     }
 
 }
