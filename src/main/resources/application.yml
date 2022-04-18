@@ -5,9 +5,21 @@ server:
     encoding:
       charset: utf-8
     session:
-      timeout: 30
+      timeout: 300
 
 spring:
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: 아이디
+    password: 비밀번호
+    properties:
+      mail:
+        smtp:
+          starttls:
+            enable: true
+            required: true
+          auth: true
   mustache:
     expose-session-attributes: true
   datasource:
@@ -24,7 +36,7 @@ spring:
       naming:
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
     show-sql: true
-    properties: 
+    properties:
       hibernate.format_sql: true
 
   output:

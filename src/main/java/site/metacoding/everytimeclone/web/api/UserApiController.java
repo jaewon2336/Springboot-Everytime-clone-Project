@@ -16,6 +16,8 @@ import lombok.RequiredArgsConstructor;
 import site.metacoding.everytimeclone.domain.user.User;
 import site.metacoding.everytimeclone.service.UserService;
 import site.metacoding.everytimeclone.util.Script;
+import site.metacoding.everytimeclone.util.UtilValid;
+import site.metacoding.everytimeclone.util.email.EmailUtil;
 import site.metacoding.everytimeclone.web.api.dto.user.LoginDto;
 
 @RequiredArgsConstructor
@@ -24,6 +26,7 @@ public class UserApiController {
 
     private final UserService userService;
     private final HttpSession session;
+    private final EmailUtil emailUtil;
 
     @GetMapping("/api/user/username-same-check")
     public ResponseEntity<?> usernameSameCheck(String username) {
@@ -58,5 +61,27 @@ public class UserApiController {
         session.invalidate();
         return Script.href("/", "로그아웃 되었습니다.");
     }
+
+    @GetMapping("/user/find-username")
+    public String findUsername(String email) {
+
+        User userEntity = userService.유저네임보내주기(email);
+
+        emailUtil.sendEmail(userEntity.getEmail(), "요청하신 이메일의 ID",
+                "ID : " + userEntity.getUsername());
+
+        return Script.href("/user/login-form", "안내 이메일을 발송하였습니다. 만약 메일이 오지 않는다면, 스팸 편지함을 확인해주세요.");
+    }
+
+    // @PostMapping("/user/password-reset")
+    // public String passwordReset(@Valid PasswordResetReqDto passwordResetReqDto,
+    // BindingResult bindingResult) {
+
+    // UtilValid.요청에러처리(bindingResult);
+
+    // userService.패스워드초기화(passwordResetReqDto);
+
+    // return "redirect:/user/loginForm";
+    // }
 
 }

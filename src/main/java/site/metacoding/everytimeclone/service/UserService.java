@@ -9,6 +9,8 @@ import org.springframework.stereotype.Service;
 import lombok.RequiredArgsConstructor;
 import site.metacoding.everytimeclone.domain.user.User;
 import site.metacoding.everytimeclone.domain.user.UserRepository;
+import site.metacoding.everytimeclone.handler.ex.CustomException;
+import site.metacoding.everytimeclone.util.email.EmailUtil;
 import site.metacoding.everytimeclone.web.api.dto.user.LoginDto;
 
 @RequiredArgsConstructor
@@ -36,4 +38,14 @@ public class UserService {
         return userRepository.mLogin(loginDto.getUsername(), loginDto.getPassword());
     }
 
+    public User 유저네임보내주기(String email) {
+
+        Optional<User> userOp = userRepository.findByEmail(email);
+
+        if (userOp.isPresent()) {
+            return userOp.get();
+        } else {
+            throw new CustomException("해당 이메일이 존재하지 않습니다");
+        }
+    }
 }

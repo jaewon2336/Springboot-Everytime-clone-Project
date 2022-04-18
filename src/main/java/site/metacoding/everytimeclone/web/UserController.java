@@ -9,8 +9,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import lombok.RequiredArgsConstructor;
+import site.metacoding.everytimeclone.domain.user.User;
 import site.metacoding.everytimeclone.service.UserService;
 import site.metacoding.everytimeclone.util.UtilValid;
+import site.metacoding.everytimeclone.util.email.EmailUtil;
 import site.metacoding.everytimeclone.web.api.dto.user.JoinDto;
 
 @RequiredArgsConstructor
@@ -38,4 +40,13 @@ public class UserController {
         return "redirect:/user/loginForm";
     }
 
+    @GetMapping("/user/find-username-form")
+    public String findUsernameForm() {
+        return "/user/findUsernameForm";
+    }
+
+    @GetMapping("/user/password-reset-form")
+    public String passwordResetForm() {
+        return "/user/passwordResetForm";
+    }
 }
