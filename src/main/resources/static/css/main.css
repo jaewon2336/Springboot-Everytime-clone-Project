@@ -253,7 +253,13 @@ time {
     color: #666;
     font-size: 12px;
     letter-spacing: -0.5px;
+}
 
+.btns_auth {
+    width: 100%;
+    color: #666;
+    font-size: 12px;
+    letter-spacing: -0.5px;
 }
 
 .btn_profile {
@@ -265,6 +271,61 @@ time {
     border-radius: 3px;
     border: 1px solid #d6d6d6;
     line-height: 25px;
+}
+
+.txt_auth_info {
+    padding: 0;
+    color: #444444;
+    font-size: 14px;
+    font-weight: normal;
+    text-align: center;
+}
+
+.txt_auth_info p {
+    margin: 0;
+}
+
+.txt_auth_info p span {
+    color: #c62917;
+    font-weight: bold;
+}
+
+.btn_profile_login {
+    display: block;
+    width: 100%;
+    height: 35px;
+    color: #737373;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 5px;
+    border-radius: 3px;
+    border: 1px solid #d6d6d6;
+    background-color: white;
+    line-height: 35px;
+}
+
+.btn_profile_login:hover {
+    color: #737373;
+}
+
+.btn_profile_join {
+    display: block;
+    width: 100%;
+    height: 35px;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 5px;
+    border-radius: 3px;
+    border: 1px solid #d6d6d6;
+    background-color: #c62917;
+    line-height: 35px;
+}
+
+.btn_profile_join:hover {
+    color: white;
 }
 
 .btn_myinfo {
