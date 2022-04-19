@@ -9,8 +9,9 @@ import org.springframework.stereotype.Service;
 import lombok.RequiredArgsConstructor;
 import site.metacoding.everytimeclone.domain.user.User;
 import site.metacoding.everytimeclone.domain.user.UserRepository;
+import site.metacoding.everytimeclone.handler.ex.CustomApiException;
 import site.metacoding.everytimeclone.handler.ex.CustomException;
-import site.metacoding.everytimeclone.util.email.EmailUtil;
+import site.metacoding.everytimeclone.web.api.dto.user.EmailUpdateDto;
 import site.metacoding.everytimeclone.web.api.dto.user.LoginDto;
 
 @RequiredArgsConstructor
@@ -45,7 +46,7 @@ public class UserService {
         if (userOp.isPresent()) {
             return userOp.get();
         } else {
-            throw new CustomException("해당 이메일이 존재하지 않습니다");
+            throw new CustomException("해당 이메일이 존재하지 않습니다.");
         }
     }
 
@@ -63,7 +64,29 @@ public class UserService {
             userEntity.setPassword(randomPassword);
             return userEntity;
         } else {
-            throw new CustomException("해당 아이디가 존재하지 않습니다");
+            throw new CustomApiException("일치하는 정보가 존재하지 않습니다.");
+        }
+    }
+
+    @Transactional
+    public void 이메일수정(Integer id, EmailUpdateDto emailUpdateDto) {
+        Optional<User> userOp = userRepository.findById(id);
+
+        if (userOp.isPresent()) {
+            User userEntity = userOp.get();
+
+            // 비밀번호 비교
+            if (userEntity.getPassword().equals(emailUpdateDto.getPassword())) {
+                // 기존 이메일과 비교
+                if (userEntity.getEmail().equals(emailUpdateDto.getEmail())) {
+                    throw new RuntimeException("현재 사용하시는 이메일과 동일합니다.");
+                }
+                userEntity.setEmail(emailUpdateDto.getEmail());
+            } else {
+                throw new RuntimeException("비밀번호가 일치하지 않습니다.");
+            }
+        } else {
+            throw new RuntimeException("잘못된 정보입니다.");
         }
     }
 }

@@ -14,7 +14,7 @@ import site.metacoding.everytimeclone.domain.user.User;
 @Data // Getter(필수), Setter, toString
 public class JoinDto {
 
-    @Size(min = 4, max = 15)
+    @Size(min = 3, max = 15)
     @NotBlank
     private String name;
 

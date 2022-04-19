@@ -8,6 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -19,8 +20,8 @@ import site.metacoding.everytimeclone.service.UserService;
 import site.metacoding.everytimeclone.util.Script;
 import site.metacoding.everytimeclone.util.UtilValid;
 import site.metacoding.everytimeclone.util.email.EmailUtil;
+import site.metacoding.everytimeclone.web.api.dto.user.EmailUpdateDto;
 import site.metacoding.everytimeclone.web.api.dto.user.LoginDto;
-import site.metacoding.everytimeclone.web.api.dto.user.PasswordResetReqDto;
 
 @RequiredArgsConstructor
 @RestController
@@ -84,6 +85,16 @@ public class UserApiController {
 
         emailUtil.sendEmail(userEntity.getEmail(), "비밀번호가 초기화 되었습니다",
                 "초기화된 비밀번호는 " + userEntity.getPassword() + " 입니다. 로그인 후 비밀번호를 재설정하십시오.");
+
+        return new ResponseEntity<>(1, HttpStatus.OK);
+    }
+
+    @PutMapping("/s/api/user/{id}/email")
+    public ResponseEntity<?> updateEmail(@PathVariable Integer id, @Valid @RequestBody EmailUpdateDto emailUpdateDto,
+            BindingResult bindingResult) {
+        UtilValid.요청에러처리(bindingResult);
+
+        userService.이메일수정(id, emailUpdateDto);
 
         return new ResponseEntity<>(1, HttpStatus.OK);
     }

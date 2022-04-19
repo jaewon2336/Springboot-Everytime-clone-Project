@@ -5,7 +5,7 @@
         <div>
             <div class="my_section_title my_flex">
                 <h1>내 정보</h1>
-                <a href="#">로그아웃</a>
+                <a href="/logout">로그아웃</a>
             </div>
         </div>
         <div class="my_profile">
@@ -13,14 +13,14 @@
                 <img src="/images/profileImg.png">
             </div>
             <div class="my_profile_info">
-                <h3>username</h3>
+                <h3>{{principal.username}}</h3>
                 <p>
-                    <span>name</span> /
-                    <span>nickname</span>
+                    <span>{{principal.name}}</span> /
+                    <span>{{principal.nickname}}</span>
                 </p>
                 <p>
-                    <span>school</span>
-                    <span>studentNo</span> 학번
+                    <span>{{principal.school}}</span>
+                    <span>{{principal.studentNo}}</span> 학번
                 </p>
             </div>
         </div>
@@ -31,15 +31,15 @@
             <h2>계정</h2>
         </div>
         <a href="#">학교 인증</a>
-        <a href="/update/password">비밀번호 변경</a>
-        <a href="/update/email">이메일 변경</a>
+        <a href="/s/user/{{principal.id}}/password-form">비밀번호 변경</a>
+        <a href="/s/user/{{principal.id}}/email-form">이메일 변경</a>
     </div>
 
     <div class="my_info_section">
         <div class="my_section_title">
             <h2>커뮤니티</h2>
         </div>
-        <a href="/update/nickname">닉네임 설정</a>
+        <a href="/s/user/{{principal.id}}/nickname-form">닉네임 설정</a>
         <a href="#">이용 제한 내역</a>
         <a href="#">커뮤니티 이용규칙</a>
     </div>
