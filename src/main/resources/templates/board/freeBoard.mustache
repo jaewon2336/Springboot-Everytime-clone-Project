@@ -14,85 +14,78 @@
             <div class="pencil"> <i class="fa-solid fa-pen"></i></div>
         </div>
 
-        <div class="clubboard">
+        <form id="write-form" class="write_form my_hidden">
+            <!-- 1은 자유게시판 -->
+            <input id="board-no" type="hidden" value="1">
 
-            <div class="clubbody">
-                <div class="boardtitle"> 제목</div>
-                <div class="boardcontent">내용</div>
-                <div class="boardbottom">
-                    <div class="bottom">
-                        <time>3분전</time>
-                        <div class="secret">익명</div>
-                    </div>
-                    <div class="vote_comment">
-                        <div class="clubvote">
-                            <li class="vote active">3</li>
-                        </div>
-                        <div class="clubcomment">
-                            <li class="comment active">4</li>
-                        </div>
-                    </div>
-                </div>
+            <p class="title_write">
+                <input class="my_write_input" type="text" id="title" placeholder="글 제목" maxlength="60" required>
+            </p>
+            <p class="write">
+                <textarea class="my_write_textarea" id="content" placeholder="에브리타임은 누구나 기분 좋게 참여할 수 있는 커뮤니티를 만들기 위해 커뮤니티 이용규칙을 제정하여 운영하고 있습니다. 위반 시 게시물이 삭제되고 서비스 이용이 일정 기간 제한될 수 있습니다. 
+
+아래는 이 게시판에 해당하는 핵심 내용에 대한 요약 사항이며, 게시물 작성 전 커뮤니티 이용규칙 전문을 반드시 확인하시기 바랍니다. 
+                
+※ 시사·이슈 게시판 작성 금지 게시물 
+- 언론·시민단체 등 관련 단체 옹호, 추천, 반대, 비하 행위 
+- 특정 정당·후보에 대한 지지, 비방, 투표 독려 행위 
+- 다른 이용자를 특정 정치 단체 관련자 및 특정 이념 옹호자로 몰아가는 행위 
+- 다양한 의견을 배척하고 여론을 하나로 수렴하는 행위 
+- 다른 이용자나 게시물에 대한 욕설, 비난, 비꼬는 행위 
+- 기타 정치·사회 관련 갈등을 조장할 수 있는 행위 일체 
+                
+※ 그 밖의 규칙 위반 
+- 타인의 권리를 침해하거나 불쾌감을 주는 행위 
+- 범죄, 불법 행위 등 법령을 위반하는 행위 
+- 욕설, 비하, 차별, 혐오, 자살, 폭력 관련 내용을 포함한 게시물 작성 행위" required></textarea>
+            </p>
+            <div class="my_post_detail_flex_space_between">
+                <ul class="my_comment_buttons my_post_detail_flex_center">
+                    <li id="tag" class="tag"></li>
+                    <li id="file" class="file"></li>
+                </ul>
+                <ul class="my_comment_buttons my_post_detail_flex_center">
+                    <li id="anony" class="write_anony"></li>
+                    <li id="submit" class="submit" type="button"></li>
+                </ul>
+            </div>
+        </form>
+        <div id="post-box" class="clubboard">
+
+        </div>
+
+        <div>
+            <div id="li-prev" class="my_hidden">
+                <button id="btn-prev" class="my_btn_paging_prev">
+                    <i class="fa-solid fa-chevron-left"></i><span class="my_mr_sm_1">이전</span>
+                </button>
             </div>
 
-
-            <div class="clubbody">
-                <div class="boardtitle"> 제목</div>
-                <div class="boardcontent">내용</div>
-                <div class="boardbottom">
-                    <div class="bottom">
-                        <time>3분전</time>
-                        <div class="secret">익명</div>
-                    </div>
-                    <div class="vote_comment">
-                        <div class="clubvote">
-                            <li class="vote active">3</li>
-                        </div>
-                        <div class="clubcomment">
-                            <li class="comment active">4</li>
+            <div id="my_post_search">
+                <form class="my_post_search">
+                    <div class="dropdown">
+                        <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
+                            전체
+                        </button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">전체</a>
+                            <a class="dropdown-item" href="#">글 제목</a>
+                            <a class="dropdown-item" href="#">글 내용</a>
                         </div>
                     </div>
-                </div>
+                    <div>
+                        <input id="keyword" type="text" placeholder="검색어를 입력하세요">
+                        <button id="btn-search"><i style="background-color: white;"
+                                class="fa-solid fa-magnifying-glass"></i></button>
+                    </div>
+                </form>
             </div>
 
-            <div class="clubbody">
-                <div class="boardtitle"> 제목</div>
-                <div class="boardcontent">내용</div>
-                <div class="boardbottom">
-                    <div class="bottom">
-                        <time>3분전</time>
-                        <div class="secret">익명</div>
-                    </div>
-                    <div class="vote_comment">
-                        <div class="clubvote">
-                            <li class="vote active">3</li>
-                        </div>
-                        <div class="clubcomment">
-                            <li class="comment active">4</li>
-                        </div>
-                    </div>
-                </div>
+            <div class="li-next">
+                <button id="btn-next" class="my_btn_paging_next">
+                    <span class="my_mr_sm_1">다음</span><i class="fa-solid fa-angle-right"></i>
+                </button>
             </div>
-
-            <div class="clubbody">
-                <div class="boardtitle"> 제목</div>
-                <div class="boardcontent">내용</div>
-                <div class="boardbottom">
-                    <div class="bottom">
-                        <time>3분전</time>
-                        <div class="secret">익명</div>
-                    </div>
-                    <div class="vote_comment">
-                        <div class="clubvote">
-                            <li class="vote active">3</li>
-                        </div>
-                        <div class="clubcomment">
-                            <li class="comment active">4</li>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
         </div>
 
     </div>
@@ -153,6 +146,8 @@
     </div>
     <!-- 오른쪽 메뉴 끝 -->
 </div>
+
+<script src="/js/board.js"></script>
 
 <script>
     $("#freeBoard").addClass("my_text_active_bold");

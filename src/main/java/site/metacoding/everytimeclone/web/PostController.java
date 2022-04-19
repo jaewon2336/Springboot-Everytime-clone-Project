@@ -30,7 +30,7 @@ public class PostController {
     }
 
     @GetMapping("/s/board/{boardNo}")
-    public String free(@PathVariable Integer boardNo) {
+    public String board(@PathVariable Integer boardNo) {
         switch (boardNo) {
             case 1:
                 return "/board/freeBoard";

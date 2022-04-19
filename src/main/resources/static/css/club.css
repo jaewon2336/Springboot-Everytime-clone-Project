@@ -1,5 +1,5 @@
 .my_list_board_box {
-    width: 600px;
+    width: 700px;
     height: 100%;
     margin-top: 10px;
 }
@@ -23,7 +23,7 @@
     border-bottom: 1px solid #d6d6d6;
     font-size: 15px;
     width: 100%;
-    height: 100px;
+    height: 100%;
 }
 
 .boardtitle {
@@ -41,7 +41,7 @@
 .boardbottom {
     display: flex;
     justify-content: space-between;
-    margin: 10px;
+    margin: 10px 10px 0 10px;
 }
 
 .vote_comment {
@@ -81,5 +81,6 @@
     display: flex;
     background-color: #f8f8f8;
     justify-content: space-between;
-    padding: 10px;
+    align-items: center;
+    padding: 0 10px;
 }
