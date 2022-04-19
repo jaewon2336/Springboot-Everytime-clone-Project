@@ -22,6 +22,7 @@ import site.metacoding.everytimeclone.util.UtilValid;
 import site.metacoding.everytimeclone.util.email.EmailUtil;
 import site.metacoding.everytimeclone.web.api.dto.user.EmailUpdateDto;
 import site.metacoding.everytimeclone.web.api.dto.user.LoginDto;
+import site.metacoding.everytimeclone.web.api.dto.user.NicknameUpdateDto;
 import site.metacoding.everytimeclone.web.api.dto.user.PasswordUpdateDto;
 
 @RequiredArgsConstructor
@@ -35,6 +36,12 @@ public class UserApiController {
     @GetMapping("/api/user/username-same-check")
     public ResponseEntity<?> usernameSameCheck(String username) {
         boolean isNotSame = userService.유저네임중복검사(username);
+        return new ResponseEntity<>(isNotSame, HttpStatus.OK);
+    }
+
+    @GetMapping("/api/user/nickname-same-check")
+    public ResponseEntity<?> nicknameSameCheck(String nickname) {
+        boolean isNotSame = userService.닉네임중복검사(nickname);
         return new ResponseEntity<>(isNotSame, HttpStatus.OK);
     }
 
@@ -92,11 +99,19 @@ public class UserApiController {
         return new ResponseEntity<>(1, HttpStatus.OK);
     }
 
-    @PutMapping("/s/api/user/{id}/password") // 주소 변경 필요?
+    @PutMapping("/s/api/user/{id}/password")
     public ResponseEntity<?> updatePassword(@PathVariable Integer id,
             @Valid @RequestBody PasswordUpdateDto passwordUpdateDto, BindingResult bindingResult) {
         UtilValid.요청에러처리(bindingResult);
         userService.비밀번호수정(id, passwordUpdateDto);
+        return new ResponseEntity<>(1, HttpStatus.OK);
+    }
+
+    @PutMapping("/s/api/user/{id}/nickname")
+    public ResponseEntity<?> updateNickname(@PathVariable Integer id,
+            @Valid @RequestBody NicknameUpdateDto nicknameUpdateDto, BindingResult bindingResult) {
+        UtilValid.요청에러처리(bindingResult);
+        userService.닉네임수정(id, nicknameUpdateDto);
         return new ResponseEntity<>(1, HttpStatus.OK);
     }
 

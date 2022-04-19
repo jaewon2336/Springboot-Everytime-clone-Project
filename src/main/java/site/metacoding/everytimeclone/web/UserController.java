@@ -40,7 +40,7 @@ public class UserController {
         // 핵심로직
         UtilValid.요청에러처리(bindingResult);
         userService.회원가입(joinDto.toEntity());
-        return "redirect:/user/loginForm";
+        return "redirect:/user/login-form";
     }
 
     @GetMapping("/user/find-username-form")

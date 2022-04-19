@@ -29,9 +29,30 @@ public class PostController {
         return "/post/main";
     }
 
-    @GetMapping("/s/board")
-    public String free() {
-        return "/board/freeBoard";
+    @GetMapping("/s/board/{boardNo}")
+    public String free(@PathVariable Integer boardNo) {
+        switch (boardNo) {
+            case 1:
+                return "/board/freeBoard";
+            case 2:
+                return "/board/secretBoard";
+            case 3:
+                return "/board/graduateBoard";
+            case 4:
+                return "/board/freshmanBoard";
+            case 5:
+                return "/board/previewBoard";
+            case 6:
+                return "/board/marketBoard";
+            case 7:
+                return "/board/promotionBoard";
+            case 8:
+                return "/board/clubBoard";
+            case 9:
+                return "/board/employBoard";
+        }
+
+        return "redirect:/";
     }
 
     // 글 상세보기

@@ -37,7 +37,7 @@ public class User {
     @Column(length = 20, nullable = false)
     private String password;
 
-    @Column(length = 30, nullable = false)
+    @Column(length = 30, nullable = false, unique = true)
     private String nickname;
 
     @Column(length = 60, nullable = false, unique = true)

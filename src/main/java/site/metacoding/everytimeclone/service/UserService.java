@@ -13,6 +13,7 @@ import site.metacoding.everytimeclone.handler.ex.CustomApiException;
 import site.metacoding.everytimeclone.handler.ex.CustomException;
 import site.metacoding.everytimeclone.web.api.dto.user.EmailUpdateDto;
 import site.metacoding.everytimeclone.web.api.dto.user.LoginDto;
+import site.metacoding.everytimeclone.web.api.dto.user.NicknameUpdateDto;
 import site.metacoding.everytimeclone.web.api.dto.user.PasswordUpdateDto;
 
 @RequiredArgsConstructor
@@ -23,6 +24,16 @@ public class UserService {
 
     public boolean 유저네임중복검사(String username) {
         Optional<User> userOp = userRepository.findByUsername(username);
+
+        if (userOp.isPresent()) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    public boolean 닉네임중복검사(String nickname) {
+        Optional<User> userOp = userRepository.findByUsername(nickname);
 
         if (userOp.isPresent()) {
             return false;
@@ -47,7 +58,7 @@ public class UserService {
         if (userOp.isPresent()) {
             return userOp.get();
         } else {
-            throw new CustomException("해당 이메일이 존재하지 않습니다.");
+            throw new CustomApiException("해당 이메일이 존재하지 않습니다.");
         }
     }
 
@@ -84,10 +95,10 @@ public class UserService {
                 }
                 userEntity.setEmail(emailUpdateDto.getEmail());
             } else {
-                throw new RuntimeException("비밀번호가 일치하지 않습니다.");
+                throw new CustomApiException("비밀번호가 일치하지 않습니다.");
             }
         } else {
-            throw new RuntimeException("존재하지 않는 사용자입니다.");
+            throw new CustomApiException("존재하지 않는 사용자입니다.");
         }
     }
 
@@ -102,6 +113,23 @@ public class UserService {
                 userEntity.setPassword(passwordUpdateDto.getPassword()); // 비밀번호 변경
             } else {
                 throw new RuntimeException("현재 비밀번호가 일치하지 않습니다.");
+            }
+        } else {
+            throw new RuntimeException("존재하지 않는 사용자입니다.");
+        }
+    }
+
+    @Transactional
+    public void 닉네임수정(Integer id, NicknameUpdateDto nicknameUpdateDto) {
+        Optional<User> userOp = userRepository.findById(id);
+
+        if (userOp.isPresent()) {
+            User userEntity = userOp.get();
+
+            if (userEntity.getNickname().equals(nicknameUpdateDto.getNickname())) {
+                throw new CustomException("현재 사용하시는 닉네임과 동일합니다.");
+            } else {
+                userEntity.setNickname(nicknameUpdateDto.getNickname()); // 닉네임 변경
             }
         } else {
             throw new RuntimeException("존재하지 않는 사용자입니다.");
