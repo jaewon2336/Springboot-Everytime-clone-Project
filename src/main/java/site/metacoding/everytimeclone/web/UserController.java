@@ -9,10 +9,12 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import lombok.RequiredArgsConstructor;
 import site.metacoding.everytimeclone.domain.user.User;
 import site.metacoding.everytimeclone.service.UserService;
+import site.metacoding.everytimeclone.util.Script;
 import site.metacoding.everytimeclone.util.UtilValid;
 import site.metacoding.everytimeclone.web.api.dto.user.JoinDto;
 
@@ -72,5 +74,11 @@ public class UserController {
     @GetMapping("/s/user/{id}/nickname-form")
     public String nicknameUpdateForm(@PathVariable Integer id) {
         return "/user/nicknameUpdateForm";
+    }
+
+    @GetMapping("/logout")
+    public @ResponseBody String logout() {
+        session.invalidate();
+        return Script.href("/", "로그아웃 되었습니다.");
     }
 }

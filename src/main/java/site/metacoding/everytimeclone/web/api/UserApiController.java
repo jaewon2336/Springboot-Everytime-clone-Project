@@ -22,6 +22,7 @@ import site.metacoding.everytimeclone.util.UtilValid;
 import site.metacoding.everytimeclone.util.email.EmailUtil;
 import site.metacoding.everytimeclone.web.api.dto.user.EmailUpdateDto;
 import site.metacoding.everytimeclone.web.api.dto.user.LoginDto;
+import site.metacoding.everytimeclone.web.api.dto.user.PasswordUpdateDto;
 
 @RequiredArgsConstructor
 @RestController
@@ -59,12 +60,6 @@ public class UserApiController {
         return new ResponseEntity<>(1, HttpStatus.OK);
     }
 
-    @GetMapping("/logout")
-    public String logout() {
-        session.invalidate();
-        return Script.href("/", "로그아웃 되었습니다.");
-    }
-
     @GetMapping("/user/find-username")
     public String findUsername(String email) {
 
@@ -93,9 +88,15 @@ public class UserApiController {
     public ResponseEntity<?> updateEmail(@PathVariable Integer id, @Valid @RequestBody EmailUpdateDto emailUpdateDto,
             BindingResult bindingResult) {
         UtilValid.요청에러처리(bindingResult);
-
         userService.이메일수정(id, emailUpdateDto);
+        return new ResponseEntity<>(1, HttpStatus.OK);
+    }
 
+    @PutMapping("/s/api/user/{id}/password") // 주소 변경 필요?
+    public ResponseEntity<?> updatePassword(@PathVariable Integer id,
+            @Valid @RequestBody PasswordUpdateDto passwordUpdateDto, BindingResult bindingResult) {
+        UtilValid.요청에러처리(bindingResult);
+        userService.비밀번호수정(id, passwordUpdateDto);
         return new ResponseEntity<>(1, HttpStatus.OK);
     }
 

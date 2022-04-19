@@ -13,6 +13,7 @@ import site.metacoding.everytimeclone.handler.ex.CustomApiException;
 import site.metacoding.everytimeclone.handler.ex.CustomException;
 import site.metacoding.everytimeclone.web.api.dto.user.EmailUpdateDto;
 import site.metacoding.everytimeclone.web.api.dto.user.LoginDto;
+import site.metacoding.everytimeclone.web.api.dto.user.PasswordUpdateDto;
 
 @RequiredArgsConstructor
 @Service
@@ -86,7 +87,25 @@ public class UserService {
                 throw new RuntimeException("비밀번호가 일치하지 않습니다.");
             }
         } else {
-            throw new RuntimeException("잘못된 정보입니다.");
+            throw new RuntimeException("존재하지 않는 사용자입니다.");
         }
     }
+
+    @Transactional
+    public void 비밀번호수정(Integer id, PasswordUpdateDto passwordUpdateDto) {
+        Optional<User> userOp = userRepository.findById(id);
+
+        if (userOp.isPresent()) {
+            User userEntity = userOp.get();
+
+            if (userEntity.getPassword().equals(passwordUpdateDto.getCurrentPassword())) {
+                userEntity.setPassword(passwordUpdateDto.getPassword()); // 비밀번호 변경
+            } else {
+                throw new RuntimeException("현재 비밀번호가 일치하지 않습니다.");
+            }
+        } else {
+            throw new RuntimeException("존재하지 않는 사용자입니다.");
+        }
+    }
+
 }
