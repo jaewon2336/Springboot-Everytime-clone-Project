@@ -29,6 +29,11 @@ public class PostController {
         return "/post/main";
     }
 
+    @GetMapping("/s/board")
+    public String free() {
+        return "/board/freeBoard";
+    }
+
     // 글 상세보기
     // @GetMapping("/post/{id}")
     // public String detail(@PathVariable Integer id, Model model) {

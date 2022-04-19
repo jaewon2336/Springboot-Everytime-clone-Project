@@ -38,6 +38,15 @@
     color: #ffcc1c;
 }
 
+.my_text_active {
+    color: #c62917;
+}
+
+.my_text_active_bold {
+    color: #c62917;
+    font-weight: bold;
+}
+
 /* Border Color */
 .my_border_primary {
     border: 1px solid #d6d6d6;
