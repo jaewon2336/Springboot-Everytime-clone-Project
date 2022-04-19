@@ -79,6 +79,7 @@ $("#btn-search").click(() => {
 let page = 0;
 let keyword = $("#keyword").val(""); // 초기화
 let boardNo = $("#board-no").val();
+console.log(boardNo);
 
 // 검색
 async function list(keyword) {
@@ -101,7 +102,7 @@ function postList(post) {
         post.user.username = "익명";
     }
 
-    return `<a href="/post/${post.id}" class="card my_post_list_box">
+    return `<a href="/s/post/${post.id}" class="card my_post_list_box">
                 <div class="clubbody">
                     <div class="boardtitle">${post.title}</div>
                     <div class="boardcontent">${post.content}</div>

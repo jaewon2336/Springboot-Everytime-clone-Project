@@ -19,19 +19,20 @@
                             </div>
                             <div style="width: 100%;">
                                 <div class="my_post_detail_flex_space_between">
-                                    <div class="my_board_username">유저네임</div>
+                                    <input id="postId" type="hidden" value="{{postEntity.id}}">
+                                    <div class="my_board_username">{{postEntity.user.username}}</div>
                                     <div class="my_post_detail_flex_center">
                                         <a class="my_m_sm_2" href="#">쪽지</a>
                                         <a class="my_m_sm_2" href="#">신고</a>
                                     </div>
                                 </div>
-                                <div>time</div>
+                                <div>{{postEntity.createDate}}</div>
                             </div>
                         </div>
-                        <div class="my_board_title my_mb_md_1 my_mt_md_1">제목</div>
-                        <div class="my_board_content">내용</div>
+                        <div class="my_board_title my_mb_md_1 my_mt_md_1">{{postEntity.title}}</div>
+                        <div class="my_board_content">{{postEntity.content}}</div>
                         <ul class="my_post_detail_flex_left my_p_0">
-                            <li class="my_post_count_vote">0</li>
+                            <li class="my_post_count_vote">{{postEntity.likeCount}}</li>
                             <li class="my_post_count_comment">0</li>
                             <li class="my_post_count_scrap">0</li>
                         </ul>
@@ -43,10 +44,10 @@
                 </div>
 
                 <div class="my_post_border_top">
-                    <form action="#" class="my_comment_form">
+                    <form action="/s/post/{{postEntity.id}}/comment" class="my_comment_form" method="post">
                         <div class="my_post_detail_flex_space_between">
-                            <!-- flex space-between -->
-                            <input class="my_comment_input" type="text" maxlength="300" placeholder="댓글을 입력하세요.">
+                            <input name="content" class="my_comment_input" type="text" maxlength="300"
+                                placeholder="댓글을 입력하세요.">
                             <ul class="my_comment_buttons my_post_detail_flex_center">
                                 <li class="anony"></li>
                                 <li class="submit"></li>
@@ -54,6 +55,29 @@
                         </div>
                     </form>
                 </div>
+
+                <div class="card">
+                    <div class="card-header"><b>댓글 리스트</b></div>
+                    <ul id="reply-box" class="list-group">
+
+                        {{#comments}}
+                        <li class="list-group-item d-flex justify-content-between">
+                            <div>{{comment.content}}</div>
+                            <div class="d-flex">
+                                <div class="font-italic">작성자 : {{comment.user.username}} &nbsp;</div>
+                                {{#auth}}
+                                <button class="badge bg-primary" onclick="deleteComment('{{comment.id}}');">삭제</button>
+                                {{/auth}}
+                            </div>
+                        </li>
+                        {{/comments}}
+
+                    </ul>
+                </div>
+                <br />
+                <!-- 댓글 끝 -->
+
+
             </div>
 
             <div>
@@ -64,6 +88,7 @@
             </div>
         </div>
     </div>
+
     <!-- 오른쪽 메뉴 시작 -->
     <div class="my_m_md_2">
 
@@ -120,4 +145,34 @@
     </div>
     <!-- 오른쪽 메뉴 끝 -->
 </div>
+
+<script src="/js/detail.js"></script>
+
+<script>
+    // 댓글 익명 체크 이벤트
+    $("#anony").click(() => {
+
+        $("#anony").toggleClass("my_btn_active");
+
+        if ($("#anony").hasClass("my_btn_active") == true) {
+            $("#anony-text").val("true");
+        } else {
+            $("#anony-text").val("false");
+        }
+    });
+
+    // 댓글 삭제
+    async function deleteComment(commentId) {
+        let response = await fetch(`/s/api/comment/${commentId}`, {
+            method: "DELETE"
+        });
+        let responseParse = await response.json();
+        if (responseParse == 1) {
+            alert("삭제 성공");
+            location.reload(); // 페이지 새로고침 ajax + ssr
+        } else {
+            alert("삭제 실패");
+        }
+    }
+</script>
 {{> /layout/footer}}
