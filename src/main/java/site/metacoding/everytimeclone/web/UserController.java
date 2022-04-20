@@ -81,4 +81,9 @@ public class UserController {
         session.invalidate();
         return Script.href("/", "로그아웃 되었습니다.");
     }
+
+    @GetMapping("/s/user/post")
+    public String myPostList() {
+        return "/user/myPostList";
+    }
 }

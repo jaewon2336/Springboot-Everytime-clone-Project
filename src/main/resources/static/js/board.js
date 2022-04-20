@@ -102,7 +102,7 @@ function postList(post) {
         post.user.username = "익명";
     }
 
-    let commentCount = $("#comment-count").val("0");
+    let commentCount = post.comments.length;
 
     return `<a href="/s/post/${post.id}" class="card my_post_list_box">
                 <div class="clubbody">

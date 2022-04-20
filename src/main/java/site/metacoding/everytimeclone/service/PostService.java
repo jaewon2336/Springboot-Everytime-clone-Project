@@ -1,5 +1,6 @@
 package site.metacoding.everytimeclone.service;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.data.domain.Page;
@@ -24,6 +25,10 @@ public class PostService {
 
     public Page<Post> 글목록보기(String keyword, Pageable pageable, Integer boardNo) {
         return postRepository.findByTitleContaining(keyword, pageable, boardNo);
+    }
+
+    public List<Post> 글목록보기() {
+        return postRepository.findAll();
     }
 
     public Post 글상세보기(Integer id) {
