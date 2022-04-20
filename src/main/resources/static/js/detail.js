@@ -21,8 +21,11 @@ async function deletePost() {
     }
 }
 
-$("#my_btn_vote").click(() => {
-    likeUp();
+$(".my_btn_vote").click(() => {
+    let result = confirm("이 글에 공감하십니까?");
+    if (result) {
+        likeUp();
+    }
 });
 
 // 공감
@@ -42,7 +45,6 @@ async function likeUp() {
     if (response.status == 200) {
         $("#like-count").text(responseParse.likeCount);
         // $("#my_btn_vote").addClass("my_hidden");
-        $("#my-modal-text").text("이미 공감한 게시글입니다."); // 수정필요
     } else {
         alert("이 글을 공감할 수 없습니다.");
     }

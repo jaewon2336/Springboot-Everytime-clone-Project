@@ -35,7 +35,7 @@
         </form>
 
         <div>
-            <a href="#" class="my_post_list_btn">
+            <a href="/s/post/{{post.id}}" class="my_post_list_btn">
                 <i class="fa-solid fa-chevron-left"></i>
                 <span>글 수정 취소</span>
             </a>
@@ -103,14 +103,12 @@
 <script>
 
     function defaultCheck() {
-        console.log($("#anonyCheck").val());
-
         let check = $("#anonyCheck").val();
 
-        if (check == false) {
-            console.log("왜안떠?");
-            console.log("나 실행됨 ?");
+        if (check) {
             $("#anony").addClass("my_btn_active");
+        } else {
+            $("#anony").removeClass("my_btn_active");
         }
     }
 
