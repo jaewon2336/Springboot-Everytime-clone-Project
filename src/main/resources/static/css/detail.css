@@ -200,3 +200,25 @@
     background-size: 10px 10px;
     cursor: pointer;
 }
+
+.my_comment_list_img {
+    margin: 0 5px 5px 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    float: left;
+}
+
+.my_comment_list_username {
+    font-size: 12px;
+    font-weight: bold;
+    height: 20px;
+    color: #444444;
+}
+
+.my_comment_list_content {
+    font-size: 14px;
+    height: 20px;
+    color: #444444;
+    padding-bottom: 5px;
+}

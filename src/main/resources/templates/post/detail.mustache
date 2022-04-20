@@ -7,6 +7,7 @@
             <div class="my_post_border my_p_md_1">
                 <!-- 게시판타이틀박스 -->
                 <div class="my_board_title">자유게시판</div>
+                <input id="boardNo" type="hidden" value="{{detailResDto.post.boardNo}}">
             </div>
 
             <div class="my_post_border">
@@ -18,22 +19,32 @@
                                 <img src="/images/profileImg.png">
                             </div>
                             <div style="width: 100%;">
-                                <div class="my_post_detail_flex_space_between">
-                                    <input id="postId" type="hidden" value="{{postEntity.id}}">
-                                    <div class="my_board_username">{{postEntity.user.username}}</div>
+                                <div class="my_post_detail_flex_space_between" style="border: 0;">
+                                    <input id="postId" type="hidden" value="{{detailResDto.post.id}}">
+                                    <div class="my_board_username">{{detailResDto.post.user.username}}</div>
                                     <div class="my_post_detail_flex_center">
+                                        {{#detailResDto.auth}}
+                                        <a id="btn-update" class="my_m_sm_2" href="javascript:;">수정</a>
+                                        <a id="btn-delete" class="my_m_sm_2" href="javascript:;">삭제</a>
+                                        {{/detailResDto.auth}}
+                                        {{^detailResDto.auth}}
                                         <a class="my_m_sm_2" href="#">쪽지</a>
                                         <a class="my_m_sm_2" href="#">신고</a>
+                                        {{/detailResDto.auth}}
+
                                     </div>
                                 </div>
-                                <div>{{postEntity.createDate}}</div>
+                                <div>
+                                    {{detailResDto.post.createDate.date.month}}/{{detailResDto.post.createDate.date.day}}
+                                    {{detailResDto.post.createDate.time.hour}}:{{detailResDto.post.createDate.time.minute}}
+                                </div>
                             </div>
                         </div>
-                        <div class="my_board_title my_mb_md_1 my_mt_md_1">{{postEntity.title}}</div>
-                        <div class="my_board_content">{{postEntity.content}}</div>
+                        <div class="my_board_title my_mb_md_1 my_mt_md_1">{{detailResDto.post.title}}</div>
+                        <div class="my_board_content">{{detailResDto.post.content}}</div>
                         <ul class="my_post_detail_flex_left my_p_0">
-                            <li class="my_post_count_vote">{{postEntity.likeCount}}</li>
-                            <li class="my_post_count_comment">0</li>
+                            <li id="like-count" class="my_post_count_vote">{{detailResDto.post.likeCount}}</li>
+                            <li class="my_post_count_comment">{{commentCount}}</li>
                             <li class="my_post_count_scrap">0</li>
                         </ul>
                         <div class="my_post_buttons">
@@ -43,45 +54,65 @@
                     </div>
                 </div>
 
+                <!-- 댓글 시작 -->
+
+                <!-- 댓글 쓰기 -->
                 <div class="my_post_border_top">
-                    <form action="/s/post/{{postEntity.id}}/comment" class="my_comment_form" method="post">
+
+                    <form action="/s/post/{{detailResDto.post.id}}/comment" class="my_comment_form" method="post">
                         <div class="my_post_detail_flex_space_between">
                             <input name="content" class="my_comment_input" type="text" maxlength="300"
                                 placeholder="댓글을 입력하세요.">
-                            <ul class="my_comment_buttons my_post_detail_flex_center">
-                                <li class="anony"></li>
-                                <li class="submit"></li>
-                            </ul>
+                            <input type="hidden" value="0" name="likeCount">
+                            <input type="hidden" id="anony-text" name="anonyCheck" value="true">
+                            <div class="my_comment_buttons my_post_detail_flex_center">
+                                <div id="anony" class="write_anony my_btn_active"></div>
+                                <input id="submit" class="submit" type="submit" value=""></input>
+                            </div>
                         </div>
                     </form>
+
                 </div>
 
-                <div class="card">
-                    <div class="card-header"><b>댓글 리스트</b></div>
+                <!-- 댓글 목록 -->
+                <div>
                     <ul id="reply-box" class="list-group">
 
                         {{#comments}}
-                        <li class="list-group-item d-flex justify-content-between">
-                            <div>{{comment.content}}</div>
-                            <div class="d-flex">
-                                <div class="font-italic">작성자 : {{comment.user.username}} &nbsp;</div>
-                                {{#auth}}
-                                <button class="badge bg-primary" onclick="deleteComment('{{comment.id}}');">삭제</button>
-                                {{/auth}}
+                        <li class="my_p_md_1" style="border-top: 1px solid #d6d6d6;">
+                            <div class="d-flex justify-content-between">
+                                <div class="d-flex">
+                                    <div>
+                                        <img class="my_comment_list_img" src="/images/profileImg.png">
+                                    </div>
+                                    <div class="my_comment_list_username">{{comment.user.username}}</div>
+                                </div>
+                                <div class="d-flex">
+                                    {{#auth}}
+                                    <a class="my_ml_sm_1" href="" onclick="deleteComment('{{comment.id}}');">삭제</a>
+                                    {{/auth}}
+                                    {{^auth}}
+                                    <a class="my_ml_sm_1" href="">공감</a>
+                                    <a class="my_ml_sm_1" href="">쪽지</a>
+                                    <a class="my_ml_sm_1" href="">신고</a>
+                                    {{/auth}}
+                                </div>
                             </div>
+                            <div class="my_comment_list_content">{{comment.content}}</div>
+                            <div>{{comment.createDate.date.month}}/{{comment.createDate.date.day}}
+                                {{comment.createDate.time.hour}}:{{comment.createDate.time.minute}}</div>
                         </li>
                         {{/comments}}
 
                     </ul>
                 </div>
-                <br />
                 <!-- 댓글 끝 -->
 
 
             </div>
 
             <div>
-                <a href="#" class="my_post_list_btn">
+                <a href="/s/board/{{detailResDto.post.boardNo}}" class="my_post_list_btn">
                     <i class="fa-solid fa-bars"></i>
                     <span>글 목록</span>
                 </a>
@@ -149,6 +180,12 @@
 <script src="/js/detail.js"></script>
 
 <script>
+    let postId = $("#postId").val();
+
+    $("#btn-update").click(() => {
+        location.href = `/s/post/${postId}/update-form`;
+    });
+
     // 댓글 익명 체크 이벤트
     $("#anony").click(() => {
 
@@ -156,8 +193,10 @@
 
         if ($("#anony").hasClass("my_btn_active") == true) {
             $("#anony-text").val("true");
+            console.log($("#anony-text").val());
         } else {
             $("#anony-text").val("false");
+            console.log($("#anony-text").val());
         }
     });
 

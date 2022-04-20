@@ -26,6 +26,6 @@ public class CommentController {
         comment.setUser(principal);
 
         commentService.댓글쓰기(comment, postId);
-        return "redirect:/post/" + postId;
+        return "redirect:/s/post/" + postId;
     }
 }

@@ -102,6 +102,8 @@ function postList(post) {
         post.user.username = "익명";
     }
 
+    let commentCount = $("#comment-count").val("0");
+
     return `<a href="/s/post/${post.id}" class="card my_post_list_box">
                 <div class="clubbody">
                     <div class="boardtitle">${post.title}</div>
@@ -116,7 +118,7 @@ function postList(post) {
                                 <li class="vote active">${post.likeCount}</li>
                             </div>
                             <div class="clubcomment">
-                                <li class="comment active">4</li>
+                                <li class="comment active">${commentCount}</li>
                             </div>
                         </div>
                     </div>

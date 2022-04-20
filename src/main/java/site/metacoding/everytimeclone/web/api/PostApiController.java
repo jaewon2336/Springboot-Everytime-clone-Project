@@ -20,7 +20,6 @@ import lombok.RequiredArgsConstructor;
 import site.metacoding.everytimeclone.domain.post.Post;
 import site.metacoding.everytimeclone.domain.user.User;
 import site.metacoding.everytimeclone.service.PostService;
-import site.metacoding.everytimeclone.web.api.dto.post.DetailResDto;
 import site.metacoding.everytimeclone.web.api.dto.post.WriteReqDto;
 
 @RequiredArgsConstructor
@@ -47,29 +46,6 @@ public class PostApiController {
         return new ResponseEntity<>(posts, HttpStatus.OK);
     }
 
-    // 글상세보기
-    @GetMapping("/api/post/{id}")
-    public ResponseEntity<?> detail(@PathVariable Integer id) {
-        Post postEntity = postService.글상세보기(id);
-        User principal = (User) session.getAttribute("principal");
-        boolean auth = false;
-
-        // 권한체크
-        if (principal != null) {
-            if (principal.getId() == postEntity.getUser().getId()) {
-                auth = true;
-            }
-
-            if (postEntity.isAnonyCheck() == true) {
-                postEntity.getUser().setUsername("익명");
-            }
-        }
-
-        System.out.println("익명인가요?" + postEntity.getUser().getUsername());
-        DetailResDto detailResponseDto = new DetailResDto(postEntity, auth);
-        return new ResponseEntity<>(detailResponseDto, HttpStatus.OK);
-    }
-
     // 글삭제하기
     @DeleteMapping("/s/api/post/{id}")
     public ResponseEntity<?> deleteById(@PathVariable Integer id) {
@@ -78,7 +54,7 @@ public class PostApiController {
     }
 
     // 글수정하기
-    @PutMapping("/s/post/{id}")
+    @PutMapping("/s/api/post/{id}")
     public ResponseEntity<?> update(@PathVariable Integer id, @RequestBody Post post) {
 
         // 인증 -> 인터셉터가 처리
@@ -95,7 +71,7 @@ public class PostApiController {
     }
 
     // 공감카운팅
-    @PutMapping("/s/post/{postId}/like")
+    @PutMapping("/s/api/post/{postId}/like")
     public ResponseEntity<?> likeUp(@PathVariable Integer postId) {
         // postId받아서 -> findById하고 -> likeCount +1해서 -> update
         Post postEntity = postService.좋아요카운팅(postService.글상세보기(postId));

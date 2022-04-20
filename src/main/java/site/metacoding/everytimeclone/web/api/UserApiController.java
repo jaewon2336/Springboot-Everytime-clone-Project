@@ -81,8 +81,6 @@ public class UserApiController {
     @PutMapping("/user/password-reset")
     public ResponseEntity<?> passwordReset(@RequestBody User user) {
 
-        System.out.println(user);
-
         User userEntity = userService.패스워드초기화(user.getUsername(), user.getEmail());
 
         emailUtil.sendEmail(userEntity.getEmail(), "비밀번호가 초기화 되었습니다",

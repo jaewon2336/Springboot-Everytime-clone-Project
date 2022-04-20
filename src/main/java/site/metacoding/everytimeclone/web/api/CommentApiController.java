@@ -19,7 +19,6 @@ public class CommentApiController {
     private final CommentService commentService;
     private final HttpSession session;
 
-    // data를 리턴하면 CommentApiController를 원래 만들어야한다.
     @DeleteMapping("/s/api/comment/{id}")
     public ResponseEntity<?> deleteById(@PathVariable Integer id) {
 

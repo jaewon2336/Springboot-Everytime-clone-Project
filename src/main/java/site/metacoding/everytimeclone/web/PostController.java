@@ -16,6 +16,7 @@ import site.metacoding.everytimeclone.domain.post.Post;
 import site.metacoding.everytimeclone.domain.user.User;
 import site.metacoding.everytimeclone.service.PostService;
 import site.metacoding.everytimeclone.web.api.dto.comment.CommentResDto;
+import site.metacoding.everytimeclone.web.api.dto.post.DetailResDto;
 
 @RequiredArgsConstructor
 @Controller
@@ -61,20 +62,35 @@ public class PostController {
     public String detail(@PathVariable Integer id, Model model) {
 
         Post postEntity = postService.글상세보기(id);
-
-        // comment의 userId랑 세션에 id랑 비교
         User principal = (User) session.getAttribute("principal");
+        boolean auth = false;
+
+        // 권한체크
+        if (principal.getId() == postEntity.getUser().getId()) {
+            if (principal.getId() == postEntity.getUser().getId()) {
+                auth = true;
+            }
+
+            if (postEntity.isAnonyCheck() == true) {
+                postEntity.getUser().setUsername("익명");
+            }
+        }
+
+        DetailResDto detailResDto = new DetailResDto(postEntity, auth);
 
         // 댓글 뿌리기
         List<CommentResDto> comments = new ArrayList<>();
 
         for (Comment comment : postEntity.getComments()) {
             CommentResDto dto = new CommentResDto();
+
             if (comment.isAnonyCheck() == true) {
                 comment.getUser().setUsername("익명");
             }
 
             dto.setComment(comment);
+
+            // comment의 userId랑 세션에 id랑 비교
             if (principal != null) { // 인증
                 if (principal.getId() == comment.getUser().getId()) { // 권한
                     dto.setAuth(true);
@@ -82,18 +98,19 @@ public class PostController {
                     dto.setAuth(false);
                 }
             }
+
             comments.add(dto);
         }
 
         model.addAttribute("commentCount", comments.size()); // 댓글 개수 모델에 담아가기
         model.addAttribute("comments", comments);
-        model.addAttribute("postEntity", postEntity);
+        model.addAttribute("detailResDto", detailResDto);
 
         return "post/detail";
     }
 
     // 글 수정폼
-    @GetMapping("/s/post/{id}/update")
+    @GetMapping("/s/post/{id}/update-form")
     public String updateForm(@PathVariable Integer id, Model model) {
         User principal = (User) session.getAttribute("principal");
 
