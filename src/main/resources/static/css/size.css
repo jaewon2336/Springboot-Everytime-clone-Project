@@ -34,6 +34,10 @@
     margin-bottom: 10px;
 }
 
+.my_mv_sm_1 {
+    margin: 10px 0;
+}
+
 /*padding*/
 .my_pl_sm_1 {
     padding-left: 10px;
@@ -164,6 +168,10 @@
     margin-bottom: 20px;
 }
 
+.my_mv_md_2 {
+    margin: 20px 0;
+}
+
 /*padding*/
 .my_pl_md_2 {
     padding-left: 20px;
@@ -267,6 +275,10 @@
 
 .my_pb_lg_1 {
     padding-bottom: 30px;
+}
+
+.my_ph_lg_1 {
+    padding: 0 30px;
 }
 
 /******************************/
