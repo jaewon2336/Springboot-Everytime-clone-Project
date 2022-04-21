@@ -1,0 +1,48 @@
+{{> /layout/header}}
+
+
+<div class="my_find_container my_info_box">
+    <div class="my_find_box my_update_form">
+        <h1 class="my_update_title">졸업 증명서 인증 안내</h1>
+
+        <div class="description my_ph_lg_1">
+            <p>대학교에서 발급한 학부 졸업 증명서 자료를 이용한 인증 방법입니다.</p>
+            <p>인증 처리에는 최대 72시간(휴일 제외)이 소요될 수 있습니다.</p>
+        </div>
+
+        <h1 class="my_update_title">증명서 첨부</h1>
+
+        <div class="description my_ph_lg_1">
+            <p>발급된 증명서를 스캔하거나 사진으로 찍어 첨부해 주세요.</p>
+            <p>증명서에는 발급일자, 대학교, 이름, 학번, 학과 정보가 모두 포함되어 있어야 하며,</p>
+            <p>3개월 이내 발급된 증명서만 유효합니다.</p>
+        </div>
+
+        <div>
+
+            <form action="/s/qna/qna-school-register" method="post" enctype="multipart/form-data">
+
+                <!-- 증명서 카테고리 시작 -->
+                <div class="form-group my_mt_md_2">
+                    <select class="form-control" name="certificateNo">
+                        <option value="1">학교별웹메일</option>
+                        <option value="2">졸업증명서</option>
+                        <option value="3">학생증사진</option>
+                    </select>
+                </div>
+                <!-- 증명서 카테고리 끝 -->
+
+                <!-- 증명서 파일 선택 시작 -->
+                <label for="certificate" class="btn_chooseFile my_mv_md_2"><i class="fas fa-camera my_mr_sm_2"></i>파일
+                    선택</label>
+                <input type="file" name="certificate" id="certificate" class="my_hidden">
+                <!-- 증명서 파일 선택 끝 -->
+
+                <input class="btn_findUsername" type="submit" value="인증 요청하기">
+            </form>
+
+        </div>
+    </div>
+</div>
+
+{{> /layout/footer}}
