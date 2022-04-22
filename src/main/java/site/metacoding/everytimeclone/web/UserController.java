@@ -82,8 +82,14 @@ public class UserController {
         return Script.href("/", "로그아웃 되었습니다.");
     }
 
-    @GetMapping("/s/user/post")
+    @GetMapping("/s/user/my-post")
     public String myPostList() {
         return "/user/myPostList";
     }
+
+    @GetMapping("/s/user/my-scrap")
+    public String myScrapList() {
+        return "user/myScrapList";
+    }
+
 }

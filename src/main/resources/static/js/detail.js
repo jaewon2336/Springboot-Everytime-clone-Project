@@ -49,3 +49,29 @@ async function likeUp() {
         alert("이 글을 공감할 수 없습니다.");
     }
 }
+
+ // 스크랩 이벤트
+ $("#btn-scrap").click(() => {
+    alert("이 글을 스크랩하시겠습니까?");
+    scrap();
+});
+
+// 스크랩하기
+async function scrap() {
+
+    let scrapDto = {
+        postId: $("#postId").val(),
+        userId: $("#userId").val()
+    };
+
+    let response = await fetch(`/s/post/${postId}/scrap`, {
+        method: "POST",
+        body: JSON.stringify(scrapDto),
+        headers: {
+            "Content-Type": "application/json; charset=utf-8"
+        }
+    });
+
+    let responseParse = await response.json();
+    console.log(responseParse);
+}
