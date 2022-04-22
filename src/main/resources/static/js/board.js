@@ -105,9 +105,9 @@ function postList(post) {
     let commentCount = post.comments.length;
 
     return `<a href="/s/post/${post.id}" class="card my_post_list_box">
-                <div class="clubbody">
-                    <div class="boardtitle">${post.title}</div>
-                    <div class="boardcontent">${post.content}</div>
+                <div class="clubbody my_p_md_2">
+                    <div class="boardtitle my_mb_sm_2">${post.title}</div>
+                    <div class="boardcontent my_mb_sm_2">${post.content}</div>
                     <div class="boardbottom">
                         <div class="bottom">
                             <time>${post.createDate}</time>
