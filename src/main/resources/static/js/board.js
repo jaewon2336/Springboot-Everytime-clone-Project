@@ -79,7 +79,7 @@ $("#btn-search").click(() => {
 let page = 0;
 let keyword = $("#keyword").val(""); // 초기화
 let boardNo = $("#board-no").val();
-console.log(boardNo);
+// console.log(boardNo);
 
 // 검색
 async function list(keyword) {

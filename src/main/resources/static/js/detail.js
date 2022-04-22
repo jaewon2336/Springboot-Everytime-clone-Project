@@ -75,3 +75,5 @@ async function scrap() {
     let responseParse = await response.json();
     console.log(responseParse);
 }
+
+
