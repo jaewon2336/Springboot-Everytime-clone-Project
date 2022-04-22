@@ -19,6 +19,10 @@ public class CommentService {
     private final CommentRepository commentRepository;
     private final PostRepository postRepository;
 
+    public Integer 댓글수가져오기(Integer id) {
+        return commentRepository.countComments(id);
+    }
+
     @Transactional
     public void 댓글쓰기(Comment comment, Integer postId) {
         Optional<Post> postOp = postRepository.findById(postId);

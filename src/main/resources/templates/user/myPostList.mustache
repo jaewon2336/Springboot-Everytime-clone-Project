@@ -10,6 +10,35 @@
         </div>
 
         <div id="post-box" class="clubboard">
+<<<<<<< HEAD
+            {{#posts}}
+            <a href="/s/post/{{id}}" class="card my_post_list_box">
+                <div class="clubbody">
+                    <div class="boardtitle">{{title}}</div>
+                    <div class="boardcontent">{{content}}</div>
+=======
+
+            <a href="/s/post/${post.id}" class="card my_post_list_box">
+                <div class="clubbody my_p_md_2">
+                    <div class="boardtitle my_mb_sm_2">제목</div>
+                    <div class="boardcontent my_mb_sm_2">내용</div>
+>>>>>>> 495b2c9b1f024d741f9084589aad85fe708dee3b
+                    <div class="boardbottom">
+                        <div class="bottom">
+                            <time>{{formatCreateDate}}</time>
+                            <div class="secret">{{user.username}}</div>
+                        </div>
+                        <div class="vote_comment">
+                            <div class="clubvote">
+                                <li class="vote active">{{likeCount}}</li>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+<<<<<<< HEAD
+            {{/posts}}
+=======
 
             <a href="/s/post/${post.id}" class="card my_post_list_box">
                 <div class="clubbody my_p_md_2">
@@ -32,63 +61,8 @@
                 </div>
             </a>
 
-            <a href="/s/post/${post.id}" class="card my_post_list_box">
-                <div class="clubbody my_p_md_2">
-                    <div class="boardtitle my_mb_sm_2">제목</div>
-                    <div class="boardcontent my_mb_sm_2">내용</div>
-                    <div class="boardbottom">
-                        <div class="bottom">
-                            <time>오늘</time>
-                            <div class="secret">게시판이름</div>
-                        </div>
-                        <div class="vote_comment">
-                            <div class="clubvote">
-                                <li class="vote active">1</li>
-                            </div>
-                            <div class="clubcomment">
-                                <li class="comment active">2</li>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </a>
-
+>>>>>>> 495b2c9b1f024d741f9084589aad85fe708dee3b
         </div>
-
-        <div>
-            <div id="li-prev" class="my_hidden">
-                <button id="btn-prev" class="my_btn_paging_prev">
-                    <i class="fa-solid fa-chevron-left"></i><span class="my_mr_sm_1">이전</span>
-                </button>
-            </div>
-
-            <div id="my_post_search">
-                <form class="my_post_search">
-                    <div class="dropdown">
-                        <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
-                            전체
-                        </button>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">전체</a>
-                            <a class="dropdown-item" href="#">글 제목</a>
-                            <a class="dropdown-item" href="#">글 내용</a>
-                        </div>
-                    </div>
-                    <div>
-                        <input id="keyword" type="text" placeholder="검색어를 입력하세요">
-                        <button id="btn-search"><i style="background-color: white;"
-                                class="fa-solid fa-magnifying-glass"></i></button>
-                    </div>
-                </form>
-            </div>
-
-            <div class="li-next">
-                <button id="btn-next" class="my_btn_paging_next">
-                    <span class="my_mr_sm_1">다음</span><i class="fa-solid fa-angle-right"></i>
-                </button>
-            </div>
-        </div>
-
     </div>
 
     <!-- 오른쪽 메뉴 시작 -->
@@ -122,34 +96,16 @@
             </a>
         </div>
 
-        <div class="box_rightside">
-            <div class="rightside_title_box">
-                <h3 class="color_secondary rightside_title">HOT 게시물</h3>
-            </div>
-            <a class="box_hot_list color_secondary" href="">
-                <div class="hot_content">프랭클린 자서전 나의 라임오렌지 나무 악마와 미스 프랭 선택 말테의 수기</div>
-                <time class="hot_time">04/03 17:52</time>
-            </a>
-            <a class="box_hot_list color_secondary" href="">
-                <div class="hot_content">프랭클린 자서전 나의 라임오렌지 나무 악마와 미스 프랭 선택 말테의 수기</div>
-                <time class="hot_time">10분 전</time>
-            </a>
-            <a class="box_hot_list color_secondary" href="">
-                <div class="hot_content">프랭클린 자서전 나의 라임오렌지 나무 악마와 미스 프랭 선택 말테의 수기</div>
-                <time class="hot_time">04/03 17:52</time>
-            </a>
-            <a class="box_hot_list color_secondary" href="">
-                <div class="hot_content">프랭클린 자서전 나의 라임오렌지 나무 악마와 미스 프랭 선택 말테의 수기</div>
-                <time class="hot_time">04/03 17:52</time>
-            </a>
 
-        </div>
     </div>
     <!-- 오른쪽 메뉴 끝 -->
 </div>
 
+<script src="/js/board.js"></script>
+
 <script>
-    $("#my_menu_board").removeClass("my_menu_active");
+    $("#freeBoard").removeClass("my_text_active_bold");
+    $("#header_menu_board").removeClass("my_text_active_bold");
 </script>
 
 {{> /layout/footer}}
