@@ -20,6 +20,8 @@
 }
 
 .clubbody {
+    display: flex;
+    flex-direction: column;
     border-bottom: 1px solid #d6d6d6;
     font-size: 15px;
     width: 100%;
@@ -27,21 +29,21 @@
 }
 
 .boardtitle {
-    font-weight: bold;
-    margin: 13px 5px 5px 5px;
-    padding: 5px;
+    flex: 1;
+    font-size: 14px;
+    color: black;
 }
 
 .boardcontent {
-    margin: 5px 5px 5px 5px;
-    padding: 5px;
+    flex: 1;
+    font-size: 12px;
     color: #444444;
 }
 
 .boardbottom {
     display: flex;
     justify-content: space-between;
-    margin: 10px 10px 0 10px;
+    flex: 1;
 }
 
 .vote_comment {
