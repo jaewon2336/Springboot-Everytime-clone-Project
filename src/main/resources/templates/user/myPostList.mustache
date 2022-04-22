@@ -10,11 +10,19 @@
         </div>
 
         <div id="post-box" class="clubboard">
+<<<<<<< HEAD
             {{#posts}}
             <a href="/s/post/{{id}}" class="card my_post_list_box">
                 <div class="clubbody">
                     <div class="boardtitle">{{title}}</div>
                     <div class="boardcontent">{{content}}</div>
+=======
+
+            <a href="/s/post/${post.id}" class="card my_post_list_box">
+                <div class="clubbody my_p_md_2">
+                    <div class="boardtitle my_mb_sm_2">제목</div>
+                    <div class="boardcontent my_mb_sm_2">내용</div>
+>>>>>>> 495b2c9b1f024d741f9084589aad85fe708dee3b
                     <div class="boardbottom">
                         <div class="bottom">
                             <time>{{formatCreateDate}}</time>
@@ -28,7 +36,32 @@
                     </div>
                 </div>
             </a>
+<<<<<<< HEAD
             {{/posts}}
+=======
+
+            <a href="/s/post/${post.id}" class="card my_post_list_box">
+                <div class="clubbody my_p_md_2">
+                    <div class="boardtitle my_mb_sm_2">제목</div>
+                    <div class="boardcontent my_mb_sm_2">내용</div>
+                    <div class="boardbottom">
+                        <div class="bottom">
+                            <time>오늘</time>
+                            <div class="secret">게시판이름</div>
+                        </div>
+                        <div class="vote_comment">
+                            <div class="clubvote">
+                                <li class="vote active">1</li>
+                            </div>
+                            <div class="clubcomment">
+                                <li class="comment active">2</li>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+>>>>>>> 495b2c9b1f024d741f9084589aad85fe708dee3b
         </div>
     </div>
 

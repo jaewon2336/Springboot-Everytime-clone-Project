@@ -93,4 +93,10 @@ public class UserController {
         model.addAttribute("posts", posts);
         return "/user/myPostList";
     }
+
+    @GetMapping("/s/user/{{principal.id}}/scrap")
+    public String myScrapList() {
+        return "user/myScrapList";
+    }
+
 }

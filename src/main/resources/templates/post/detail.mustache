@@ -21,6 +21,7 @@
                             <div style="width: 100%;">
                                 <div class="my_post_detail_flex_space_between" style="border: 0;">
                                     <input id="postId" type="hidden" value="{{detailResDto.post.id}}">
+                                    <input id="userId" type="hidden" value="{{detailResDto.post.user.id}}">
                                     <div class="my_board_username">{{detailResDto.post.user.username}}</div>
                                     <div class="my_post_detail_flex_center">
                                         {{#detailResDto.auth}}
@@ -48,11 +49,10 @@
                         </ul>
                         <div class="my_post_buttons">
                             <span class="my_btn_vote">공감</span>
-                            <span class="my_btn_scrap">스크랩</span>
+                            <span id="btn-scrap" class="my_btn_scrap">스크랩</span>
                         </div>
                     </div>
                 </div>
-
                 <!-- 댓글 시작 -->
 
                 <!-- 댓글 쓰기 -->
@@ -198,4 +198,6 @@
         }
     }
 </script>
+
+
 {{> /layout/footer}}

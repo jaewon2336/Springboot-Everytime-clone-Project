@@ -61,6 +61,13 @@ $("#btn-search").click(() => {
     list(keyword);
 });
 
+<<<<<<< HEAD
+=======
+let page = 0;
+let keyword = $("#keyword").val(""); // 초기화
+let boardNo = $("#board-no").val();
+// console.log(boardNo);
+>>>>>>> 495b2c9b1f024d741f9084589aad85fe708dee3b
 
 // 검색
 async function list(keyword) {
@@ -84,4 +91,47 @@ function postList(post) {
     }
 
     let commentCount = post.comments.length;
+<<<<<<< HEAD
 }
+=======
+
+    return `<a href="/s/post/${post.id}" class="card my_post_list_box">
+                <div class="clubbody my_p_md_2">
+                    <div class="boardtitle my_mb_sm_2">${post.title}</div>
+                    <div class="boardcontent my_mb_sm_2">${post.content}</div>
+                    <div class="boardbottom">
+                        <div class="bottom">
+                            <time>${post.createDate}</time>
+                            <div class="secret">${post.user.username}</div>
+                        </div>
+                        <div class="vote_comment">
+                            <div class="clubvote">
+                                <li class="vote active">${post.likeCount}</li>
+                            </div>
+                            <div class="clubcomment">
+                                <li class="comment active">${commentCount}</li>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>`;
+}
+
+function pagingDisabled(responseParse) {
+    if (responseParse.first == true) {
+        $("#li-prev").addClass("my_hidden");
+        $("#li-next").removeClass("my_hidden");
+        $("#my_post_search").removeClass("my_hidden");
+    } else if (responseParse.last == true) {
+        $("#li-prev").removeClass("my_hidden");
+        $("#li-next").addClass("my_hidden");
+        $("#my_post_search").addClass("my_hidden");
+    } else {
+        $("#li-prev").removeClass("my_hidden");
+        $("#li-next").removeClass("my_hidden");
+        $("#my_post_search").addClass("my_hidden");
+    }
+}
+
+list("");
+>>>>>>> 495b2c9b1f024d741f9084589aad85fe708dee3b
