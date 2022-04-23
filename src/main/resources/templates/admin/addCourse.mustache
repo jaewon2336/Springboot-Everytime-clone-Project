@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>에브리타임 관리자페이지</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="/css/admin/sb-admin-2.min.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+            <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/s/admin">
+                <div class="sidebar-brand-icon rotate-n-15">
+                    <i class="fas fa-laugh-wink"></i>
+                </div>
+                <div class="sidebar-brand-text mx-3">에브리타임 <sup>관리자</sup></div>
+            </a>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider my-0">
+
+            <br>
+
+            <!-- Heading -->
+            <div class="sidebar-heading">
+                Professor
+            </div>
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="/s/admin/add-professor">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>교수 등록</span>
+                </a>
+            </li>
+
+            <!-- Nav Item - Utilities Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="/s/admin/professor-list">
+                    <i class="fas fa-fw fa-folder"></i>
+                    <span>교수 목록</span>
+                </a>
+            </li>
+
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <!-- Heading -->
+            <div class="sidebar-heading">
+                Course
+            </div>
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="/s/admin/add-course">
+                    <i class="fas fa-fw fa-wrench"></i>
+                    <span>강의 등록</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="/s/admin/course-list">
+                    <i class="fas fa-fw fa-folder"></i>
+                    <span>강의 목록</span>
+                </a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider d-none d-md-block">
+
+        </ul>
+        <!-- End of Sidebar -->
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+
+                <!-- Topbar -->
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+                    <!-- Nav Item - User Information -->
+                    <li class="nav-item dropdown no-arrow">
+                        <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span class="mr-2 d-none d-lg-inline text-gray-600 small">admin</span>
+                            <img class="img-profile rounded-circle" src="/images/admin/undraw_profile.svg">
+                        </a>
+                        <!-- Dropdown - User Information -->
+                        <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                            aria-labelledby="userDropdown">
+                            <a class="dropdown-item" href="#">
+                                <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                                Profile
+                            </a>
+                            <a class="dropdown-item" href="#">
+                                <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                                Settings
+                            </a>
+                            <a class="dropdown-item" href="#">
+                                <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+                                Activity Log
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                Logout
+                            </a>
+                        </div>
+                    </li>
+
+                    </ul>
+
+                </nav>
+
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+
+                    <!-- Page Heading -->
+                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                        <h1 class="h3 mb-0 text-gray-800">ADD COURSE</h1>
+                    </div>
+
+                    <!-- Content Row -->
+
+                    <div class="container" style="margin-top:30px">
+                        <div class="row">
+                            <div class="col-md-12">
+
+                                <form action="/s/admin/add-course" method="post">
+                                    <div class="form-group">
+                                        <label>강의명:</label>
+                                        <input id="name" name="name" type="text" class="form-control"
+                                            placeholder="강의명을 입력하세요">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>학점:</label>
+                                        <select id="point" name="point" class="form-control">
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>교수명:</label>
+                                        <input id="professor" name="professor" type="text" class="form-control"
+                                            placeholder="교수명을 입력하세요">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>강의실:</label>
+                                        <input id="classroom" name="classroom" type="text" class="form-control"
+                                            placeholder="강의실을 입력하세요">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>요일:</label>
+                                        <select id="weekday" name="weekday" class="form-control">
+                                            <option value="mon">월</option>
+                                            <option value="tue">화</option>
+                                            <option value="wed">수</option>
+                                            <option value="thu">목</option>
+                                            <option value="fri">금</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>시간:</label>
+                                        <div class="form-row">
+                                            <select id="startTime" name="startTime" class="form-control col-md-1 mr-4">
+                                                <option>9</option>
+                                                <option>10</option>
+                                                <option>11</option>
+                                                <option>12</option>
+                                                <option>13</option>
+                                                <option>14</option>
+                                                <option>15</option>
+                                                <option>16</option>
+                                                <option>17</option>
+                                                <option>18</option>
+                                            </select>~
+                                            <select id="endTime" name="endTime" class="form-control col-md-1 ml-4">
+                                                <option>9</option>
+                                                <option>10</option>
+                                                <option>11</option>
+                                                <option>12</option>
+                                                <option>13</option>
+                                                <option>14</option>
+                                                <option>15</option>
+                                                <option>16</option>
+                                                <option>17</option>
+                                                <option>18</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <!-- Button trigger modal -->
+                                    <button id="beforeModal" type="button"
+                                        class="btn btn-outline-secondary btn-lg btn-block" data-toggle="modal"
+                                        data-target="#staticBackdrop">등록</button>
+
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="staticBackdrop" data-backdrop="static"
+                                        data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel"
+                                        aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="staticBackdropLabel">강의를 등록하시겠습니까?</h5>
+                                                    <button type="button" class="close" data-dismiss="modal"
+                                                        aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-outline-secondary"
+                                                        data-dismiss="modal">취소</button>
+                                                    <button type="submit" class="btn btn-outline-danger">등록</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+
+                                <br>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End of Main Content -->
+
+                    <!-- Footer -->
+                    <footer class="sticky-footer bg-white">
+                        <div class="container my-auto">
+                            <div class="copyright text-center my-auto">
+                                <span> &copy; 에브리타임</span>
+                            </div>
+                        </div>
+                    </footer>
+                    <!-- End of Footer -->
+
+                </div>
+                <!-- End of Content Wrapper -->
+
+            </div>
+            <!-- End of Page Wrapper -->
+
+
+            <!-- Bootstrap core JavaScript-->
+            <script src="/vendor/jquery/jquery.min.js"></script>
+            <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+            <!-- Core plugin JavaScript-->
+            <script src="/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+            <!-- Custom scripts for all pages-->
+            <script src="/js/admin/sb-admin-2.min.js"></script>
+
+            <script>
+                $("#beforeModal").click(() => {
+                    courseScript();
+                });
+
+                function courseScript() {
+
+                    let courseDto = {
+                        name: $("#name").val(),
+                        point: $("#point").val(),
+                        professor: $("#professor").val(),
+                        classroom: $("#classroom").val(),
+                        weekday: $("#weekday").val(),
+                        startTime: $("#startTime").val(),
+                        endTime: $("#endTime").val()
+                    }
+
+                    $(".modal-body").append(bodyRender(courseDto));
+                }
+
+                function bodyRender(courseDto) {
+                    return `<div>강의명 : ${courseDto.name}</div>
+                            <div>학점 : ${courseDto.point}</div>
+                            <div>교수명 : ${courseDto.professor}</div>
+                            <div>강의실 : ${courseDto.classroom}</div>
+                            <div>요일 : ${courseDto.weekday}</div>
+                            <div>시간 : ${courseDto.startTime}시 ~ ${courseDto.endTime}시</div>`
+                }
+            </script>
+</body>
+
+</html>

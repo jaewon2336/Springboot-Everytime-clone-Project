@@ -53,6 +53,7 @@ public class JoinDto {
         user.setEmail(email);
         user.setSchool(school);
         user.setStudentNo(studentNo);
+        user.setRole("user");
 
         return user;
     }

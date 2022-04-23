@@ -49,6 +49,8 @@ public class User {
     @Column(length = 30, nullable = false)
     private String studentNo;
 
+    private String role; // admin OR user(default)
+
     @CreatedDate
     private LocalDateTime createDate;
     @LastModifiedBy
