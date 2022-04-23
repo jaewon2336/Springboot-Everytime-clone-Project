@@ -21,13 +21,12 @@
             </div>
 
             <div class="box_small color_secondary mb_5">
-                <div class="box_small_list"><a class="myarticle" href="/s/user/my-post">내가 쓴
-                        글</a>
+
+                <div class="box_small_list"><a class="myarticle" href="/s/user/{{principal.id}}/post">내가 쓴 글</a>
                 </div>
-                <div class="box_small_list"><a class="mycommentarticle" href="">댓글 단
-                        글</a></div>
-                <div class="box_small_list"><a class="myscrap" href="/s/{{principal.id}}/my-scrap">내
-                        스크랩</a></div>
+                <div class="box_small_list"><a class="mycommentarticle" href="">댓글 단 글</a></div>
+                <div class="box_small_list"><a class="myscrap" href="/s/user/{{principal.id}}/scrap">내 스크랩</a></div>
+
             </div>
             {{/principal}}
             {{^principal}}
@@ -50,7 +49,7 @@
         <!-- 왼쪽 메뉴 끝 -->
 
         <!-- 중간 메뉴 시작 -->
-        <div class="main">
+        <div class="main_center_menu">
 
             <!-- 게시판 시작 -->
             <div class="box_board mb_5">
@@ -59,22 +58,18 @@
                         <div>
                             <h3><a class="board_title" href="/s/board/1">자유게시판</a></h3>
                         </div>
-                        <a class="board_list" href="">
-                            <div class="board_article">게임 하고 싶어 게임 하고 싶어 게임 하고 싶어</div>
-                            <time class="board_time">3분 전</time>
+                        {{#postsBy1}}
+                        <a class="board_list" href="/s/post/{{id}}">
+                            <div class="board_content">
+                                <p class="board_p">{{content}} </p>
+
+                                <time>{{formatCreateDate}}</time>
+                                <ul class="status">
+                                    <li class="vote active">{{likeCount}}</li>
+                                </ul>
+                            </div>
                         </a>
-                        <a class="board_list" href="">
-                            <div class="board_article">게임 하고 싶어 게임 하고 싶어 게임 하고 싶어</div>
-                            <time class="board_time">3분 전</time>
-                        </a>
-                        <a class="board_list" href="">
-                            <div class="board_article">게임 하고 싶어 게임 하고 싶어 게임 하고 싶어</div>
-                            <time class="board_time">3분 전</time>
-                        </a>
-                        <a class="board_list" href="">
-                            <div class="board_article">게임 하고 싶어 게임 하고 싶어 게임 하고 싶어</div>
-                            <time class="board_time">3분 전</time>
-                        </a>
+                        {{/postsBy1}}
                     </div>
                 </div>
                 <div class="board">
@@ -82,28 +77,18 @@
                         <div>
                             <h3><a class="board_title" href="/s/board/2">비밀게시판</a></h3>
                         </div>
-                        <a class="board_list" href="">
+                        {{#postsBy2}}
+                        <a class="board_list" href="/s/post/{{id}}">
                             <div class="board_content">
-                                <p class="board_p">고전읽기와 토론 ㅎㅅㅂ 교수님 수업 듣는분? ㅠㅠ </p>
+                                <p class="board_p">{{content}} </p>
 
-                                <time>04/08 13:29</time>
+                                <time>{{formatCreateDate}}</time>
                                 <ul class="status">
-                                    <li class="vote active">3</li>
-                                    <li class="comment active">4</li>
+                                    <li class="vote active">{{likeCount}}</li>
                                 </ul>
                             </div>
                         </a>
-                        <a class="board_list" href="">
-                            <div class="board_content">
-                                <p class="board_p">고전읽기와 토론 ㅎㅅㅂ 교수님 수업 듣는분? ㅠㅠ </p>
-
-                                <time>04/08 13:29</time>
-                                <ul class="status">
-                                    <li class="vote active">3</li>
-                                    <li class="comment active">4</li>
-                                </ul>
-                            </div>
-                        </a>
+                        {{/postsBy2}}
                     </div>
                 </div>
             </div>
@@ -113,28 +98,18 @@
                         <div>
                             <h3><a class="board_title" href="/s/board/3">졸업생게시판</a></h3>
                         </div>
-                        <a class="board_list" href="">
+                        {{#postsBy3}}
+                        <a class="board_list" href="/s/post/{{id}}">
                             <div class="board_content">
-                                <p class="board_p">고전읽기와 토론 ㅎㅅㅂ 교수님 수업 듣는분? ㅠㅠ </p>
+                                <p class="board_p">{{content}} </p>
 
-                                <time>04/08 13:29</time>
+                                <time>{{formatCreateDate}}</time>
                                 <ul class="status">
-                                    <li class="vote active">3</li>
-                                    <li class="comment active">4</li>
+                                    <li class="vote active">{{likeCount}}</li>
                                 </ul>
                             </div>
                         </a>
-                        <a class="board_list" href="">
-                            <div class="board_content">
-                                <p class="board_p">고전읽기와 토론 ㅎㅅㅂ 교수님 수업 듣는분? ㅠㅠ </p>
-
-                                <time>04/08 13:29</time>
-                                <ul class="status">
-                                    <li class="vote active">3</li>
-                                    <li class="comment active">4</li>
-                                </ul>
-                            </div>
-                        </a>
+                        {{/postsBy3}}
                     </div>
                 </div>
                 <div class="board">
@@ -142,29 +117,18 @@
                         <div>
                             <h3><a class="board_title" href="/s/board/4">새내기게시판</a></h3>
                         </div>
-                        <a class="board_list" href="">
+                        {{#postsBy4}}
+                        <a class="board_list" href="/s/post/{{id}}">
                             <div class="board_content">
-                                <p class="board_p">고전읽기와 토론 ㅎㅅㅂ 교수님 수업 듣는분? ㅠㅠ 21세기 먼나라 이웃나라 이탈리아 만화로 보는 조선 왕조 500년
-                                </p>
+                                <p class="board_p">{{content}} </p>
 
-                                <time>04/08 13:29</time>
+                                <time>{{formatCreateDate}}</time>
                                 <ul class="status">
-                                    <li class="vote active">3</li>
-                                    <li class="comment active">4</li>
+                                    <li class="vote active">{{likeCount}}</li>
                                 </ul>
                             </div>
                         </a>
-                        <a class="board_list" href="">
-                            <div class="board_content">
-                                <p class="board_p">고전읽기와 토론 ㅎㅅㅂ 교수님 수업 듣는분? ㅠㅠ </p>
-
-                                <time>04/08 13:29</time>
-                                <ul class="status">
-                                    <li class="vote active">3</li>
-                                    <li class="comment active">4</li>
-                                </ul>
-                            </div>
-                        </a>
+                        {{/postsBy4}}
                     </div>
                 </div>
             </div>
@@ -174,22 +138,18 @@
                         <div>
                             <h3><a class="board_title" href="/s/board/5">시사·이슈</a></h3>
                         </div>
-                        <a class="board_list" href="">
-                            <div class="board_article">게임 하고 싶어 게임 하고 싶어 게임 하고 싶어</div>
-                            <time class="board_time">3분 전</time>
+                        {{#postsBy5}}
+                        <a class="board_list" href="/s/post/{{id}}">
+                            <div class="board_content">
+                                <p class="board_p">{{content}} </p>
+
+                                <time>{{formatCreateDate}}</time>
+                                <ul class="status">
+                                    <li class="vote active">{{likeCount}}</li>
+                                </ul>
+                            </div>
                         </a>
-                        <a class="board_list" href="">
-                            <div class="board_article">게임 하고 싶어 게임 하고 싶어 게임 하고 싶어</div>
-                            <time class="board_time">3분 전</time>
-                        </a>
-                        <a class="board_list" href="">
-                            <div class="board_article">게임 하고 싶어 게임 하고 싶어 게임 하고 싶어</div>
-                            <time class="board_time">3분 전</time>
-                        </a>
-                        <a class="board_list" href="">
-                            <div class="board_article">게임 하고 싶어 게임 하고 싶어 게임 하고 싶어</div>
-                            <time class="board_time">3분 전</time>
-                        </a>
+                        {{/postsBy5}}
                     </div>
                 </div>
                 <div class="board">
@@ -197,22 +157,18 @@
                         <div>
                             <h3><a class="board_title" href="/s/board/9">취업·진로</a></h3>
                         </div>
-                        <a class="board_list" href="">
-                            <div class="board_article">게임 하고 싶어 게임 하고 싶어 게임 하고 싶어</div>
-                            <time class="board_time">3분 전</time>
+                        {{#postsBy9}}
+                        <a class="board_list" href="/s/post/{{id}}">
+                            <div class="board_content">
+                                <p class="board_p">{{content}} </p>
+
+                                <time>{{formatCreateDate}}</time>
+                                <ul class="status">
+                                    <li class="vote active">{{likeCount}}</li>
+                                </ul>
+                            </div>
                         </a>
-                        <a class="board_list" href="">
-                            <div class="board_article">게임 하고 싶어 게임 하고 싶어 게임 하고 싶어</div>
-                            <time class="board_time">3분 전</time>
-                        </a>
-                        <a class="board_list" href="">
-                            <div class="board_article">게임 하고 싶어 게임 하고 싶어 게임 하고 싶어</div>
-                            <time class="board_time">3분 전</time>
-                        </a>
-                        <a class="board_list" href="">
-                            <div class="board_article">게임 하고 싶어 게임 하고 싶어 게임 하고 싶어</div>
-                            <time class="board_time">3분 전</time>
-                        </a>
+                        {{/postsBy9}}
                     </div>
                 </div>
             </div>
@@ -222,22 +178,18 @@
                         <div>
                             <h3><a class="board_title" href="/s/board/7">홍보게시판</a></h3>
                         </div>
-                        <a class="board_list" href="">
-                            <div class="board_article">게임 하고 싶어 게임 하고 싶어 게임 하고 싶어</div>
-                            <time class="board_time">3분 전</time>
+                        {{#postsBy7}}
+                        <a class="board_list" href="/s/post/{{id}}">
+                            <div class="board_content">
+                                <p class="board_p">{{content}} </p>
+
+                                <time>{{formatCreateDate}}</time>
+                                <ul class="status">
+                                    <li class="vote active">{{likeCount}}</li>
+                                </ul>
+                            </div>
                         </a>
-                        <a class="board_list" href="">
-                            <div class="board_article">게임 하고 싶어 게임 하고 싶어 게임 하고 싶어</div>
-                            <time class="board_time">3분 전</time>
-                        </a>
-                        <a class="board_list" href="">
-                            <div class="board_article">게임 하고 싶어 게임 하고 싶어 게임 하고 싶어</div>
-                            <time class="board_time">3분 전</time>
-                        </a>
-                        <a class="board_list" href="">
-                            <div class="board_article">게임 하고 싶어 게임 하고 싶어 게임 하고 싶어</div>
-                            <time class="board_time">3분 전</time>
-                        </a>
+                        {{/postsBy7}}
                     </div>
                 </div>
                 <div class="board">
@@ -245,22 +197,18 @@
                         <div>
                             <h3><a class="board_title" href="/s/board/8">동아리·학회</a></h3>
                         </div>
-                        <a class="board_list" href="">
-                            <div class="board_article">게임 하고 싶어 게임 하고 싶어 게임 하고 싶어</div>
-                            <time class="board_time">3분 전</time>
+                        {{#postsBy8}}
+                        <a class="board_list" href="/s/post/{{id}}">
+                            <div class="board_content">
+                                <p class="board_p">{{content}} </p>
+
+                                <time>{{formatCreateDate}}</time>
+                                <ul class="status">
+                                    <li class="vote active">{{likeCount}}</li>
+                                </ul>
+                            </div>
                         </a>
-                        <a class="board_list" href="">
-                            <div class="board_article">게임 하고 싶어 게임 하고 싶어 게임 하고 싶어</div>
-                            <time class="board_time">3분 전</time>
-                        </a>
-                        <a class="board_list" href="">
-                            <div class="board_article">게임 하고 싶어 게임 하고 싶어 게임 하고 싶어</div>
-                            <time class="board_time">3분 전</time>
-                        </a>
-                        <a class="board_list" href="">
-                            <div class="board_article">게임 하고 싶어 게임 하고 싶어 게임 하고 싶어</div>
-                            <time class="board_time">3분 전</time>
-                        </a>
+                        {{/postsBy8}}
                     </div>
                 </div>
             </div>
@@ -270,22 +218,18 @@
                         <div>
                             <h3><a class="board_title" href="/s/board/6">장터게시판</a></h3>
                         </div>
-                        <a class="board_list" href="">
-                            <div class="board_article">게임 하고 싶어 게임 하고 싶어 게임 하고 싶어</div>
-                            <time class="board_time">3분 전</time>
+                        {{#postsBy6}}
+                        <a class="board_list" href="/s/post/{{id}}">
+                            <div class="board_content">
+                                <p class="board_p">{{content}} </p>
+
+                                <time>{{formatCreateDate}}</time>
+                                <ul class="status">
+                                    <li class="vote active">{{likeCount}}</li>
+                                </ul>
+                            </div>
                         </a>
-                        <a class="board_list" href="">
-                            <div class="board_article">게임 하고 싶어 게임 하고 싶어 게임 하고 싶어</div>
-                            <time class="board_time">3분 전</time>
-                        </a>
-                        <a class="board_list" href="">
-                            <div class="board_article">게임 하고 싶어 게임 하고 싶어 게임 하고 싶어</div>
-                            <time class="board_time">3분 전</time>
-                        </a>
-                        <a class="board_list" href="">
-                            <div class="board_article">게임 하고 싶어 게임 하고 싶어 게임 하고 싶어</div>
-                            <time class="board_time">3분 전</time>
-                        </a>
+                        {{/postsBy6}}
                     </div>
                 </div>
             </div>
@@ -299,6 +243,7 @@
                     <input class="search_text" type="text" placeholder="전체 게시판의 글을 검색하세요!">
                 </form>
             </div>
+
             <div class="box_rightside">
                 <div class="rightside_title_box">
                     <h3 class="color_secondary rightside_title">실시간 인기 글</h3>
@@ -327,28 +272,6 @@
                 </a>
             </div>
 
-            <div class="box_rightside">
-                <div class="rightside_title_box">
-                    <h3 class="color_secondary rightside_title">HOT 게시물</h3>
-                </div>
-                <a class="box_hot_list color_secondary" href="">
-                    <div class="hot_content">프랭클린 자서전 나의 라임오렌지 나무 악마와 미스 프랭 선택 말테의 수기</div>
-                    <time class="hot_time">04/03 17:52</time>
-                </a>
-                <a class="box_hot_list color_secondary" href="">
-                    <div class="hot_content">프랭클린 자서전 나의 라임오렌지 나무 악마와 미스 프랭 선택 말테의 수기</div>
-                    <time class="hot_time">10분 전</time>
-                </a>
-                <a class="box_hot_list color_secondary" href="">
-                    <div class="hot_content">프랭클린 자서전 나의 라임오렌지 나무 악마와 미스 프랭 선택 말테의 수기</div>
-                    <time class="hot_time">04/03 17:52</time>
-                </a>
-                <a class="box_hot_list color_secondary" href="">
-                    <div class="hot_content">프랭클린 자서전 나의 라임오렌지 나무 악마와 미스 프랭 선택 말테의 수기</div>
-                    <time class="hot_time">04/03 17:52</time>
-                </a>
-
-            </div>
         </div>
         <!-- 오른쪽 메뉴 끝 -->
     </div>

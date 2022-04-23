@@ -1,5 +1,7 @@
 package site.metacoding.everytimeclone.web;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
@@ -12,7 +14,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import lombok.RequiredArgsConstructor;
+import site.metacoding.everytimeclone.domain.post.Post;
 import site.metacoding.everytimeclone.domain.user.User;
+import site.metacoding.everytimeclone.service.PostService;
 import site.metacoding.everytimeclone.service.UserService;
 import site.metacoding.everytimeclone.util.Script;
 import site.metacoding.everytimeclone.util.UtilValid;
@@ -23,6 +27,7 @@ import site.metacoding.everytimeclone.web.api.dto.user.JoinDto;
 public class UserController {
 
     private final UserService userService;
+    private final PostService postService;
     private final HttpSession session;
 
     @GetMapping("/user/login-form")
@@ -82,13 +87,15 @@ public class UserController {
         return Script.href("/", "로그아웃 되었습니다.");
     }
 
-    @GetMapping("/s/user/my-post")
-    public String myPostList() {
+    @GetMapping("/s/user/{id}/post")
+    public String myPostList(@PathVariable Integer id, Model model) {
+        List<Post> posts = postService.내가쓴글(id);
+        model.addAttribute("posts", posts);
         return "/user/myPostList";
     }
 
-    @GetMapping("/s/user/my-scrap")
-    public String myScrapList() {
+    @GetMapping("/s/user/{id}/scrap")
+    public String myScrapList(@PathVariable Integer id) {
         return "user/myScrapList";
     }
 

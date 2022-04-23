@@ -5,6 +5,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -18,6 +19,14 @@ public class CommentApiController {
 
     private final CommentService commentService;
     private final HttpSession session;
+
+    @GetMapping("/api/post/{id}/comment")
+    public ResponseEntity<?> getCommentCount(@PathVariable Integer id) {
+        // id로 post 찾아서 comment 카운팅 해오기
+        Integer commentCount = commentService.댓글수가져오기(id);
+
+        return new ResponseEntity<>(commentCount, HttpStatus.OK);
+    }
 
     @DeleteMapping("/s/api/comment/{id}")
     public ResponseEntity<?> deleteById(@PathVariable Integer id) {

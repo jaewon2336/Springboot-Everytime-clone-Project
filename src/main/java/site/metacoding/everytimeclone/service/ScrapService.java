@@ -18,6 +18,7 @@ import site.metacoding.everytimeclone.domain.user.User;
 import site.metacoding.everytimeclone.web.api.dto.scrap.ScrapReqDto;
 import site.metacoding.everytimeclone.web.api.dto.scrap.ScrapRespDto;
 
+
 @RequiredArgsConstructor
 @Service
 public class ScrapService {
@@ -60,5 +61,4 @@ public class ScrapService {
 
         return scrapsEntity;
     }
-
 }

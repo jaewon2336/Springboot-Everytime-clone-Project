@@ -180,4 +180,6 @@ textarea:focus {
 .my_post_list_box {
     border: 0;
     height: 100px;
+    padding: 10px;
+    border-bottom: 1px solid #d6d6d6;
 }

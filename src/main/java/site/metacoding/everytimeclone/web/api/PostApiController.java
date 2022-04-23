@@ -2,13 +2,13 @@ package site.metacoding.everytimeclone.web.api;
 
 import javax.servlet.http.HttpSession;
 
+import org.apache.catalina.connector.Response;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -37,14 +37,6 @@ public class PostApiController {
         Post post = writeReqDto.toEntity(principal);
         postService.글쓰기(post);
         return new ResponseEntity<>(1, HttpStatus.OK);
-    }
-
-    // 글목록
-    @GetMapping("/s/api/post/list")
-    public ResponseEntity<?> list(String keyword, Integer page, Integer boardNo,
-            @PageableDefault(size = 3, sort = "id", direction = Sort.Direction.DESC) Pageable pageable) {
-        Page<Post> posts = postService.글목록보기(keyword, pageable, boardNo);
-        return new ResponseEntity<>(posts, HttpStatus.OK);
     }
 
     // 글삭제하기

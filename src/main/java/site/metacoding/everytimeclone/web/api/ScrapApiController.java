@@ -34,6 +34,7 @@ public class ScrapApiController {
 
     // 스크랩하기
     @PostMapping("/s/api/post/{postId}/scrap")
+
     public ResponseEntity<?> scrap(@PathVariable Integer postId, ScrapReqDto scrapReqDto) {
         // 1. 스크랩버튼을 누른다
         // 2. DB의 scrap 테이블에 저장된다 (누가 몇 번 글을 스크랩했나)
@@ -50,5 +51,4 @@ public class ScrapApiController {
         Post postEntity = scrapService.스크랩카운팅(postService.글상세보기(postId));
         return new ResponseEntity<>(postEntity, HttpStatus.OK);
     }
-
 }

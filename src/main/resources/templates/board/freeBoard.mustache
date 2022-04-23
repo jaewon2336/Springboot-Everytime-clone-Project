@@ -50,17 +50,43 @@
                 </ul>
             </div>
         </form>
+
         <div id="post-box" class="clubboard">
+
+            {{#boardResDto.posts.content}}
+            <a href="/s/post/{{id}}" class="card my_post_list_box">
+                <div class="clubbody">
+                    <div class="boardtitle">{{title}}</div>
+                    <div class="boardcontent">{{content}}</div>
+                    <div class="boardbottom">
+                        <div class="bottom">
+                            <time>{{formatCreateDate}}</time>
+                            {{#anonyCheck}}
+                            <div class="secret">익명</div>
+                            {{/anonyCheck}}
+                            {{^anonyCheck}}
+                            <div class="secret">{{user.username}}</div>
+                            {{/anonyCheck}}
+                        </div>
+                        <div class="vote_comment">
+                            <div class="clubvote">
+                                <li class="vote active">{{likeCount}}</li>
+                            </div>
+
+                            <div class="clubcomment">
+                                <li class="comment active"></li>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            {{/boardResDto.posts.content}}
 
         </div>
 
         <div>
-            <div id="li-prev" class="my_hidden">
-                <button id="btn-prev" class="my_btn_paging_prev">
-                    <i class="fa-solid fa-chevron-left"></i><span class="my_mr_sm_1">이전</span>
-                </button>
-            </div>
 
+            {{#boardResDto.posts.first}}
             <div id="my_post_search">
                 <form class="my_post_search">
                     <div class="dropdown">
@@ -80,12 +106,27 @@
                     </div>
                 </form>
             </div>
-
-            <div class="li-next">
-                <button id="btn-next" class="my_btn_paging_next">
-                    <span class="my_mr_sm_1">다음</span><i class="fa-solid fa-angle-right"></i>
-                </button>
+            {{/boardResDto.posts.first}}
+            {{^boardResDto.posts.first}}
+            <div id="li-prev">
+                <a id="btn-prev" href="/s/board/{{boardResDto.boardNo}}?page={{boardResDto.prev}}"
+                    class="my_btn_paging_prev">
+                    <i class="fa-solid fa-chevron-left"></i><span class="my_mr_sm_1">이전</span>
+                </a>
             </div>
+            {{/boardResDto.posts.first}}
+
+            {{#boardResDto.posts.last}}
+            {{/boardResDto.posts.last}}
+            {{^boardResDto.posts.last}}
+            <div class="li-next">
+                <a id="btn-next" href="/s/board/{{boardResDto.boardNo}}?page={{boardResDto.next}}"
+                    class="my_btn_paging_next">
+                    <span class="my_mr_sm_1">다음</span><i class="fa-solid fa-angle-right"></i>
+                </a>
+            </div>
+            {{/boardResDto.posts.last}}
+
         </div>
 
     </div>
@@ -121,28 +162,7 @@
             </a>
         </div>
 
-        <div class="box_rightside">
-            <div class="rightside_title_box">
-                <h3 class="color_secondary rightside_title">HOT 게시물</h3>
-            </div>
-            <a class="box_hot_list color_secondary" href="">
-                <div class="hot_content">프랭클린 자서전 나의 라임오렌지 나무 악마와 미스 프랭 선택 말테의 수기</div>
-                <time class="hot_time">04/03 17:52</time>
-            </a>
-            <a class="box_hot_list color_secondary" href="">
-                <div class="hot_content">프랭클린 자서전 나의 라임오렌지 나무 악마와 미스 프랭 선택 말테의 수기</div>
-                <time class="hot_time">10분 전</time>
-            </a>
-            <a class="box_hot_list color_secondary" href="">
-                <div class="hot_content">프랭클린 자서전 나의 라임오렌지 나무 악마와 미스 프랭 선택 말테의 수기</div>
-                <time class="hot_time">04/03 17:52</time>
-            </a>
-            <a class="box_hot_list color_secondary" href="">
-                <div class="hot_content">프랭클린 자서전 나의 라임오렌지 나무 악마와 미스 프랭 선택 말테의 수기</div>
-                <time class="hot_time">04/03 17:52</time>
-            </a>
 
-        </div>
     </div>
     <!-- 오른쪽 메뉴 끝 -->
 </div>

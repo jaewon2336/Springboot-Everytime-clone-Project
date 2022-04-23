@@ -5,6 +5,8 @@ import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,6 +18,7 @@ import site.metacoding.everytimeclone.domain.post.Post;
 import site.metacoding.everytimeclone.domain.user.User;
 import site.metacoding.everytimeclone.service.PostService;
 import site.metacoding.everytimeclone.web.api.dto.comment.CommentResDto;
+import site.metacoding.everytimeclone.web.api.dto.post.BoardResDto;
 import site.metacoding.everytimeclone.web.api.dto.post.DetailResDto;
 
 @RequiredArgsConstructor
@@ -27,12 +30,40 @@ public class PostController {
 
     // 메인
     @GetMapping("/")
-    public String main() {
+    public String main(Model model) {
+        // post findAll해서 가져오기
+        List<Post> postsBy1 = postService.게시글미리보기(1);
+        List<Post> postsBy2 = postService.게시글미리보기(2);
+        List<Post> postsBy3 = postService.게시글미리보기(3);
+        List<Post> postsBy4 = postService.게시글미리보기(4);
+        List<Post> postsBy5 = postService.게시글미리보기(5);
+        List<Post> postsBy6 = postService.게시글미리보기(6);
+        List<Post> postsBy7 = postService.게시글미리보기(7);
+        List<Post> postsBy8 = postService.게시글미리보기(8);
+        List<Post> postsBy9 = postService.게시글미리보기(9);
+
+        model.addAttribute("postsBy1", postsBy1);
+        model.addAttribute("postsBy2", postsBy2);
+        model.addAttribute("postsBy3", postsBy3);
+        model.addAttribute("postsBy4", postsBy4);
+        model.addAttribute("postsBy5", postsBy5);
+        model.addAttribute("postsBy6", postsBy6);
+        model.addAttribute("postsBy7", postsBy7);
+        model.addAttribute("postsBy8", postsBy8);
+        model.addAttribute("postsBy9", postsBy9);
+
         return "/post/main";
     }
 
+    // 게시판 이동(글 목록)
     @GetMapping("/s/board/{boardNo}")
-    public String board(@PathVariable Integer boardNo) {
+    public String board(@PathVariable Integer boardNo, Model model, @PageableDefault(size = 5) Pageable pageable) {
+
+        // SELECT * FROM post WHERE userId = :id AND boardNo = :boardNo
+        BoardResDto boardResDto = postService.카테고리별게시글목록보기(boardNo, pageable);
+
+        model.addAttribute("boardResDto", boardResDto);
+
         switch (boardNo) {
             case 1:
                 return "/board/freeBoard";
@@ -83,11 +114,6 @@ public class PostController {
 
         for (Comment comment : postEntity.getComments()) {
             CommentResDto dto = new CommentResDto();
-
-            if (comment.isAnonyCheck() == true) {
-                comment.getUser().setUsername("익명");
-            }
-
             dto.setComment(comment);
 
             // comment의 userId랑 세션에 id랑 비교

@@ -66,6 +66,7 @@ async function scrap() {
     };
 
     let response = await fetch(`/s/api/post/${postId}/scrap`, {
+
         method: "POST",
         body: JSON.stringify(scrapDto),
         headers: {
@@ -101,4 +102,3 @@ async function scrapUp() {
         alert("이미 스크랩한 게시글입니다");
     }
 }
-

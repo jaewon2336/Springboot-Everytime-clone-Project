@@ -1,6 +1,7 @@
 package site.metacoding.everytimeclone.domain.post;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -76,4 +77,9 @@ public class Post {
     private LocalDateTime createDate;
     @LastModifiedDate
     private LocalDateTime updateDate;
+
+    public String getFormatCreateDate() {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd hh:mm");
+        return createDate.format(formatter);
+    }
 }

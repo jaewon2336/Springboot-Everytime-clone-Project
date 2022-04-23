@@ -53,21 +53,6 @@ async function write() {
     }
 }
 
-// 이전버튼
-$("#btn-prev").click(() => {
-    page--;
-    $("#post-box").empty();
-    let keyword = $("#keyword").val(); // 키워드 가지고 가야함
-    list(keyword);
-});
-
-// 다음버튼 이벤트
-$("#btn-next").click(() => {
-    page++;
-    $("#post-box").empty();
-    let keyword = $("#keyword").val();
-    list(keyword);
-});
 
 // 검색버튼 이벤트
 $("#btn-search").click(() => {
@@ -77,15 +62,10 @@ $("#btn-search").click(() => {
     list(keyword);
 });
 
-let page = 0;
-let keyword = $("#keyword").val(""); // 초기화
-let boardNo = $("#board-no").val();
-// console.log(boardNo);
-
 // 검색
 async function list(keyword) {
     // alert(page);
-    let response = await fetch(`/s/api/post/list?page=${page}&keyword=${keyword}&boardNo=${boardNo}`);
+    let response = await fetch(`/s/board/${boardNo}?keyword=${keyword}`);
     let responseParse = await response.json();
 
     if (response.status === 200) {
@@ -104,43 +84,5 @@ function postList(post) {
     }
 
     let commentCount = post.comments.length;
-
-    return `<a href="/s/post/${post.id}" class="card my_post_list_box">
-                <div class="clubbody my_p_md_2">
-                    <div class="boardtitle my_mb_sm_2">${post.title}</div>
-                    <div class="boardcontent my_mb_sm_2">${post.content}</div>
-                    <div class="boardbottom">
-                        <div class="bottom">
-                            <time>${post.createDate}</time>
-                            <div class="secret">${post.user.username}</div>
-                        </div>
-                        <div class="vote_comment">
-                            <div class="clubvote">
-                                <li class="vote active">${post.likeCount}</li>
-                            </div>
-                            <div class="clubcomment">
-                                <li class="comment active">${commentCount}</li>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </a>`;
 }
 
-function pagingDisabled(responseParse) {
-    if (responseParse.first == true) {
-        $("#li-prev").addClass("my_hidden");
-        $("#li-next").removeClass("my_hidden");
-        $("#my_post_search").removeClass("my_hidden");
-    } else if (responseParse.last == true) {
-        $("#li-prev").removeClass("my_hidden");
-        $("#li-next").addClass("my_hidden");
-        $("#my_post_search").addClass("my_hidden");
-    } else {
-        $("#li-prev").removeClass("my_hidden");
-        $("#li-next").removeClass("my_hidden");
-        $("#my_post_search").addClass("my_hidden");
-    }
-}
-
-list("");
