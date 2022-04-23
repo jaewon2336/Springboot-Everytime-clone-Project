@@ -2,9 +2,14 @@ package site.metacoding.everytimeclone.web.api;
 
 import javax.servlet.http.HttpSession;
 
-import org.apache.catalina.connector.Response;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -17,6 +22,7 @@ import site.metacoding.everytimeclone.domain.user.User;
 import site.metacoding.everytimeclone.service.PostService;
 import site.metacoding.everytimeclone.service.ScrapService;
 import site.metacoding.everytimeclone.web.api.dto.scrap.ScrapReqDto;
+import site.metacoding.everytimeclone.web.api.dto.scrap.ScrapRespDto;
 
 @RequiredArgsConstructor
 @RestController
@@ -44,4 +50,5 @@ public class ScrapApiController {
         Post postEntity = scrapService.스크랩카운팅(postService.글상세보기(postId));
         return new ResponseEntity<>(postEntity, HttpStatus.OK);
     }
+
 }
