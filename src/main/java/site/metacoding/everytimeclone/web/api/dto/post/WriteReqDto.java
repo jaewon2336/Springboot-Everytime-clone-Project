@@ -27,6 +27,7 @@ public class WriteReqDto {
         post.setUser(principal);
         post.setBoardNo(boardNo);
         post.setLikeCount(0);
+        post.setScrapCount(0);
         post.setAnonyCheck(anonyCheck);
         post.setHashTag(hashTag);
 

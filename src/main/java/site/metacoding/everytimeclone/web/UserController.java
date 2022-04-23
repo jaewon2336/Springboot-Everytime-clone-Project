@@ -94,8 +94,8 @@ public class UserController {
         return "/user/myPostList";
     }
 
-    @GetMapping("/s/user/{{principal.id}}/scrap")
-    public String myScrapList() {
+    @GetMapping("/s/user/{id}/scrap")
+    public String myScrapList(@PathVariable Integer id) {
         return "user/myScrapList";
     }
 
