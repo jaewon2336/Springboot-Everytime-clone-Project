@@ -1,0 +1,491 @@
+{{> /layout/header}}
+
+<style>
+    * {
+        /* border: 1px solid black; */
+    }
+
+    .timetable_bg {
+        background-color: #f8f8f8;
+    }
+
+    .my_timetable_box {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        /* background-color: aqua; */
+        border: 1px solid #d6d6d6;
+    }
+
+    .table_head {
+        display: flex;
+        width: 100%;
+        height: 45px;
+        background-color: #f2f2f2;
+    }
+
+    .table_body {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .table_row {
+        display: flex;
+        border-top: 1px solid #e3e3e3;
+        height: 55px;
+    }
+
+    .my_hours {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex: 1;
+        border-right: 2px solid #d6d6d6;
+    }
+
+    .my_time {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex: 1;
+        border-left: 1px solid #d6d6d6;
+    }
+
+    .cols {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex: 2;
+        border-right: 1px solid #d6d6d6;
+    }
+
+    .timetable_font {
+        font-size: 15px;
+        color: #a6a6a6;
+    }
+
+    .timetable_font_sm {
+        font-size: 14px;
+        color: #a6a6a6;
+    }
+
+    .my_mv_xl_1 {
+        margin: 50px 0;
+    }
+</style>
+
+
+<div class="my_main_body my_mt_xl_1 timetable_bg">
+    <div class="container my_mv_xl_1">
+
+        <div class="my_timetable_box">
+            <!-- 헤드 시작 -->
+            <div class="table_head">
+                <div class="my_hours">
+                    <div class="my_hidden">요일</div>
+                </div>
+                <div class="cols">
+                    <div class="timetable_font">월</div>
+                </div>
+                <div class="cols">
+                    <div class="timetable_font">화</div>
+                </div>
+                <div class="cols">
+                    <div class="timetable_font">수</div>
+                </div>
+                <div class="cols">
+                    <div class="timetable_font">목</div>
+                </div>
+                <div class="cols">
+                    <div class="timetable_font">금</div>
+                </div>
+                <div class="my_time">
+                    <div class="my_hidden">시간</div>
+                </div>
+            </div>
+            <!-- 헤드 끝 -->
+
+            <!-- 바디 시작 -->
+            <div class="table_body">
+
+                <!-- 바디 1행 시작 -->
+                <div class="table_row">
+                    <div class="my_hours">
+                        <div class="timetable_font_sm">1교시</div>
+                    </div>
+                    <div class="cols">
+                        <div class="timetable_font_sm">월</div>
+                    </div>
+                    <div class="cols">
+                        <div class="timetable_font_sm">화</div>
+                    </div>
+                    <div class="cols">
+                        <div class="timetable_font_sm">수</div>
+                    </div>
+                    <div class="cols">
+                        <div class="timetable_font_sm">목</div>
+                    </div>
+                    <div class="cols">
+                        <div class="timetable_font_sm">금</div>
+                    </div>
+                    <div class="my_time">
+                        <div class="timetable_font_sm">오전 9시</div>
+                    </div>
+                </div>
+                <!-- 바디 1행 끝 -->
+                <!-- 바디 2행 시작 -->
+                <div class="table_row">
+                    <div class="my_hours">
+                        <div class="timetable_font_sm">2교시</div>
+                    </div>
+                    <div class="cols">
+                        <div class="timetable_font_sm">월</div>
+                    </div>
+                    <div class="cols">
+                        <div class="timetable_font_sm">화</div>
+                    </div>
+                    <div class="cols">
+                        <div class="timetable_font_sm">수</div>
+                    </div>
+                    <div class="cols">
+                        <div class="timetable_font_sm">목</div>
+                    </div>
+                    <div class="cols">
+                        <div class="timetable_font_sm">금</div>
+                    </div>
+                    <div class="my_time">
+                        <div class="timetable_font_sm">오전 10시</div>
+                    </div>
+                </div>
+                <!-- 바디 2행 끝 -->
+                <!-- 바디 3행 시작 -->
+                <div class="table_row">
+                    <div class="my_hours">
+                        <div class="timetable_font_sm">3교시</div>
+                    </div>
+                    <div class="cols">
+                        <div class="timetable_font_sm">월</div>
+                    </div>
+                    <div class="cols">
+                        <div class="timetable_font_sm">화</div>
+                    </div>
+                    <div class="cols">
+                        <div class="timetable_font_sm">수</div>
+                    </div>
+                    <div class="cols">
+                        <div class="timetable_font_sm">목</div>
+                    </div>
+                    <div class="cols">
+                        <div class="timetable_font_sm">금</div>
+                    </div>
+                    <div class="my_time">
+                        <div class="timetable_font_sm">오전 11시</div>
+                    </div>
+                </div>
+                <!-- 바디 3행 끝 -->
+                <!-- 바디 4행 시작 -->
+                <div class="table_row">
+                    <div class="my_hours">
+                        <div class="timetable_font_sm">4교시</div>
+                    </div>
+                    <div class="cols">
+                        <div class="timetable_font_sm">월</div>
+                    </div>
+                    <div class="cols">
+                        <div class="timetable_font_sm">화</div>
+                    </div>
+                    <div class="cols">
+                        <div class="timetable_font_sm">수</div>
+                    </div>
+                    <div class="cols">
+                        <div class="timetable_font_sm">목</div>
+                    </div>
+                    <div class="cols">
+                        <div class="timetable_font_sm">금</div>
+                    </div>
+                    <div class="my_time">
+                        <div class="timetable_font_sm">오전 12시</div>
+                    </div>
+                </div>
+                <!-- 바디 4행 끝 -->
+                <!-- 바디 5행 시작 -->
+                <div class="table_row">
+                    <div class="my_hours">
+                        <div class="timetable_font_sm">5교시</div>
+                    </div>
+                    <div class="cols">
+                        <div class="timetable_font_sm">월</div>
+                    </div>
+                    <div class="cols">
+                        <div class="timetable_font_sm">화</div>
+                    </div>
+                    <div class="cols">
+                        <div class="timetable_font_sm">수</div>
+                    </div>
+                    <div class="cols">
+                        <div class="timetable_font_sm">목</div>
+                    </div>
+                    <div class="cols">
+                        <div class="timetable_font_sm">금</div>
+                    </div>
+                    <div class="my_time">
+                        <div class="timetable_font_sm">오후 1시</div>
+                    </div>
+                </div>
+                <!-- 바디 5행 끝 -->
+                <!-- 바디 6행 시작 -->
+                <div class="table_row">
+                    <div class="my_hours">
+                        <div class="timetable_font_sm">6교시</div>
+                    </div>
+                    <div class="cols">
+                        <div class="timetable_font_sm">월</div>
+                    </div>
+                    <div class="cols">
+                        <div class="timetable_font_sm">화</div>
+                    </div>
+                    <div class="cols">
+                        <div class="timetable_font_sm">수</div>
+                    </div>
+                    <div class="cols">
+                        <div class="timetable_font_sm">목</div>
+                    </div>
+                    <div class="cols">
+                        <div class="timetable_font_sm">금</div>
+                    </div>
+                    <div class="my_time">
+                        <div class="timetable_font_sm">오후 2시</div>
+                    </div>
+                </div>
+                <!-- 바디 6행 끝 -->
+                <!-- 바디 7행 시작 -->
+                <div class="table_row">
+                    <div class="my_hours">
+                        <div class="timetable_font_sm">7교시</div>
+                    </div>
+                    <div class="cols">
+                        <div class="timetable_font_sm">월</div>
+                    </div>
+                    <div class="cols">
+                        <div class="timetable_font_sm">화</div>
+                    </div>
+                    <div class="cols">
+                        <div class="timetable_font_sm">수</div>
+                    </div>
+                    <div class="cols">
+                        <div class="timetable_font_sm">목</div>
+                    </div>
+                    <div class="cols">
+                        <div class="timetable_font_sm">금</div>
+                    </div>
+                    <div class="my_time">
+                        <div class="timetable_font_sm">오후 3시</div>
+                    </div>
+                </div>
+                <!-- 바디 7행 끝 -->
+                <!-- 바디 8행 시작 -->
+                <div class="table_row">
+                    <div class="my_hours">
+                        <div class="timetable_font_sm">8교시</div>
+                    </div>
+                    <div class="cols">
+                        <div class="timetable_font_sm">월</div>
+                    </div>
+                    <div class="cols">
+                        <div class="timetable_font_sm">화</div>
+                    </div>
+                    <div class="cols">
+                        <div class="timetable_font_sm">수</div>
+                    </div>
+                    <div class="cols">
+                        <div class="timetable_font_sm">목</div>
+                    </div>
+                    <div class="cols">
+                        <div class="timetable_font_sm">금</div>
+                    </div>
+                    <div class="my_time">
+                        <div class="timetable_font_sm">오후 4시</div>
+                    </div>
+                </div>
+                <!-- 바디 8행 끝 -->
+                <!-- 바디 9행 시작 -->
+                <div class="table_row">
+                    <div class="my_hours">
+                        <div class="timetable_font_sm">9교시</div>
+                    </div>
+                    <div class="cols">
+                        <div class="timetable_font_sm">월</div>
+                    </div>
+                    <div class="cols">
+                        <div class="timetable_font_sm">화</div>
+                    </div>
+                    <div class="cols">
+                        <div class="timetable_font_sm">수</div>
+                    </div>
+                    <div class="cols">
+                        <div class="timetable_font_sm">목</div>
+                    </div>
+                    <div class="cols">
+                        <div class="timetable_font_sm">금</div>
+                    </div>
+                    <div class="my_time">
+                        <div class="timetable_font_sm">오후 5시</div>
+                    </div>
+                </div>
+                <!-- 바디 9행 끝 -->
+                <!-- 바디 10행 시작 -->
+                <div class="table_row">
+                    <div class="my_hours">
+                        <div class="timetable_font_sm">10교시</div>
+                    </div>
+                    <div class="cols">
+                        <div class="timetable_font_sm">월</div>
+                    </div>
+                    <div class="cols">
+                        <div class="timetable_font_sm">화</div>
+                    </div>
+                    <div class="cols">
+                        <div class="timetable_font_sm">수</div>
+                    </div>
+                    <div class="cols">
+                        <div class="timetable_font_sm">목</div>
+                    </div>
+                    <div class="cols">
+                        <div class="timetable_font_sm">금</div>
+                    </div>
+                    <div class="my_time">
+                        <div class="timetable_font_sm">오후 6시</div>
+                    </div>
+                </div>
+                <!-- 바디 10행 끝 -->
+                <!-- 바디 11행 시작 -->
+                <div class="table_row">
+                    <div class="my_hours">
+                        <div class="timetable_font_sm">11교시</div>
+                    </div>
+                    <div class="cols">
+                        <div class="timetable_font_sm">월</div>
+                    </div>
+                    <div class="cols">
+                        <div class="timetable_font_sm">화</div>
+                    </div>
+                    <div class="cols">
+                        <div class="timetable_font_sm">수</div>
+                    </div>
+                    <div class="cols">
+                        <div class="timetable_font_sm">목</div>
+                    </div>
+                    <div class="cols">
+                        <div class="timetable_font_sm">금</div>
+                    </div>
+                    <div class="my_time">
+                        <div class="timetable_font_sm">오후 7시</div>
+                    </div>
+                </div>
+                <!-- 바디 11행 끝 -->
+                <!-- 바디 12행 시작 -->
+                <div class="table_row">
+                    <div class="my_hours">
+                        <div class="timetable_font_sm">12교시</div>
+                    </div>
+                    <div class="cols">
+                        <div class="timetable_font_sm">월</div>
+                    </div>
+                    <div class="cols">
+                        <div class="timetable_font_sm">화</div>
+                    </div>
+                    <div class="cols">
+                        <div class="timetable_font_sm">수</div>
+                    </div>
+                    <div class="cols">
+                        <div class="timetable_font_sm">목</div>
+                    </div>
+                    <div class="cols">
+                        <div class="timetable_font_sm">금</div>
+                    </div>
+                    <div class="my_time">
+                        <div class="timetable_font_sm">오후 8시</div>
+                    </div>
+                </div>
+                <!-- 바디 12행 끝 -->
+                <!-- 바디 13행 시작 -->
+                <div class="table_row">
+                    <div class="my_hours">
+                        <div class="timetable_font_sm">13교시</div>
+                    </div>
+                    <div class="cols">
+                        <div class="timetable_font_sm">월</div>
+                    </div>
+                    <div class="cols">
+                        <div class="timetable_font_sm">화</div>
+                    </div>
+                    <div class="cols">
+                        <div class="timetable_font_sm">수</div>
+                    </div>
+                    <div class="cols">
+                        <div class="timetable_font_sm">목</div>
+                    </div>
+                    <div class="cols">
+                        <div class="timetable_font_sm">금</div>
+                    </div>
+                    <div class="my_time">
+                        <div class="timetable_font_sm">오후 9시</div>
+                    </div>
+                </div>
+                <!-- 바디 13행 끝 -->
+                <!-- 바디 14행 시작 -->
+                <div class="table_row">
+                    <div class="my_hours">
+                        <div class="timetable_font_sm">14교시</div>
+                    </div>
+                    <div class="cols">
+                        <div class="timetable_font_sm">월</div>
+                    </div>
+                    <div class="cols">
+                        <div class="timetable_font_sm">화</div>
+                    </div>
+                    <div class="cols">
+                        <div class="timetable_font_sm">수</div>
+                    </div>
+                    <div class="cols">
+                        <div class="timetable_font_sm">목</div>
+                    </div>
+                    <div class="cols">
+                        <div class="timetable_font_sm">금</div>
+                    </div>
+                    <div class="my_time">
+                        <div class="timetable_font_sm">오후 10시</div>
+                    </div>
+                </div>
+                <!-- 바디 14행 끝 -->
+                <!-- 바디 15행 시작 -->
+                <div class="table_row">
+                    <div class="my_hours">
+                        <div class="timetable_font_sm">15교시</div>
+                    </div>
+                    <div class="cols">
+                        <div class="timetable_font_sm">월</div>
+                    </div>
+                    <div class="cols">
+                        <div class="timetable_font_sm">화</div>
+                    </div>
+                    <div class="cols">
+                        <div class="timetable_font_sm">수</div>
+                    </div>
+                    <div class="cols">
+                        <div class="timetable_font_sm">목</div>
+                    </div>
+                    <div class="cols">
+                        <div class="timetable_font_sm">금</div>
+                    </div>
+                    <div class="my_time">
+                        <div class="timetable_font_sm">오후 11시</div>
+                    </div>
+                </div>
+                <!-- 바디 15행 끝 -->
+            </div>
+            <!-- 바디 끝 -->
+        </div>
+
+    </div>
+</div>
