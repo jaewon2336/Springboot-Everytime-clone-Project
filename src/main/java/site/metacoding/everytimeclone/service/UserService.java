@@ -48,7 +48,12 @@ public class UserService {
     }
 
     public User 로그인(LoginDto loginDto) {
-        return userRepository.mLogin(loginDto.getUsername(), loginDto.getPassword());
+        Optional<User> userOp = userRepository.mLogin(loginDto.getUsername(), loginDto.getPassword());
+        if (userOp.isPresent()) {
+            return userOp.get();
+        } else {
+            throw new CustomApiException("없는사용자입니다.");
+        }
     }
 
     public User 유저네임보내주기(String email) {

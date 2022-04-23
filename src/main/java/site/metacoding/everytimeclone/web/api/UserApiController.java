@@ -57,14 +57,12 @@ public class UserApiController {
 
         session.setAttribute("principal", userEntity); // 세션에 저장
 
-        // System.out.println(loginDto.getRemember()); // on
-
         // 쿠키에 저장
         if (loginDto.getRemember().equals("on")) {
             response.addHeader("Set-Cookie", "remember=" + loginDto.getUsername() + ";path=/");
         }
 
-        return new ResponseEntity<>(1, HttpStatus.OK);
+        return new ResponseEntity<>(userEntity, HttpStatus.OK);
     }
 
     @GetMapping("/user/find-username")

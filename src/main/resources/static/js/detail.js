@@ -44,14 +44,14 @@ async function likeUp() {
 
     if (response.status == 200) {
         $("#like-count").text(responseParse.likeCount);
-        // $("#my_btn_vote").addClass("my_hidden");
+        $("#my_btn_vote").attr("disabled", true);
     } else {
         alert("이 글을 공감할 수 없습니다.");
     }
 }
 
- // 스크랩 이벤트
- $("#btn-scrap").click(() => {
+// 스크랩 이벤트
+$("#btn-scrap").click(() => {
     alert("이 글을 스크랩하시겠습니까?");
     scrap();
 });

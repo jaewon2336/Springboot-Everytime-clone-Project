@@ -22,4 +22,7 @@ public class LoginDto {
 
     private String remember;
 
+    @NotBlank
+    private String role;
+
 }

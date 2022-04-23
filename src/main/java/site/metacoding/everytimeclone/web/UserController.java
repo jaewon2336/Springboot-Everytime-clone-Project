@@ -30,6 +30,17 @@ public class UserController {
     private final PostService postService;
     private final HttpSession session;
 
+    // admin 로그인 시 관리자 페이지 이동
+    @GetMapping("/s/admin")
+    public String adminMain() {
+        return "/admin/index";
+    }
+
+    @GetMapping("/s/admin/add-course")
+    public String addCourse() {
+        return "/admin/addCourse";
+    }
+
     @GetMapping("/user/login-form")
     public String loginForm() {
         return "/user/loginForm";
@@ -44,7 +55,11 @@ public class UserController {
     public String join(@Valid JoinDto joinDto, BindingResult bindingResult) {
         // 핵심로직
         UtilValid.요청에러처리(bindingResult);
-        userService.회원가입(joinDto.toEntity());
+        User userEntity = joinDto.toEntity();
+        if (userEntity.getUsername().equals("admin")) {
+            userEntity.setRole("admin");
+        }
+        userService.회원가입(userEntity);
         return "redirect:/user/login-form";
     }
 

@@ -24,6 +24,7 @@
         </h1>
 
         <form>
+            <input id="role" type="hidden" value="user">
             <div class="mb-3 mt-3 my_auth_input">
                 <input id="username" type="text" placeholder="아이디" name="username" maxlength="20" required>
             </div>
@@ -69,7 +70,8 @@
         let loginDto = {
             username: $("#username").val(),
             password: $("#password").val(),
-            remember: checked ? "on" : "off"
+            remember: checked ? "on" : "off",
+            role: $("#role").val()
         }
 
         let response = await fetch("/api/login", {
@@ -82,19 +84,25 @@
 
         let responseParse = await response.json();
 
-        if (responseParse == 1) {
-            alert("로그인에 성공하셨습니다.");
-            location.href = "/"; // 메인으로
+        if (response.status == 200) {
+            if (responseParse.role == "admin") {
+                alert("관리자 화면으로 이동합니다.");
+                location.href = "/s/admin"; // 관리자페이지로메인으로
+            } else {
+                alert("로그인에 성공하셨습니다.");
+                location.href = "/"; // 메인으로
+            }
         } else {
             alert("로그인에 실패하였습니다.");
         }
+
+
     }
 
     // username 기억하기 (cookie) httpOnly 속성이 걸려있으면 안되는 것 주의
     function usernameRemember() {
         let cookies = document.cookie.split("=");
         $("#username").val(cookies[1]);
-        console.log(cookies[1]);
     }
 
     // 바로 실행
