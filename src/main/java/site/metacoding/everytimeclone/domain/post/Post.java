@@ -61,6 +61,8 @@ public class Post {
 
     private Integer likeCount;
 
+    private Integer scrapCount;
+
     // @JsonIgnoreProperties({ "post" }) // messageConverter에게 알려주는 어노테이션
     // @OneToMany(mappedBy = "post", cascade = CascadeType.REMOVE)
     // private Scrap scrap;

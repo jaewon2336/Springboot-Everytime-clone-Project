@@ -54,6 +54,7 @@ async function likeUp() {
  $("#btn-scrap").click(() => {
     alert("이 글을 스크랩하시겠습니까?");
     scrap();
+    scrapUp();
 });
 
 // 스크랩하기
@@ -64,7 +65,7 @@ async function scrap() {
         userId: $("#userId").val()
     };
 
-    let response = await fetch(`/s/post/${postId}/scrap`, {
+    let response = await fetch(`/s/api/post/${postId}/scrap`, {
         method: "POST",
         body: JSON.stringify(scrapDto),
         headers: {
@@ -73,7 +74,31 @@ async function scrap() {
     });
 
     let responseParse = await response.json();
-    console.log(responseParse);
+
+    if (response.status == 200) {
+       alert("스크랩 완료");
+    } else {
+        alert("이미 스크랩한 게시글입니다");
+    }
 }
 
+// 스크랩카운팅 
+async function scrapUp() {
+
+    let postId = $("#postId").val();
+
+    let response = await fetch(`/s/api/post/${postId}/scrap`, {
+        headers: {
+            'Content-Type': 'application/json;charset=utf-8'
+        },
+        method: 'PUT'
+    });
+
+    let responseParse = await response.json();
+    if (response.status == 200) {
+        $("#scrap-count").text(responseParse.scrapCount);
+    } else {
+        alert("이미 스크랩한 게시글입니다");
+    }
+}
 
