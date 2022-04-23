@@ -36,11 +36,6 @@ public class UserController {
         return "/admin/index";
     }
 
-    @GetMapping("/s/admin/add-course")
-    public String addCourse() {
-        return "/admin/addCourse";
-    }
-
     @GetMapping("/user/login-form")
     public String loginForm() {
         return "/user/loginForm";

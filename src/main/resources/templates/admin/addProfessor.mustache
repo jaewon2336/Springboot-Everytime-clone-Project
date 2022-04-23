@@ -142,7 +142,7 @@
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">ADD COURSE</h1>
+                        <h1 class="h3 mb-0 text-gray-800">ADD PROFESSOR</h1>
                     </div>
 
                     <!-- Content Row -->
@@ -151,68 +151,16 @@
                         <div class="row">
                             <div class="col-md-12">
 
-                                <form action="/s/admin/add-course" method="post">
-                                    <div class="form-group">
-                                        <label>강의명:</label>
-                                        <input id="name" name="name" type="text" class="form-control"
-                                            placeholder="강의명을 입력하세요">
-                                    </div>
-                                    <div class="form-group">
-                                        <label>학점:</label>
-                                        <select id="point" name="point" class="form-control">
-                                            <option>2</option>
-                                            <option>3</option>
-                                            <option>4</option>
-                                        </select>
-                                    </div>
+                                <form action="/s/admin/add-professor" method="post">
                                     <div class="form-group">
                                         <label>교수명:</label>
-                                        <input id="professor" name="professor" type="text" class="form-control"
+                                        <input id="name" name="name" type="text" class="form-control"
                                             placeholder="교수명을 입력하세요">
                                     </div>
                                     <div class="form-group">
-                                        <label>강의실:</label>
-                                        <input id="classroom" name="classroom" type="text" class="form-control"
-                                            placeholder="강의실을 입력하세요">
-                                    </div>
-                                    <div class="form-group">
-                                        <label>요일:</label>
-                                        <select id="weekday" name="weekday" class="form-control">
-                                            <option value="mon">월</option>
-                                            <option value="tue">화</option>
-                                            <option value="wed">수</option>
-                                            <option value="thu">목</option>
-                                            <option value="fri">금</option>
-                                        </select>
-                                    </div>
-                                    <div class="form-group">
-                                        <label>시간:</label>
-                                        <div class="form-row">
-                                            <select id="startTime" name="startTime" class="form-control col-md-1 mr-4">
-                                                <option>9</option>
-                                                <option>10</option>
-                                                <option>11</option>
-                                                <option>12</option>
-                                                <option>13</option>
-                                                <option>14</option>
-                                                <option>15</option>
-                                                <option>16</option>
-                                                <option>17</option>
-                                                <option>18</option>
-                                            </select>~
-                                            <select id="endTime" name="endTime" class="form-control col-md-1 ml-4">
-                                                <option>9</option>
-                                                <option>10</option>
-                                                <option>11</option>
-                                                <option>12</option>
-                                                <option>13</option>
-                                                <option>14</option>
-                                                <option>15</option>
-                                                <option>16</option>
-                                                <option>17</option>
-                                                <option>18</option>
-                                            </select>
-                                        </div>
+                                        <label>담당 학과:</label>
+                                        <input id="department" name="department" type="text" class="form-control"
+                                            placeholder="담당학과를 입력하세요">
                                     </div>
 
                                     <!-- Button trigger modal -->
@@ -227,7 +175,7 @@
                                         <div class="modal-dialog">
                                             <div class="modal-content">
                                                 <div class="modal-header">
-                                                    <h5 class="modal-title" id="staticBackdropLabel">강의를 등록하시겠습니까?</h5>
+                                                    <h5 class="modal-title" id="staticBackdropLabel">교수를 등록하시겠습니까?</h5>
                                                     <button type="button" class="close" data-dismiss="modal"
                                                         aria-label="Close">
                                                         <span aria-hidden="true">&times;</span>
@@ -245,12 +193,11 @@
                                         </div>
                                     </div>
                                 </form>
-
                                 <br>
-
                             </div>
                         </div>
                     </div>
+
                     <!-- End of Main Content -->
 
                     <!-- Footer -->
@@ -282,33 +229,27 @@
 
             <script>
                 $("#beforeModal").click(() => {
-                    courseScript();
+                    professorScript();
                 });
 
-                function courseScript() {
+                function professorScript() {
 
-                    let courseDto = {
+                    let professorDto = {
                         name: $("#name").val(),
-                        point: $("#point").val(),
-                        professor: $("#professor").val(),
-                        classroom: $("#classroom").val(),
-                        weekday: $("#weekday").val(),
-                        startTime: $("#startTime").val(),
-                        endTime: $("#endTime").val()
+                        department: $("#department").val()
                     }
 
-                    $(".modal-body").append(bodyRender(courseDto));
+                    $(".modal-body").append(bodyRender(professorDto));
                 }
 
-                function bodyRender(courseDto) {
-                    return `<div>강의명 : ${courseDto.name}</div>
-                            <div>학점 : ${courseDto.point}</div>
-                            <div>교수명 : ${courseDto.professor}</div>
-                            <div>강의실 : ${courseDto.classroom}</div>
-                            <div>요일 : ${courseDto.weekday}</div>
-                            <div>시간 : ${courseDto.startTime}시 ~ ${courseDto.endTime}시</div>`
+                function bodyRender(professorDto) {
+                    return `<div>교수명 : ${professorDto.name}</div>
+                            <div>담당학과 : ${professorDto.department}</div>`
                 }
             </script>
+
+
+
 </body>
 
 </html>
