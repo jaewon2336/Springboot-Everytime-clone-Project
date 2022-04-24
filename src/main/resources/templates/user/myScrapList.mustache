@@ -19,7 +19,8 @@
                     <div class="boardbottom">
                         <div class="bottom">
                             <time>{{post.formatCreateDate}}</time>
-                            <div class="secret">자유게시판</div>
+                            <input id="boardNo" type="hidden" value="{{post.boardNo}}">
+                            <div id="board-title" class="secret"></div>
                         </div>
                         <div class="vote_comment">
                             <div class="clubvote">
@@ -89,6 +90,31 @@
 </script>
 
 <script>
+
+    let boardNo = $("#boardNo").val();
+    boardNoCheck();
+    function boardNoCheck() {
+        console.log(boardNo);
+        if (boardNo == 1) {
+            $("#board-title").text("자유게시판");
+        } else if (boardNo == 2) {
+            $("#board-title").text("비밀게시판");
+        } else if (boardNo == 3) {
+            $("#board-title").text("졸업생게시판");
+        } else if (boardNo == 4) {
+            $("#board-title").text("새내기게시판");
+        } else if (boardNo == 5) {
+            $("#board-title").text("시사·이슈");
+        } else if (boardNo == 6) {
+            $("#board-title").text("장터게시판");
+        } else if (boardNo == 7) {
+            $("#board-title").text("홍보게시판");
+        } else if (boardNo == 8) {
+            $("#board-title").text("동아리·학회");
+        } else if (boardNo == 9) {
+            $("#board-title").text("취업·진로");
+        }
+    }
     // $("#btn-next").click(() => {
     //     page++;
     //     $("#post-box").empty();
