@@ -89,4 +89,8 @@ public class PostService {
         }
     } // 더티체킹 완료 (수정됨)
 
+    public List<Post> 실시간인기글() {
+        return postRepository.findByLikeCount();
+    }
+
 }

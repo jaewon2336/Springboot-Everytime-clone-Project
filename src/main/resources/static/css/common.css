@@ -11,6 +11,15 @@
     display: none;
 }
 
+.my_rightside {
+    display: flex;
+    width: 325px;
+    height: 100%;
+    flex-direction: column;
+    margin-top: 22px;
+    margin-left: 10px;
+}
+
 
 .my_navbar {
     border-bottom: 1px solid #d6d6d6;

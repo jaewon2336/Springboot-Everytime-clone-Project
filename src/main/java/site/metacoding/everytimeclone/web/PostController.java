@@ -31,6 +31,10 @@ public class PostController {
     // 메인
     @GetMapping("/")
     public String main(Model model) {
+
+        List<Post> orderByLikeCountPosts = postService.실시간인기글();
+        model.addAttribute("hotPosts", orderByLikeCountPosts);
+
         // post findAll해서 가져오기
         List<Post> postsBy1 = postService.게시글미리보기(1);
         List<Post> postsBy2 = postService.게시글미리보기(2);
@@ -58,6 +62,9 @@ public class PostController {
     // 게시판 이동(글 목록)
     @GetMapping("/s/board/{boardNo}")
     public String board(@PathVariable Integer boardNo, Model model, @PageableDefault(size = 5) Pageable pageable) {
+
+        List<Post> orderByLikeCountPosts = postService.실시간인기글();
+        model.addAttribute("hotPosts", orderByLikeCountPosts);
 
         // SELECT * FROM post WHERE userId = :id AND boardNo = :boardNo
         BoardResDto boardResDto = postService.카테고리별게시글목록보기(boardNo, pageable);
@@ -91,6 +98,9 @@ public class PostController {
     // 글 상세보기
     @GetMapping("/s/post/{id}")
     public String detail(@PathVariable Integer id, Model model) {
+
+        List<Post> orderByLikeCountPosts = postService.실시간인기글();
+        model.addAttribute("hotPosts", orderByLikeCountPosts);
 
         Post postEntity = postService.글상세보기(id);
         User principal = (User) session.getAttribute("principal");

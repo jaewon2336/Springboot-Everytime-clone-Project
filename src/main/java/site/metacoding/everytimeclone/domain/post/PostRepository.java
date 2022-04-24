@@ -18,4 +18,7 @@ public interface PostRepository extends JpaRepository<Post, Integer> {
 
     @Query(value = "SELECT * FROM post WHERE userId = :userId ORDER BY id DESC", nativeQuery = true)
     List<Post> findByUserId(@Param("userId") Integer userId);
+
+    @Query(value = "SELECT * FROM post ORDER BY likeCount DESC LIMIT 2", nativeQuery = true)
+    List<Post> findByLikeCount();
 }
