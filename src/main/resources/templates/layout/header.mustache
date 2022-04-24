@@ -44,7 +44,7 @@
                         <a id="header_menu_board" href="/">게시판</a>
                     </li>
                     <li id="my_menu_timetable">
-                        <a id="header_menu_timetable" href="/user/1/timetable">시간표</a>
+                        <a id="header_menu_timetable" href="/user/{{principal.id}}/timetable">시간표</a>
                     </li>
                     <li id="my_menu_course">
                         <a href="#">강의평가</a>
@@ -63,7 +63,7 @@
                         </a>
                     </div>
                     <div class="my_header_icon_box">
-                        <a href="/s/user/1">
+                        <a href="/s/user/{{principal.id}}">
                             <img src="/images/icn_account.png" width="22" height="22" />
                         </a>
                     </div>

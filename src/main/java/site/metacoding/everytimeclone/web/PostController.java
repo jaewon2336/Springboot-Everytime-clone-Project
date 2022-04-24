@@ -147,6 +147,10 @@ public class PostController {
     // 글 수정폼
     @GetMapping("/s/post/{id}/update-form")
     public String updateForm(@PathVariable Integer id, Model model) {
+
+        List<Post> orderByLikeCountPosts = postService.실시간인기글();
+        model.addAttribute("hotPosts", orderByLikeCountPosts);
+
         User principal = (User) session.getAttribute("principal");
 
         Post postEntity = postService.글상세보기(id);

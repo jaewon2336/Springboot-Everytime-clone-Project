@@ -57,6 +57,9 @@
         align-items: center;
         flex: 2;
         border-right: 1px solid #d6d6d6;
+        color: #444444;
+        font-weight: bold;
+        font-size: 12px;
     }
 
     .timetable_font {
@@ -346,11 +349,11 @@
 
                 <!-- Modal body -->
                 <div class="modal-body">
-                    <table>
+                    <table style="width: 100%;">
                         <input id="userId" type="hidden" value="{{userId}}">
                         <tr>
                             <td>과목명</td>
-                            <td><select id="courseName" class="form-control ml-4">
+                            <td><select id="courseName" class="form-control md-3 my_mb_sm_1">
                                     {{#timetableResDto.courses}}
                                     <option>{{name}}</option>
                                     {{/timetableResDto.courses}}
@@ -358,7 +361,7 @@
                         </tr>
                         <tr>
                             <td>교수명</td>
-                            <td><select id="professorName" class="form-control ml-4">
+                            <td><select id="professorName" class="form-control md-3 my_mb_sm_1">
                                     {{#timetableResDto.professors}}
                                     <option>{{name}}</option>
                                     {{/timetableResDto.professors}}
@@ -369,14 +372,15 @@
                             <td>
 
                                 <div class="form-row ml-4">
-                                    <select id="weekday" name="weekday" class="form-control col-md-3 mr-3">
+                                    <select id="weekday" name="weekday" class="form-control col-md-2 mr-3 my_mb_sm_1">
                                         <option id="day" name="day" value="mon">월</option>
                                         <option id="day" name="day" value="tue">화</option>
                                         <option id="day" name="day" value="wed">수</option>
                                         <option id="day" name="day" value="thu">목</option>
                                         <option id="day" name="day" value="fri">금</option>
                                     </select>
-                                    <select id="startTime" name="startTime" class="form-control col-md-3 mr-2">
+                                    <select id="startTime" name="startTime"
+                                        class="form-control col-md-2 mr-2 my_mb_sm_1">
                                         <option value="9">9</option>
                                         <option value="10">10</option>
                                         <option value="11">11</option>
@@ -388,7 +392,7 @@
                                         <option value="17">17</option>
                                         <option value="18">18</option>
                                     </select>~
-                                    <select id="endTime" name="endTime" class="form-control col-md-3 ml-2">
+                                    <select id="endTime" name="endTime" class="form-control col-md-2 ml-2 my_mb_sm_1">
                                         <option value="9">9</option>
                                         <option value="10">10</option>
                                         <option value="11">11</option>
@@ -407,7 +411,7 @@
                         <tr>
                             <td>장소</td>
                             <td>
-                                <select id="classroom" class="form-control ml-4">
+                                <select id="classroom" class="form-control md-3 my_mb_sm_1">
                                     {{#timetableResDto.courses}}
                                     <option>{{classroom}}</option>
                                     {{/timetableResDto.courses}}
@@ -440,7 +444,7 @@
             drawUserTimetable(t);
         });
 
-        const colors = ["red", "grey", "orange", "green", "yellow", "antiquewhite", "cornflowerblue"];
+        const colors = ["IndianRed", "LightCoral", "Salmon", "DarkSalmon", "LightSalmon", "Coral", "Orange", "PeachPuff", "Moccasin"];
 
         $("#saveBtn").click(() => {
             saveTimetable();
@@ -499,8 +503,8 @@
         }
 
         function drawUserTimetable(timetable) {
-            console.log("나호출됨?");
-            const colorst = ["red", "grey", "orange", "green", "yellow", "antiquewhite", "cornflowerblue"];
+
+            const colorst = ["IndianRed", "LightCoral", "Salmon", "DarkSalmon", "LightSalmon", "Coral", "Orange", "PeachPuff", "Moccasin"];
             let n = Math.floor(Math.random() * 7); // 0~6
 
             // 1. 과목명 data.courseTime 원래는 시작시간이였음
