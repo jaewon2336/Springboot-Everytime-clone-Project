@@ -144,7 +144,6 @@
                 <h3 class="color_secondary rightside_title">실시간 인기 글</h3>
             </div>
 
-            {{#principal}}
             {{#hotPosts}}
             <a class="box_popular_list column color_secondary" href="/s/post/{{id}}">
                 <div class="popular_title mv_5 ">{{title}}</div>
@@ -153,32 +152,13 @@
                     <time>{{formatCreateDate}}</time>
                     <div class="status">
                         <li class="vote active">{{likeCount}}</li>
-                        <li class="comment active">4</li>
+                        <li class="comment active">{{commentCount}}</li>
                     </div>
                 </div>
             </a>
             {{/hotPosts}}
-            {{/principal}}
-
-            {{^principal}}
-            {{#hotPosts}}
-            <a class="box_popular_list column color_secondary" href="/s/post/{{id}}">
-                <div class="popular_title mv_5 ">로그인 후 확인할 수 있습니다.</div>
-                <div class="popular_content"></div>
-                <div class="popular_status">
-                    <time>{{formatCreateDate}}</time>
-                    <div class="status">
-                        <li class="vote active">{{likeCount}}</li>
-                        <li class="comment active">4</li>
-                    </div>
-                </div>
-            </a>
-            {{/hotPosts}}
-            {{/principal}}
-
 
         </div>
-
     </div>
     <!-- 오른쪽 메뉴 끝 -->
 </div>
