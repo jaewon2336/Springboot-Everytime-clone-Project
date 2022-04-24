@@ -151,12 +151,14 @@ public class PostController {
         return "post/updateForm";
     }
 
-    @GetMapping("/qnaForm")
+    // 문의하기 게시판 이동
+
+    @GetMapping("/qna/main")
     public String qnaForm() {
         return "/qna/qnaForm";
     }
 
-    @GetMapping("/qna/community")
+    @GetMapping("/qna/community-rule")
     public String community() {
         return "/qna/communityRule";
     }
@@ -164,6 +166,46 @@ public class PostController {
     @GetMapping("/qna/account")
     public String qnaAccount() {
         return "/qna/qnaAccount";
+    }
+
+    @GetMapping("/qna/school")
+    public String qnaSchool() {
+        return "/qna/qnaSchool";
+    }
+
+    @GetMapping("/qna/timetable")
+    public String qnaTimetable() {
+        return "/qna/qnaTimetable";
+    }
+
+    @GetMapping("/qna/community")
+    public String qnaCommunity() {
+        return "/qna/qnaCommunity";
+    }
+
+    @GetMapping("/qna/anony")
+    public String qnaAnony() {
+        return "/qna/qnaAnony";
+    }
+
+    @GetMapping("/qna/report")
+    public String qnaReport() {
+        return "/qna/qnaReport";
+    }
+
+    @GetMapping("/qna/other")
+    public String qndOther() {
+        return "/qna/qnaOther";
+    }
+
+    @GetMapping("/policy")
+    public String policy() {
+        return "/qna/policy";
+    }
+
+    @GetMapping("/usageContract")
+    public String usageContract() {
+        return "/qna/usageContract";
     }
 
     @GetMapping("/user/certificate-registration")

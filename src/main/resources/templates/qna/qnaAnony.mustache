@@ -1,3 +1,603 @@
 {{> /layout/header}}
 
+<style>
+    .test {
+        display: none;
+    }
+
+    .hidden_list {
+        display: none;
+        background-color: #F2F2F2;
+        border-bottom: 1px solid #d6d6d6;
+        color: black;
+        padding: 15px 20px;
+        font-size: 14px;
+        flex: 1;
+    }
+
+    .hidden_list_end {
+        display: none;
+        background-color: #F2F2F2;
+        border-top: 1px solid #d6d6d6;
+        color: black;
+        padding: 10px;
+        font-size: 14px;
+        flex: 1;
+    }
+
+    .font_color_red {
+        color: #c62917;
+        font-weight: bold;
+    }
+
+    .qna_account_list {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        background-image: url("/images/faqIcon.png");
+        background-repeat: no-repeat;
+        background-position: 98% 50%;
+        text-decoration: none;
+        height: 50px;
+        border-bottom: 1px solid #d6d6d6;
+        padding-left: 19px;
+    }
+
+    .qna_account_list_end {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        background-image: url("/images/faqIcon.png");
+        background-repeat: no-repeat;
+        background-position: 98% 50%;
+        text-decoration: none;
+        height: 50px;
+        padding-left: 19px;
+    }
+
+    .qna_account_wrap_list {
+        font-size: 14px;
+        flex: 1;
+        display: flex;
+    }
+
+    .qna_account_list_end {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        background-image: url("/images/faqIcon.png");
+        background-repeat: no-repeat;
+        background-position: 98% 50%;
+        text-decoration: none;
+        height: 50px;
+        padding-left: 19px;
+    }
+
+    .qna_account_list:hover {
+        background-color: #f8f8f8;
+    }
+
+    .qna_account_list_end:hover {
+        background-color: #f8f8f8;
+    }
+
+    .qna_account_wrap {
+        width: 780px;
+        background-color: white;
+        border: 1px solid #e3e3e3;
+    }
+
+    .qna_title {
+        font-weight: bold;
+        color: #292929;
+        font-size: 15px;
+        margin-left: 15px;
+    }
+
+    .qna_title2 {
+        font-weight: bold;
+        color: #292929;
+        font-size: 15px;
+        margin-left: 15px;
+        padding-top: 30px;
+    }
+</style>
+
+
+<body class="my_bg_secondary">
+    <div class="container my_mt_xl_2 my_mb_md_2">
+        <div class="qna_container">
+            <div class="qna_menu my_mr_md_3">
+                <div class="qna_menu_title my_mb_sm_2 my_bg_primary">문의하기</div>
+                <div class="qna_menu_lists">
+                    <a class="qna_menu_list my_ph_md_2" href="/qna/main">
+                        <div class="my_qna_menu_font my_active">문의하기</div>
+                    </a>
+                    <a class="qna_menu_list my_ph_md_2" href="/qna/community-rule">
+                        <div class="my_qna_menu_font">커뮤니티이용규칙</div>
+                    </a>
+                    <a class="qna_menu_list my_ph_md_2" href="/usageContract">
+                        <div class="my_qna_menu_font">개인정보처리방침</div>
+                    </a>
+                    <a class="qna_menu_list my_ph_md_2" href="/policy">
+                        <div class="my_qna_menu_font">서비스 이용 약관</div>
+                    </a>
+                </div>
+            </div>
+
+
+            <div>
+                <h3 class="qna_title">익명</h3>
+                <div class="qna_account_wrap">
+                    <div class="qna_account_wrap_list">
+                        <a id="color-change1" class="qna_account_list" href="javascript:doDisplay1(); ">
+                            익명으로 글/댓글을 어떻게 작성하나요? </a>
+                    </div>
+
+
+                    <div id="myDIV1" class="hidden_list" style="display: none;">
+                        글/댓글을 작성하실 때, 하단 익명 버튼을 체크하고 작성하시기 바랍니다.
+
+                    </div>
+
+
+
+                    <div class="qna_account_wrap_list">
+                        <a id="color-change2" class="qna_account_list" href="javascript:doDisplay2();">
+                            익명으로 쪽지를 어떻게 발송하나요?</a>
+                    </div>
+
+
+                    <div id="myDIV2" class="hidden_list" style="display: none;">
+                        익명으로 작성된 글/댓글 작성자에게 쪽지를 보내면, 익명으로 발송됩니다. 닉네임으로 작성한 글/댓글 작성자에게 쪽지를 보낼 경우, 자신의 닉네임이 보여지게 됩니다.
+                    </div>
+
+
+
+                    <div class="qna_account_wrap_list">
+                        <a id="color-change3" class="qna_account_list" href="javascript:doDisplay3();">익명으로 작성한 글/댓글의
+                            작성자를 알 수 있나요?</a>
+                    </div>
+
+
+                    <div id="myDIV3" class="hidden_list" style="display: none;">
+
+                        에브리타임의 익명은 일방향 암호화 처리되므로, 글/댓글 작성자가 누구인지 알 수 없습니다.
+                    </div>
+
+
+                    <div class="qna_account_wrap_list">
+                        <a id="color-change4" class="qna_account_list_end" href="javascript:doDisplay4();">
+                            익명으로 발송한 쪽지의 작성자를 알 수 있나요?</a>
+                    </div>
+
+                    <div id="myDIV4" class="hidden_list_end" style="display: none;">
+
+                        에브리타임의 익명은 일방향 암호화 처리되므로, 쪽지 발송자가 누구인지 알 수 없습니다.
+
+                    </div>
+
+
+
+
+                </div>
+                <div>
+                    <h3 class="qna_title2">타 이용자의 개인정보</h3>
+                    <div class="qna_account_wrap">
+                        <div class="qna_account_wrap_list">
+                            <a id="color-change5" class="qna_account_list" href="javascript:doDisplay5();">
+                                누가 제 개인정보를 알 수 있다고 하는데 사실인가요?</a>
+                        </div>
+
+                        <div id="myDIV5" class="hidden_list" style="display: none;">
+
+                            해당 내용은 모두 허위사실 입니다. 에브리타임은 운영자를 사칭하거나 허위사실을 유포하는 이용자에 대해 강력한 법적 조치 및 서비스 이용 제한 조치를 취하고 있습니다.
+                            만약 운영자 사칭 및 허위사실로 타 이용자의 불안감을 조성하는 게시물을 발견하셨을 경우, 허위사실 신고를 통해 신고해주시기 바랍니다. 에브리타임은 익명 여부와 관계
+                            없이, 게시판 관리자, 글 작성자 등 어떤 이용자라도 다른 이용자의 개인정보를 절대 알 수 없습니다. 단, 익명으로 글, 댓글, 쪽지를 작성하지 않았을 경우,
+                            닉네임이 보여지게 됩니다.
+
+                        </div>
+
+                        <div class="qna_account_wrap_list">
+                            <a id="color-change6" class="qna_account_list" href="javascript:doDisplay6();">
+                                다른 이용자의 개인정보를 알 수 있나요?</a>
+                        </div>
+
+                        <div id="myDIV6" class="hidden_list" style="display: none;">
+
+                            익명 여부와 관계 없이, 게시판 관리자, 글 작성자 등 어떤 이용자라도 다른 이용자의 개인정보를 절대 알 수 없습니다. 단, 익명으로 글, 댓글, 쪽지를 작성하지
+                            않았을 경우, 닉네임이 보여지게 됩니다.</div>
+
+
+                        <div class="qna_account_wrap_list">
+                            <a id="color-change7" class="qna_account_list" href="javascript:doDisplay7();">
+                                누가 공감이나 신고를 했는지 알 수 있나요?</a>
+                        </div>
+
+                        <div id="myDIV7" class="hidden_list" style="display: none;">
+
+                            익명 여부와 관계 없이, 게시판 관리자, 글 작성자 등 어떤 이용자라도 누가 공감과 신고를 했는지 알 수 없습니다.
+                        </div>
+
+                        <div class="qna_account_wrap_list">
+                            <a id="color-change8" class="qna_account_list" href="javascript:doDisplay8();">
+                                개인정보 침해, 모욕, 허위사실 유포 등을 당했어요. 법적인 조치를 취하려면 어떻게 해야하나요?</a>
+                        </div>
+
+                        <div id="myDIV8" class="hidden_list" style="display: none;">
+
+                            법적 조치는 에브리타임에서 처리되기 어렵습니다. 법적인 문제가 있다고 판단되실 경우, 수사기관에 직접 의뢰하여 주시기 바랍니다.
+
+                        </div>
+
+                        <div class="qna_account_wrap_list">
+                            <a id="color-change9" class="qna_account_list" href="javascript:doDisplay9();">
+                                경찰에 신고하기 위해, 익명 작성자의 개인정보를 알고 싶어요.</a>
+                        </div>
+
+                        <div id="myDIV9" class="hidden_list" style="display: none;">
+
+                            에브리타임은 개인정보보호 정책과 개인정보보호법, 정보통신망법 등 관련법에 의거하여, 타인의 개인정보와 관련된 사항 및 관련 자료의 존재, 보관 여부 등을
+                            알려드리거나, 해당 개인정보를 임의로 복구, 보관, 삭제하는 행위는 금지되어 있습니다. 수사기관의 법적 절차에 따른 요청이 있을 시 자료를 수사기관에 직접 제출할
+                            것이며, 원활한 수사가 이뤄질 수 있도록 최대한 협조드릴 것입니다. 경찰의 협조 요청은 에브리타임 권리침해신고센터 팩스(070-7614-3744)로 접수해주시기
+                            바라며, 유선 문의 창구는 없습니다.
+                        </div>
+
+
+                        <div class="qna_account_wrap_list">
+                            <a id="color-change10" class="qna_account_list_end" href="javascript:doDisplay10();">
+                                생명, 재산에 피해를 입거나 위급한 상황에 처한 이용자가 있어요. 어떻게 해야 하나요?</a>
+                        </div>
+
+                        <div id="myDIV10" class="hidden_list_end" style="display: none;">
+
+                            개인정보보호 정책과 관련 법률에 의거하여 타인의 개인정보를 직접 알려드리는것은 금지되어 있으므로, 최대한 빠른 시간 내에 수사기관에 해당 내용을 신고해주시기
+                            바랍니다. 경찰의 수사 요청이 확인될 경우, 최대한 빠른 시간 내에 수사에 협조하도록 하겠습니다. 경찰의 협조 요청은 권리침해신고센터
+                            팩스(070-7614-3744)로 접수해주셔야 합니다.</div>
+
+
+
+
+
+
+
+
+
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+</body>
+<script>
+    function doDisplay1() {
+        let num = 1;
+        var con1 = document.getElementById("myDIV1");
+        if (con1.style.display == 'none') {
+            con1.style.display = 'block';
+            autoClose(num);
+        } else {
+            con1.style.display = 'none';
+            $("#color-change1").removeClass("font_color_red");
+        }
+    }
+    function doDisplay2() {
+        let num = 2;
+        var con2 = document.getElementById("myDIV2");
+        if (con2.style.display == 'none') {
+            con2.style.display = 'block';
+            autoClose(num);
+        } else {
+            con2.style.display = 'none';
+            $("#color-change2").removeClass("font_color_red");
+        }
+    }
+    function doDisplay3() {
+        let num = 3;
+        var con3 = document.getElementById("myDIV3");
+        if (con3.style.display == 'none') {
+            con3.style.display = 'block';
+            autoClose(num);
+        } else {
+            con3.style.display = 'none';
+            $("#color-change3").removeClass("font_color_red");
+        }
+    }
+    function doDisplay4() {
+        let num = 4;
+        var con4 = document.getElementById("myDIV4");
+        if (con4.style.display == 'none') {
+            con4.style.display = 'block';
+            autoClose(num);
+        } else {
+            con4.style.display = 'none';
+            $("#color-change4").removeClass("font_color_red");
+        }
+    }
+    function doDisplay5() {
+        let num = 5;
+        var con5 = document.getElementById("myDIV5");
+        if (con5.style.display == 'none') {
+            con5.style.display = 'block';
+            autoClose(num);
+        } else {
+            con5.style.display = 'none';
+            $("#color-change5").removeClass("font_color_red");
+        }
+    }
+    function doDisplay6() {
+        let num = 6;
+        var con6 = document.getElementById("myDIV6");
+        if (con6.style.display == 'none') {
+            con6.style.display = 'block';
+            autoClose(num);
+        } else {
+            con6.style.display = 'none';
+            $("#color-change6").removeClass("font_color_red");
+        }
+    }
+    function doDisplay7() {
+        let num = 7;
+        var con7 = document.getElementById("myDIV7");
+        if (con7.style.display == 'none') {
+            con7.style.display = 'block';
+            autoClose(num);
+        } else {
+            con7.style.display = 'none';
+            $("#color-change7").removeClass("font_color_red");
+        }
+    }
+    function doDisplay8() {
+        let num = 8;
+        var con8 = document.getElementById("myDIV8");
+        if (con8.style.display == 'none') {
+            con8.style.display = 'block';
+            autoClose(num);
+        } else {
+            con8.style.display = 'none';
+            $("#color-change8").removeClass("font_color_red");
+        }
+    }
+    function doDisplay9() {
+        let num = 9;
+        var con9 = document.getElementById("myDIV9");
+        if (con9.style.display == 'none') {
+            con9.style.display = 'block';
+            autoClose(num);
+        } else {
+            con9.style.display = 'none';
+            $("#color-change9").removeClass("font_color_red");
+        }
+    }
+    function doDisplay10() {
+        let num = 10;
+        var con10 = document.getElementById("myDIV10");
+        if (con10.style.display == 'none') {
+            con10.style.display = 'block';
+            autoClose(num);
+        } else {
+            con10.style.display = 'none';
+            $("#color-change10").removeClass("font_color_red");
+        }
+    }
+    function autoClose(num) {
+        var con1 = document.getElementById("myDIV1");
+        var con2 = document.getElementById("myDIV2");
+        var con3 = document.getElementById("myDIV3");
+        var con4 = document.getElementById("myDIV4");
+        var con5 = document.getElementById("myDIV5");
+        var con6 = document.getElementById("myDIV6");
+        var con7 = document.getElementById("myDIV7");
+        var con8 = document.getElementById("myDIV8");
+        var con9 = document.getElementById("myDIV9");
+        var con10 = document.getElementById("myDIV10");
+        if (num == 1) {
+            con2.style.display = 'none';
+            con3.style.display = 'none';
+            con4.style.display = 'none';
+            con5.style.display = 'none';
+            con6.style.display = 'none';
+            con7.style.display = 'none';
+            con8.style.display = 'none';
+            con9.style.display = 'none';
+            con10.style.display = 'none';
+            $("#color-change1").addClass("font_color_red");
+            $("#color-change2").removeClass("font_color_red");
+            $("#color-change3").removeClass("font_color_red");
+            $("#color-change4").removeClass("font_color_red");
+            $("#color-change5").removeClass("font_color_red");
+            $("#color-change6").removeClass("font_color_red");
+            $("#color-change7").removeClass("font_color_red");
+            $("#color-change8").removeClass("font_color_red");
+            $("#color-change9").removeClass("font_color_red");
+            $("#color-change10").removeClass("font_color_red");
+        } else if (num == 2) {
+            con1.style.display = 'none';
+            con3.style.display = 'none';
+            con4.style.display = 'none';
+            con5.style.display = 'none';
+            con6.style.display = 'none';
+            con7.style.display = 'none';
+            con8.style.display = 'none';
+            con9.style.display = 'none';
+            con10.style.display = 'none';
+            $("#color-change2").addClass("font_color_red");
+            $("#color-change1").removeClass("font_color_red");
+            $("#color-change3").removeClass("font_color_red");
+            $("#color-change4").removeClass("font_color_red");
+            $("#color-change5").removeClass("font_color_red");
+            $("#color-change6").removeClass("font_color_red");
+            $("#color-change7").removeClass("font_color_red");
+            $("#color-change8").removeClass("font_color_red");
+            $("#color-change9").removeClass("font_color_red");
+            $("#color-change10").removeClass("font_color_red");
+        } else if (num == 3) {
+            con2.style.display = 'none';
+            con1.style.display = 'none';
+            con4.style.display = 'none';
+            con5.style.display = 'none';
+            con6.style.display = 'none';
+            con7.style.display = 'none';
+            con8.style.display = 'none';
+            con9.style.display = 'none';
+            con10.style.display = 'none';
+            $("#color-change3").addClass("font_color_red");
+            $("#color-change2").removeClass("font_color_red");
+            $("#color-change1").removeClass("font_color_red");
+            $("#color-change4").removeClass("font_color_red");
+            $("#color-change5").removeClass("font_color_red");
+            $("#color-change6").removeClass("font_color_red");
+            $("#color-change7").removeClass("font_color_red");
+            $("#color-change8").removeClass("font_color_red");
+            $("#color-change9").removeClass("font_color_red");
+            $("#color-change10").removeClass("font_color_red");
+        } else if (num == 4) {
+            con2.style.display = 'none';
+            con3.style.display = 'none';
+            con1.style.display = 'none';
+            con5.style.display = 'none';
+            con6.style.display = 'none';
+            con7.style.display = 'none';
+            con8.style.display = 'none';
+            con9.style.display = 'none';
+            con10.style.display = 'none';
+            $("#color-change4").addClass("font_color_red");
+            $("#color-change2").removeClass("font_color_red");
+            $("#color-change3").removeClass("font_color_red");
+            $("#color-change1").removeClass("font_color_red");
+            $("#color-change5").removeClass("font_color_red");
+            $("#color-change6").removeClass("font_color_red");
+            $("#color-change7").removeClass("font_color_red");
+            $("#color-change8").removeClass("font_color_red");
+            $("#color-change9").removeClass("font_color_red");
+            $("#color-change10").removeClass("font_color_red");
+        } else if (num == 5) {
+            con2.style.display = 'none';
+            con3.style.display = 'none';
+            con4.style.display = 'none';
+            con1.style.display = 'none';
+            con6.style.display = 'none';
+            con7.style.display = 'none';
+            con8.style.display = 'none';
+            con9.style.display = 'none';
+            con10.style.display = 'none';
+            $("#color-change5").addClass("font_color_red");
+            $("#color-change2").removeClass("font_color_red");
+            $("#color-change3").removeClass("font_color_red");
+            $("#color-change4").removeClass("font_color_red");
+            $("#color-change1").removeClass("font_color_red");
+            $("#color-change6").removeClass("font_color_red");
+            $("#color-change7").removeClass("font_color_red");
+            $("#color-change8").removeClass("font_color_red");
+            $("#color-change9").removeClass("font_color_red");
+            $("#color-change10").removeClass("font_color_red");
+        } else if (num == 6) {
+            con2.style.display = 'none';
+            con3.style.display = 'none';
+            con4.style.display = 'none';
+            con5.style.display = 'none';
+            con1.style.display = 'none';
+            con7.style.display = 'none';
+            con8.style.display = 'none';
+            con9.style.display = 'none';
+            con10.style.display = 'none';
+            $("#color-change6").addClass("font_color_red");
+            $("#color-change2").removeClass("font_color_red");
+            $("#color-change3").removeClass("font_color_red");
+            $("#color-change4").removeClass("font_color_red");
+            $("#color-change5").removeClass("font_color_red");
+            $("#color-change1").removeClass("font_color_red");
+            $("#color-change7").removeClass("font_color_red");
+            $("#color-change8").removeClass("font_color_red");
+            $("#color-change9").removeClass("font_color_red");
+            $("#color-change10").removeClass("font_color_red");
+        } else if (num == 7) {
+            con1.style.display = 'none';
+            con3.style.display = 'none';
+            con4.style.display = 'none';
+            con5.style.display = 'none';
+            con6.style.display = 'none';
+            con2.style.display = 'none';
+            con8.style.display = 'none';
+            con9.style.display = 'none';
+            con10.style.display = 'none';
+            $("#color-change7").addClass("font_color_red");
+            $("#color-change1").removeClass("font_color_red");
+            $("#color-change3").removeClass("font_color_red");
+            $("#color-change4").removeClass("font_color_red");
+            $("#color-change5").removeClass("font_color_red");
+            $("#color-change6").removeClass("font_color_red");
+            $("#color-change2").removeClass("font_color_red");
+            $("#color-change8").removeClass("font_color_red");
+            $("#color-change9").removeClass("font_color_red");
+            $("#color-change10").removeClass("font_color_red");
+        } else if (num == 8) {
+            con2.style.display = 'none';
+            con3.style.display = 'none';
+            con4.style.display = 'none';
+            con5.style.display = 'none';
+            con6.style.display = 'none';
+            con7.style.display = 'none';
+            con1.style.display = 'none';
+            con9.style.display = 'none';
+            con10.style.display = 'none';
+            $("#color-change8").addClass("font_color_red");
+            $("#color-change2").removeClass("font_color_red");
+            $("#color-change3").removeClass("font_color_red");
+            $("#color-change4").removeClass("font_color_red");
+            $("#color-change5").removeClass("font_color_red");
+            $("#color-change6").removeClass("font_color_red");
+            $("#color-change7").removeClass("font_color_red");
+            $("#color-change1").removeClass("font_color_red");
+            $("#color-change9").removeClass("font_color_red");
+            $("#color-change10").removeClass("font_color_red");
+        } else if (num == 9) {
+            con2.style.display = 'none';
+            con3.style.display = 'none';
+            con4.style.display = 'none';
+            con5.style.display = 'none';
+            con6.style.display = 'none';
+            con7.style.display = 'none';
+            con8.style.display = 'none';
+            con1.style.display = 'none';
+            con10.style.display = 'none';
+            $("#color-change9").addClass("font_color_red");
+            $("#color-change2").removeClass("font_color_red");
+            $("#color-change3").removeClass("font_color_red");
+            $("#color-change4").removeClass("font_color_red");
+            $("#color-change5").removeClass("font_color_red");
+            $("#color-change6").removeClass("font_color_red");
+            $("#color-change7").removeClass("font_color_red");
+            $("#color-change8").removeClass("font_color_red");
+            $("#color-change1").removeClass("font_color_red");
+            $("#color-change10").removeClass("font_color_red");
+        } else if (num == 10) {
+            con2.style.display = 'none';
+            con3.style.display = 'none';
+            con4.style.display = 'none';
+            con5.style.display = 'none';
+            con6.style.display = 'none';
+            con7.style.display = 'none';
+            con8.style.display = 'none';
+            con9.style.display = 'none';
+            con1.style.display = 'none';
+            $("#color-change10").addClass("font_color_red");
+            $("#color-change2").removeClass("font_color_red");
+            $("#color-change3").removeClass("font_color_red");
+            $("#color-change4").removeClass("font_color_red");
+            $("#color-change5").removeClass("font_color_red");
+            $("#color-change6").removeClass("font_color_red");
+            $("#color-change7").removeClass("font_color_red");
+            $("#color-change8").removeClass("font_color_red");
+            $("#color-change9").removeClass("font_color_red");
+            $("#color-change1").removeClass("font_color_red");
+        }
+    }
+</script>
+
+</html>
 {{> /layout/footer}}

@@ -1,3 +1,598 @@
 {{> /layout/header}}
+<style>
+    .test {
+        display: none;
+    }
 
+    .hidden_list {
+        display: none;
+        background-color: #F2F2F2;
+        border-bottom: 1px solid #d6d6d6;
+        color: black;
+        padding: 15px 20px;
+        font-size: 14px;
+        flex: 1;
+    }
+
+    .hidden_list_end {
+        display: none;
+        background-color: #F2F2F2;
+        border-top: 1px solid #d6d6d6;
+        color: black;
+        padding: 10px;
+        font-size: 14px;
+        flex: 1;
+    }
+
+    .font_color_red {
+        color: #c62917;
+        font-weight: bold;
+    }
+
+    .qna_account_list {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        background-image: url("/images/faqIcon.png");
+        background-repeat: no-repeat;
+        background-position: 98% 50%;
+        text-decoration: none;
+        height: 50px;
+        border-bottom: 1px solid #d6d6d6;
+        padding-left: 19px;
+    }
+
+    .qna_account_list_end {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        background-image: url("/images/faqIcon.png");
+        background-repeat: no-repeat;
+        background-position: 98% 50%;
+        text-decoration: none;
+        height: 50px;
+        padding-left: 19px;
+    }
+
+    .qna_account_wrap_list {
+        font-size: 14px;
+        flex: 1;
+        display: flex;
+    }
+
+    .qna_account_list_end {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        background-image: url("/images/faqIcon.png");
+        background-repeat: no-repeat;
+        background-position: 98% 50%;
+        text-decoration: none;
+        height: 50px;
+        padding-left: 19px;
+    }
+
+    .qna_account_list:hover {
+        background-color: #f8f8f8;
+    }
+
+    .qna_account_list_end:hover {
+        background-color: #f8f8f8;
+    }
+
+    .qna_account_wrap {
+        width: 780px;
+        background-color: white;
+        border: 1px solid #e3e3e3;
+    }
+
+    .qna_title {
+        font-weight: bold;
+        color: #292929;
+        font-size: 15px;
+        margin-left: 15px;
+    }
+
+    .qna_title2 {
+        font-weight: bold;
+        color: #292929;
+        font-size: 15px;
+        margin-left: 15px;
+        padding-top: 30px;
+    }
+</style>
+
+
+<body class="my_bg_secondary">
+    <div class="container my_mt_xl_2 my_mb_md_2">
+        <div class="qna_container">
+            <div class="qna_menu my_mr_md_3">
+                <div class="qna_menu_title my_mb_sm_2 my_bg_primary">문의하기</div>
+                <div class="qna_menu_lists">
+                    <a class="qna_menu_list my_ph_md_2" href="/qna/main">
+                        <div class="my_qna_menu_font my_active">문의하기</div>
+                    </a>
+                    <a class="qna_menu_list my_ph_md_2" href="/qna/community-rule">
+                        <div class="my_qna_menu_font">커뮤니티이용규칙</div>
+                    </a>
+                    <a class="qna_menu_list my_ph_md_2" href="/usageContract">
+                        <div class="my_qna_menu_font">개인정보처리방침</div>
+                    </a>
+                    <a class="qna_menu_list my_ph_md_2" href="/policy">
+                        <div class="my_qna_menu_font">서비스 이용 약관</div>
+                    </a>
+                </div>
+            </div>
+
+
+            <div>
+                <h3 class="qna_title">강의시간표(수강편람)</h3>
+                <div class="qna_account_wrap">
+                    <div class="qna_account_wrap_list">
+                        <a id="color-change1" class="qna_account_list" href="javascript:doDisplay1(); ">
+                            개설 과목 목록은 어떤 경로를 통해 수집하나요?</a>
+                    </div>
+
+
+                    <div id="myDIV1" class="hidden_list" style="display: none;">
+                        학교가 제공하는 Open API, 학교가 공지사항 등 웹사이트에 게시한 자료, 교무처/총학생회 등 교내 공식 기관을 통해 전달받은 자료를 바탕으로 수집하고 있습니다.
+
+                    </div>
+
+
+
+                    <div class="qna_account_wrap_list">
+                        <a id="color-change2" class="qna_account_list" href="javascript:doDisplay2();">
+                            우리학교는 왜 개설 과목 검색 기능을 지원하지 않나요?</a>
+                    </div>
+
+
+                    <div id="myDIV2" class="hidden_list" style="display: none;">
+                        개설 과목 검색 기능은 위에서 안내한 경로를 통해 수집한 자료를 바탕으로 제공하고 있습니다.
+
+                        해당 경로를 통해 자료를 수집할 수 없는 학교는 지원이 불가능하며, 지원을 희망하시는 경우 학교 측에 강의시간표 자료에 대한 웹사이트 게시(공지사항 등)를 요청해주시기
+                        바랍니다.</div>
+
+
+
+                    <div class="qna_account_wrap_list">
+                        <a id="color-change3" class="qna_account_list" href="javascript:doDisplay3();">에브리타임의 개설 과목 정보가
+                            잘못되었어요.</a>
+                    </div>
+
+
+                    <div id="myDIV3" class="hidden_list" style="display: none;">
+
+                        개설 과목 정보는 위에서 안내한 경로를 통해 수집한 자료와 연동되어 제공하고 있습니다.
+
+                        해당 경로를 통한 공식적인 정보가 아닌 경우, 과목 정보 변경을 요청하셔도 예외적으로 반영하기 어렵습니다. 학과/교수에 의해 임의로 시간 및 강의실이 변경된 경우, 학교
+                        측에 정보 반영을 요청해주시기 바랍니다.
+
+                        변경사항은 주기적으로 에브리타임에 반영하고 있으며, 일정 기간이 지난 후에도 지속해서 반영되지 않는 과목이 있다면 정보 변경 요청을 통해 알려주시기 바랍니다.
+                    </div>
+
+
+                    <div class="qna_account_wrap_list">
+                        <a id="color-change4" class="qna_account_list" href="javascript:doDisplay4();">계절학기 강의시간표는 지원하지
+                            않나요?</a>
+                    </div>
+
+                    <div id="myDIV4" class="hidden_list" style="display: none;">
+
+                        에브리타임은 정규학기만을 지원하고 있습니다.
+
+                    </div>
+
+
+                    <div class="qna_account_wrap_list">
+                        <a id="color-change5" class="qna_account_list" href="javascript:doDisplay5();">
+                            학점교류를 하는데, 다른 학교/캠퍼스의 강의 정보는 볼 수 없나요?</a>
+                    </div>
+
+                    <div id="myDIV5" class="hidden_list" style="display: none;">
+
+                        에브리타임은 회원가입 시 설정한 학교/캠퍼스의 강의 정보만 볼 수 있습니다. 다른 학교의 강의를 내 시간표에 넣고 싶다면, [과목 직접 추가]를 이용해 과목을 직접
+                        만들어주세요.
+
+                    </div>
+
+                    <div class="qna_account_wrap_list">
+                        <a id="color-change6" class="qna_account_list" href="javascript:doDisplay6();">
+                            온라인 강의는 넣을 수 없나요?</a>
+                    </div>
+
+                    <div id="myDIV6" class="hidden_list" style="display: none;">
+
+                        시간이 정해져 있지 않은 강의의 경우 시간표에 추가하실 수 없습니다. 온라인 강의를 주로 듣는 시간을 지정해서 과목을 직접 만들어주세요.</div>
+
+
+                    <div class="qna_account_wrap_list">
+                        <a id="color-change7" class="qna_account_list_end" href="javascript:doDisplay7();">대학원, 평생교육원 등의
+                            강의시간표도 추가해주실 수 없나요?</a>
+                    </div>
+
+                    <div id="myDIV7" class="hidden_list_end" style="display: none;">
+
+                        현재 에브리타임의 시간표는 학부 강의시간표에 한해 지원하고 있습니다.
+                    </div>
+
+
+
+
+
+                </div>
+                <div>
+                    <h3 class="qna_title2">시간표 기능</h3>
+                    <div class="qna_account_wrap">
+                        <div class="qna_account_wrap_list">
+                            <a id="color-change8" class="qna_account_list" href="javascript:doDisplay8();">
+                                시간표 디자인을 마음대로 변경할 수 없나요?</a>
+                        </div>
+
+                        <div id="myDIV8" class="hidden_list" style="display: none;">
+
+                            에브리타임 시간표는 입력하신 과목에 따라 여백 등이 자동으로 조절되며, 시간표 테마를 제외한 부분은 임의로 변경하실 수 없습니다.</div>
+                        <div class="qna_account_wrap_list">
+                            <a id="color-change9" class="qna_account_list" href="javascript:doDisplay9();">
+                                스마트폰 위젯은 어떻게 추가하나요?</a>
+                        </div>
+
+                        <div id="myDIV9" class="hidden_list" style="display: none;">
+
+                            안드로이드 : 바탕화면을 길게 누른 후, 다음수업위젯, 오늘수업위젯, 주간위젯, 할일위젯을 추가할 수 있습니다.
+
+                            아이폰 : 상태바를 내린 후, 맨 아래에서 다음수업위젯을 추가할 수 있습니다.</div>
+
+
+                        <div class="qna_account_wrap_list">
+                            <a id="color-change10" class="qna_account_list_end" href="javascript:doDisplay10();">
+                                해외에서 에브리타임을 이용하고 있는데, 과목을 만들면 시간 부분에서 오류가 있어요.</a>
+                        </div>
+
+                        <div id="myDIV10" class="hidden_list_end" style="display: none;">
+
+                            스마트폰의 시간대를 대한민국으로 변경하시거나, PC를 통해 과목을 만들어주시기 바랍니다.</div>
+
+
+
+
+
+
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+</body>
+<script>
+    function doDisplay1() {
+        let num = 1;
+        var con1 = document.getElementById("myDIV1");
+        if (con1.style.display == 'none') {
+            con1.style.display = 'block';
+            autoClose(num);
+        } else {
+            con1.style.display = 'none';
+            $("#color-change1").removeClass("font_color_red");
+        }
+    }
+    function doDisplay2() {
+        let num = 2;
+        var con2 = document.getElementById("myDIV2");
+        if (con2.style.display == 'none') {
+            con2.style.display = 'block';
+            autoClose(num);
+        } else {
+            con2.style.display = 'none';
+            $("#color-change2").removeClass("font_color_red");
+        }
+    }
+    function doDisplay3() {
+        let num = 3;
+        var con3 = document.getElementById("myDIV3");
+        if (con3.style.display == 'none') {
+            con3.style.display = 'block';
+            autoClose(num);
+        } else {
+            con3.style.display = 'none';
+            $("#color-change3").removeClass("font_color_red");
+        }
+    }
+    function doDisplay4() {
+        let num = 4;
+        var con4 = document.getElementById("myDIV4");
+        if (con4.style.display == 'none') {
+            con4.style.display = 'block';
+            autoClose(num);
+        } else {
+            con4.style.display = 'none';
+            $("#color-change4").removeClass("font_color_red");
+        }
+    }
+    function doDisplay5() {
+        let num = 5;
+        var con5 = document.getElementById("myDIV5");
+        if (con5.style.display == 'none') {
+            con5.style.display = 'block';
+            autoClose(num);
+        } else {
+            con5.style.display = 'none';
+            $("#color-change5").removeClass("font_color_red");
+        }
+    }
+    function doDisplay6() {
+        let num = 6;
+        var con6 = document.getElementById("myDIV6");
+        if (con6.style.display == 'none') {
+            con6.style.display = 'block';
+            autoClose(num);
+        } else {
+            con6.style.display = 'none';
+            $("#color-change6").removeClass("font_color_red");
+        }
+    }
+    function doDisplay7() {
+        let num = 7;
+        var con7 = document.getElementById("myDIV7");
+        if (con7.style.display == 'none') {
+            con7.style.display = 'block';
+            autoClose(num);
+        } else {
+            con7.style.display = 'none';
+            $("#color-change7").removeClass("font_color_red");
+        }
+    }
+    function doDisplay8() {
+        let num = 8;
+        var con8 = document.getElementById("myDIV8");
+        if (con8.style.display == 'none') {
+            con8.style.display = 'block';
+            autoClose(num);
+        } else {
+            con8.style.display = 'none';
+            $("#color-change8").removeClass("font_color_red");
+        }
+    }
+    function doDisplay9() {
+        let num = 9;
+        var con9 = document.getElementById("myDIV9");
+        if (con9.style.display == 'none') {
+            con9.style.display = 'block';
+            autoClose(num);
+        } else {
+            con9.style.display = 'none';
+            $("#color-change9").removeClass("font_color_red");
+        }
+    }
+    function doDisplay10() {
+        let num = 10;
+        var con10 = document.getElementById("myDIV10");
+        if (con10.style.display == 'none') {
+            con10.style.display = 'block';
+            autoClose(num);
+        } else {
+            con10.style.display = 'none';
+            $("#color-change10").removeClass("font_color_red");
+        }
+    }
+    function autoClose(num) {
+        var con1 = document.getElementById("myDIV1");
+        var con2 = document.getElementById("myDIV2");
+        var con3 = document.getElementById("myDIV3");
+        var con4 = document.getElementById("myDIV4");
+        var con5 = document.getElementById("myDIV5");
+        var con6 = document.getElementById("myDIV6");
+        var con7 = document.getElementById("myDIV7");
+        var con8 = document.getElementById("myDIV8");
+        var con9 = document.getElementById("myDIV9");
+        var con10 = document.getElementById("myDIV10");
+        if (num == 1) {
+            con2.style.display = 'none';
+            con3.style.display = 'none';
+            con4.style.display = 'none';
+            con5.style.display = 'none';
+            con6.style.display = 'none';
+            con7.style.display = 'none';
+            con8.style.display = 'none';
+            con9.style.display = 'none';
+            con10.style.display = 'none';
+            $("#color-change1").addClass("font_color_red");
+            $("#color-change2").removeClass("font_color_red");
+            $("#color-change3").removeClass("font_color_red");
+            $("#color-change4").removeClass("font_color_red");
+            $("#color-change5").removeClass("font_color_red");
+            $("#color-change6").removeClass("font_color_red");
+            $("#color-change7").removeClass("font_color_red");
+            $("#color-change8").removeClass("font_color_red");
+            $("#color-change9").removeClass("font_color_red");
+            $("#color-change10").removeClass("font_color_red");
+        } else if (num == 2) {
+            con1.style.display = 'none';
+            con3.style.display = 'none';
+            con4.style.display = 'none';
+            con5.style.display = 'none';
+            con6.style.display = 'none';
+            con7.style.display = 'none';
+            con8.style.display = 'none';
+            con9.style.display = 'none';
+            con10.style.display = 'none';
+            $("#color-change2").addClass("font_color_red");
+            $("#color-change1").removeClass("font_color_red");
+            $("#color-change3").removeClass("font_color_red");
+            $("#color-change4").removeClass("font_color_red");
+            $("#color-change5").removeClass("font_color_red");
+            $("#color-change6").removeClass("font_color_red");
+            $("#color-change7").removeClass("font_color_red");
+            $("#color-change8").removeClass("font_color_red");
+            $("#color-change9").removeClass("font_color_red");
+            $("#color-change10").removeClass("font_color_red");
+        } else if (num == 3) {
+            con2.style.display = 'none';
+            con1.style.display = 'none';
+            con4.style.display = 'none';
+            con5.style.display = 'none';
+            con6.style.display = 'none';
+            con7.style.display = 'none';
+            con8.style.display = 'none';
+            con9.style.display = 'none';
+            con10.style.display = 'none';
+            $("#color-change3").addClass("font_color_red");
+            $("#color-change2").removeClass("font_color_red");
+            $("#color-change1").removeClass("font_color_red");
+            $("#color-change4").removeClass("font_color_red");
+            $("#color-change5").removeClass("font_color_red");
+            $("#color-change6").removeClass("font_color_red");
+            $("#color-change7").removeClass("font_color_red");
+            $("#color-change8").removeClass("font_color_red");
+            $("#color-change9").removeClass("font_color_red");
+            $("#color-change10").removeClass("font_color_red");
+        } else if (num == 4) {
+            con2.style.display = 'none';
+            con3.style.display = 'none';
+            con1.style.display = 'none';
+            con5.style.display = 'none';
+            con6.style.display = 'none';
+            con7.style.display = 'none';
+            con8.style.display = 'none';
+            con9.style.display = 'none';
+            con10.style.display = 'none';
+            $("#color-change4").addClass("font_color_red");
+            $("#color-change2").removeClass("font_color_red");
+            $("#color-change3").removeClass("font_color_red");
+            $("#color-change1").removeClass("font_color_red");
+            $("#color-change5").removeClass("font_color_red");
+            $("#color-change6").removeClass("font_color_red");
+            $("#color-change7").removeClass("font_color_red");
+            $("#color-change8").removeClass("font_color_red");
+            $("#color-change9").removeClass("font_color_red");
+            $("#color-change10").removeClass("font_color_red");
+        } else if (num == 5) {
+            con2.style.display = 'none';
+            con3.style.display = 'none';
+            con4.style.display = 'none';
+            con1.style.display = 'none';
+            con6.style.display = 'none';
+            con7.style.display = 'none';
+            con8.style.display = 'none';
+            con9.style.display = 'none';
+            con10.style.display = 'none';
+            $("#color-change5").addClass("font_color_red");
+            $("#color-change2").removeClass("font_color_red");
+            $("#color-change3").removeClass("font_color_red");
+            $("#color-change4").removeClass("font_color_red");
+            $("#color-change1").removeClass("font_color_red");
+            $("#color-change6").removeClass("font_color_red");
+            $("#color-change7").removeClass("font_color_red");
+            $("#color-change8").removeClass("font_color_red");
+            $("#color-change9").removeClass("font_color_red");
+            $("#color-change10").removeClass("font_color_red");
+        } else if (num == 6) {
+            con2.style.display = 'none';
+            con3.style.display = 'none';
+            con4.style.display = 'none';
+            con5.style.display = 'none';
+            con1.style.display = 'none';
+            con7.style.display = 'none';
+            con8.style.display = 'none';
+            con9.style.display = 'none';
+            con10.style.display = 'none';
+            $("#color-change6").addClass("font_color_red");
+            $("#color-change2").removeClass("font_color_red");
+            $("#color-change3").removeClass("font_color_red");
+            $("#color-change4").removeClass("font_color_red");
+            $("#color-change5").removeClass("font_color_red");
+            $("#color-change1").removeClass("font_color_red");
+            $("#color-change7").removeClass("font_color_red");
+            $("#color-change8").removeClass("font_color_red");
+            $("#color-change9").removeClass("font_color_red");
+            $("#color-change10").removeClass("font_color_red");
+        } else if (num == 7) {
+            con1.style.display = 'none';
+            con3.style.display = 'none';
+            con4.style.display = 'none';
+            con5.style.display = 'none';
+            con6.style.display = 'none';
+            con2.style.display = 'none';
+            con8.style.display = 'none';
+            con9.style.display = 'none';
+            con10.style.display = 'none';
+            $("#color-change7").addClass("font_color_red");
+            $("#color-change1").removeClass("font_color_red");
+            $("#color-change3").removeClass("font_color_red");
+            $("#color-change4").removeClass("font_color_red");
+            $("#color-change5").removeClass("font_color_red");
+            $("#color-change6").removeClass("font_color_red");
+            $("#color-change2").removeClass("font_color_red");
+            $("#color-change8").removeClass("font_color_red");
+            $("#color-change9").removeClass("font_color_red");
+            $("#color-change10").removeClass("font_color_red");
+        } else if (num == 8) {
+            con2.style.display = 'none';
+            con3.style.display = 'none';
+            con4.style.display = 'none';
+            con5.style.display = 'none';
+            con6.style.display = 'none';
+            con7.style.display = 'none';
+            con1.style.display = 'none';
+            con9.style.display = 'none';
+            con10.style.display = 'none';
+            $("#color-change8").addClass("font_color_red");
+            $("#color-change2").removeClass("font_color_red");
+            $("#color-change3").removeClass("font_color_red");
+            $("#color-change4").removeClass("font_color_red");
+            $("#color-change5").removeClass("font_color_red");
+            $("#color-change6").removeClass("font_color_red");
+            $("#color-change7").removeClass("font_color_red");
+            $("#color-change1").removeClass("font_color_red");
+            $("#color-change9").removeClass("font_color_red");
+            $("#color-change10").removeClass("font_color_red");
+        } else if (num == 9) {
+            con2.style.display = 'none';
+            con3.style.display = 'none';
+            con4.style.display = 'none';
+            con5.style.display = 'none';
+            con6.style.display = 'none';
+            con7.style.display = 'none';
+            con8.style.display = 'none';
+            con1.style.display = 'none';
+            con10.style.display = 'none';
+            $("#color-change9").addClass("font_color_red");
+            $("#color-change2").removeClass("font_color_red");
+            $("#color-change3").removeClass("font_color_red");
+            $("#color-change4").removeClass("font_color_red");
+            $("#color-change5").removeClass("font_color_red");
+            $("#color-change6").removeClass("font_color_red");
+            $("#color-change7").removeClass("font_color_red");
+            $("#color-change8").removeClass("font_color_red");
+            $("#color-change1").removeClass("font_color_red");
+            $("#color-change10").removeClass("font_color_red");
+        } else if (num == 10) {
+            con2.style.display = 'none';
+            con3.style.display = 'none';
+            con4.style.display = 'none';
+            con5.style.display = 'none';
+            con6.style.display = 'none';
+            con7.style.display = 'none';
+            con8.style.display = 'none';
+            con9.style.display = 'none';
+            con1.style.display = 'none';
+            $("#color-change10").addClass("font_color_red");
+            $("#color-change2").removeClass("font_color_red");
+            $("#color-change3").removeClass("font_color_red");
+            $("#color-change4").removeClass("font_color_red");
+            $("#color-change5").removeClass("font_color_red");
+            $("#color-change6").removeClass("font_color_red");
+            $("#color-change7").removeClass("font_color_red");
+            $("#color-change8").removeClass("font_color_red");
+            $("#color-change9").removeClass("font_color_red");
+            $("#color-change1").removeClass("font_color_red");
+        }
+    }
+</script>
+
+</html>
 {{> /layout/footer}}
