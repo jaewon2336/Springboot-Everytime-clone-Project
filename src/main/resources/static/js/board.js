@@ -27,7 +27,7 @@ async function write() {
 
     let writeDto = {
         title: $("#title").val(),
-        content: $("#content").html(),
+        content: $("#content").val(),
         boardNo: $("#board-no").val(),
         likeCount: 0,
         commentCount: 0,

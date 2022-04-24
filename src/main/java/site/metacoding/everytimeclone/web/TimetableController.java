@@ -31,7 +31,7 @@ public class TimetableController {
     private final TimetableService timetableService;
     private final HttpSession session;
 
-    @PostMapping("/user/{id}/timetable")
+    @PostMapping("/s/user/{id}/timetable")
     public ResponseEntity<?> addTimetable(@PathVariable Integer id, @RequestBody TimetableReqDto timetableReqDto) {
         User principal = (User) session.getAttribute("principal");
         timetableService.시간표등록(timetableReqDto, principal);
@@ -39,7 +39,7 @@ public class TimetableController {
     }
 
     // 해당유저의 시간표로 이동(course, professor 담아가야함 -> timetable을 담아가야함!!)
-    @GetMapping("/user/{id}/timetable")
+    @GetMapping("/s/user/{id}/timetable")
     public String mainUser(@PathVariable Integer id, Model model) {
         User principal = (User) session.getAttribute("principal");
 

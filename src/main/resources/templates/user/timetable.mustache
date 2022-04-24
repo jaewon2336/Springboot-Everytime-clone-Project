@@ -467,7 +467,7 @@
             console.log(data);
 
             // 1. 해당 값 JSON.stringify(data)으로 fetch 통신해서 insert 하기 (POST 통신)
-            let response = await fetch(`/user/${id}/timetable`, {
+            let response = await fetch(`/s/user/${id}/timetable`, {
                 headers: {
                     'Content-Type': 'application/json;charset=utf-8'
                 },
