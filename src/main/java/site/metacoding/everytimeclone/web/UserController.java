@@ -8,16 +8,19 @@ import javax.validation.Valid;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import lombok.RequiredArgsConstructor;
+import site.metacoding.everytimeclone.domain.course.Course;
 import site.metacoding.everytimeclone.domain.post.Post;
+import site.metacoding.everytimeclone.domain.professor.Professor;
 import site.metacoding.everytimeclone.domain.user.User;
+import site.metacoding.everytimeclone.service.CourseService;
 import site.metacoding.everytimeclone.service.PostService;
+import site.metacoding.everytimeclone.service.ProfessorService;
 import site.metacoding.everytimeclone.service.UserService;
 import site.metacoding.everytimeclone.util.Script;
 import site.metacoding.everytimeclone.util.UtilValid;
@@ -29,11 +32,17 @@ public class UserController {
 
     private final UserService userService;
     private final PostService postService;
+    private final CourseService courseService;
+    private final ProfessorService professorService;
     private final HttpSession session;
 
     // admin 로그인 시 관리자 페이지 이동
     @GetMapping("/s/admin")
-    public String adminMain() {
+    public String adminMain(Model model) {
+        List<Course> courses = courseService.강의목록();
+        List<Professor> professors = professorService.교수목록();
+        model.addAttribute("professors", professors);
+        model.addAttribute("courses", courses);
         return "/admin/index";
     }
 

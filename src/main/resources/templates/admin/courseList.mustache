@@ -60,7 +60,7 @@
             <li class="nav-item">
                 <a class="nav-link collapsed" href="/s/admin/professor-list">
                     <i class="fas fa-fw fa-folder"></i>
-                    <span>교수 목록</span>
+                    <span>교수 관리</span>
                 </a>
             </li>
 
@@ -84,7 +84,7 @@
             <li class="nav-item">
                 <a class="nav-link collapsed" href="/s/admin/course-list">
                     <i class="fas fa-fw fa-folder"></i>
-                    <span>강의 목록</span>
+                    <span>강의 관리</span>
                 </a>
             </li>
 
@@ -202,6 +202,7 @@
                                             <th scope="col">강의실</th>
                                             <th scope="col">요일</th>
                                             <th scope="col">시간</th>
+                                            <th scope="col"></th>
                                         </tr>
                                     </thead>
 
@@ -215,6 +216,10 @@
                                             <td>{{classroom}}</td>
                                             <td>{{weekday}}</td>
                                             <td>{{startTime}} ~ {{endTime}}</td>
+                                            <td>
+                                                <button id="course-{{id}}" type="button"
+                                                    onclick="deleteCourse({{id}})">삭제</button>
+                                            </td>
                                         </tr>
                                         {{/courses}}
                                     </tbody>
@@ -253,6 +258,22 @@
 
             <!-- Custom scripts for all pages-->
             <script src="/js/admin/sb-admin-2.min.js"></script>
+
+            <script>
+                async function deleteCourse(id) {
+                    let response = await fetch(`/s/admin/course/${id}`, {
+                        method: "DELETE"
+                    });
+                    let responseParse = await response.json();
+
+                    if (responseParse == 1) {
+                        alert("해당 강의 정보가 삭제되었습니다.");
+                        location.reload();
+                    } else {
+                        alert("삭제 실패했습니다.");
+                    }
+                }
+            </script>
 
 
 

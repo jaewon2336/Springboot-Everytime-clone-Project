@@ -60,7 +60,7 @@
             <li class="nav-item">
                 <a class="nav-link collapsed" href="/s/admin/professor-list">
                     <i class="fas fa-fw fa-folder"></i>
-                    <span>교수 목록</span>
+                    <span>교수 관리</span>
                 </a>
             </li>
 
@@ -84,7 +84,7 @@
             <li class="nav-item">
                 <a class="nav-link collapsed" href="/s/admin/course-list">
                     <i class="fas fa-fw fa-folder"></i>
-                    <span>강의 목록</span>
+                    <span>강의 관리</span>
                 </a>
             </li>
 
@@ -203,17 +203,12 @@
                                             <th scope="col">id</th>
                                             <th scope="col">교수명</th>
                                             <th scope="col">담당학과</th>
+                                            <th scope="col"></th>
                                         </tr>
                                     </thead>
 
-                                    <tbody>
-                                        {{#professors}}
-                                        <tr>
-                                            <th scope="row">{{id}}</th>
-                                            <td>{{name}}</td>
-                                            <td>{{department}}</td>
-                                        </tr>
-                                        {{/professors}}
+                                    <tbody id="list-box">
+
                                     </tbody>
                                 </table>
                                 <br>
@@ -250,6 +245,52 @@
 
             <!-- Custom scripts for all pages-->
             <script src="/js/admin/sb-admin-2.min.js"></script>
+
+            <script>
+
+                list();
+
+                async function list() {
+                    let response = await fetch("/s/api/admin/professor");
+                    let responseParse = await response.json();
+
+                    if (response.status == 200) {
+                        responseParse.forEach((professor) => {
+                            $("#list-box").append(itemRender(professor));
+                        });
+                    } else {
+                        alert("잘못된 요청입니다.");
+                    }
+                }
+
+                function itemRender(professor) {
+                    return `<tr>
+                                <th id="professorId" scope="row">${professor.id}</th>
+                                <td>${professor.name}</td>
+                                <td>${professor.department}</td>
+                                <td>
+                                    <button type="button" onclick="deleteProfessor(${professor.id});">삭제</button>
+                                </td>
+                            </tr>`;
+                }
+
+                async function deleteProfessor(id) {
+
+                    let response = await fetch(`/s/admin/professor/${id}`, {
+                        method: "DELETE"
+                    });
+                    let responseParse = await response.json();
+
+                    if (responseParse == 1) {
+                        alert("해당 교수 정보가 삭제되었습니다.");
+                        location.reload();
+                    } else {
+                        alert("삭제 실패했습니다.");
+                    }
+
+                }
+
+            </script>
 
 
 

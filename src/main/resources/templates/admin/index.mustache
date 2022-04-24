@@ -59,7 +59,7 @@
             <li class="nav-item">
                 <a class="nav-link collapsed" href="/s/admin/professor-list">
                     <i class="fas fa-fw fa-folder"></i>
-                    <span>교수 목록</span>
+                    <span>교수 관리</span>
                 </a>
             </li>
 
@@ -83,7 +83,7 @@
             <li class="nav-item">
                 <a class="nav-link collapsed" href="/s/admin/course-list">
                     <i class="fas fa-fw fa-folder"></i>
-                    <span>강의 목록</span>
+                    <span>강의 관리</span>
                 </a>
             </li>
 
@@ -150,87 +150,100 @@
                     </div>
 
                     <!-- Content Row -->
+
                     <div class="row">
 
-                        <!-- Earnings (Monthly) Card Example -->
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-primary shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                                Earnings (Monthly)</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">$40,000</div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fas fa-calendar fa-2x text-gray-300"></i>
-                                        </div>
-                                    </div>
+                        <!-- Area Chart -->
+                        <div class="col-xl-8 col-lg-8">
+                            <div class="card shadow mb-4">
+                                <!-- Card Header - Dropdown -->
+                                <div
+                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <h6 class="m-0 font-weight-bold text-primary">COURSE LIST</h6>
                                 </div>
-                            </div>
-                        </div>
-
-                        <!-- Earnings (Monthly) Card Example -->
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-success shadow h-100 py-2">
+                                <!-- Card Body -->
                                 <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                                Earnings (Annual)</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">$215,000</div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
 
-                        <!-- Earnings (Monthly) Card Example -->
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-info shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Tasks
-                                            </div>
-                                            <div class="row no-gutters align-items-center">
-                                                <div class="col-auto">
-                                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">50%</div>
-                                                </div>
-                                                <div class="col">
-                                                    <div class="progress progress-sm mr-2">
-                                                        <div class="progress-bar bg-info" role="progressbar"
-                                                            style="width: 50%" aria-valuenow="50" aria-valuemin="0"
-                                                            aria-valuemax="100"></div>
-                                                    </div>
-                                                </div>
+                                    <div class="container" style="margin-top:30px">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <table class="table">
+                                                    <thead class="thead-light">
+                                                        <tr>
+                                                            <th scope="col">id</th>
+                                                            <th scope="col">강의명</th>
+                                                            <th scope="col">이수 학점</th>
+                                                            <th scope="col">교수명</th>
+                                                            <th scope="col">강의실</th>
+                                                            <th scope="col">요일</th>
+                                                            <th scope="col">시간</th>
+                                                        </tr>
+                                                    </thead>
+
+                                                    <tbody>
+                                                        {{#courses}}
+                                                        <tr>
+                                                            <th scope="row">{{id}}</th>
+                                                            <td>{{name}}</td>
+                                                            <td>{{point}}</td>
+                                                            <td>{{professor.name}}</td>
+                                                            <td>{{classroom}}</td>
+                                                            <td>{{weekday}}</td>
+                                                            <td>{{startTime}} ~ {{endTime}}</td>
+                                                        </tr>
+                                                        {{/courses}}
+                                                    </tbody>
+                                                </table>
+                                                <br>
+
                                             </div>
                                         </div>
-                                        <div class="col-auto">
-                                            <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
-                                        </div>
                                     </div>
+
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Pending Requests Card Example -->
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-warning shadow h-100 py-2">
+                        <!-- Pie Chart -->
+                        <div class="col-xl-4 col-lg-4">
+                            <div class="card shadow mb-4">
+                                <!-- Card Header - Dropdown -->
+                                <div
+                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <h6 class="m-0 font-weight-bold text-primary">PROFESSOR LIST</h6>
+                                </div>
+                                <!-- Card Body -->
                                 <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
-                                                Pending Requests</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fas fa-comments fa-2x text-gray-300"></i>
+
+                                    <div class="container" style="margin-top:30px">
+                                        <div class="row">
+                                            <div class="col-md-12">
+
+                                                <table class="table">
+                                                    <thead class="thead-light">
+                                                        <tr>
+                                                            <th scope="col">id</th>
+                                                            <th scope="col">교수명</th>
+                                                            <th scope="col">담당학과</th>
+                                                        </tr>
+                                                    </thead>
+
+                                                    <tbody>
+                                                        {{#professors}}
+                                                        <tr>
+                                                            <th scope="row">{{id}}</th>
+                                                            <td>{{name}}</td>
+                                                            <td>{{department}}</td>
+                                                        </tr>
+                                                        {{/professors}}
+                                                    </tbody>
+                                                </table>
+                                                <br>
+
+                                            </div>
                                         </div>
                                     </div>
+
                                 </div>
                             </div>
                         </div>

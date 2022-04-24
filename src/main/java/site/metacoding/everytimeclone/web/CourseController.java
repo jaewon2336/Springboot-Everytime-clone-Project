@@ -2,9 +2,13 @@ package site.metacoding.everytimeclone.web;
 
 import java.util.List;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import lombok.RequiredArgsConstructor;
@@ -41,6 +45,12 @@ public class CourseController {
         courseService.강의등록(addCourseReqDto.toEntity(professorEntity));
 
         return "redirect:/s/admin/course-list";
+    }
+
+    @DeleteMapping("/s/admin/course/{id}")
+    public ResponseEntity<?> deleteProfessor(@PathVariable Integer id) {
+        courseService.강의삭제(id);
+        return new ResponseEntity<>(1, HttpStatus.OK);
     }
 
 }

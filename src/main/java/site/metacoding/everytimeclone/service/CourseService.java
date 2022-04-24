@@ -23,4 +23,9 @@ public class CourseService {
     public void 강의등록(Course course) {
         courseRepository.save(course);
     }
+
+    @Transactional
+    public void 강의삭제(Integer id) {
+        courseRepository.deleteById(id);
+    }
 }
