@@ -151,4 +151,24 @@ public class PostController {
         return "post/updateForm";
     }
 
+    @GetMapping("/qnaForm")
+    public String qnaForm() {
+        return "/qna/qnaForm";
+    }
+
+    @GetMapping("/qna/community")
+    public String community() {
+        return "/qna/communityRule";
+    }
+
+    @GetMapping("/qna/account")
+    public String qnaAccount() {
+        return "/qna/qnaAccount";
+    }
+
+    @GetMapping("/user/certificate-registration")
+    public String certificateForm() {
+        return "/user/certificateRegistrationForm";
+    }
+
 }

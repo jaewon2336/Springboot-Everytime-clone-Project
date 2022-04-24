@@ -3,11 +3,8 @@ package site.metacoding.everytimeclone.service;
 import java.util.List;
 import java.util.Optional;
 
-import javax.transaction.Transactional;
-
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import lombok.RequiredArgsConstructor;
 import site.metacoding.everytimeclone.domain.post.Post;
@@ -16,8 +13,6 @@ import site.metacoding.everytimeclone.domain.scrap.Scrap;
 import site.metacoding.everytimeclone.domain.scrap.ScrapRepository;
 import site.metacoding.everytimeclone.domain.user.User;
 import site.metacoding.everytimeclone.web.api.dto.scrap.ScrapReqDto;
-import site.metacoding.everytimeclone.web.api.dto.scrap.ScrapRespDto;
-
 
 @RequiredArgsConstructor
 @Service
@@ -26,6 +21,7 @@ public class ScrapService {
     private final ScrapRepository scrapRepository;
     private final PostRepository postRepository;
 
+    @Transactional
     public void 스크랩하기(ScrapReqDto scrapReqDto, Integer postId, User principal) {
         Optional<Post> postOp = postRepository.findById(postId);
 

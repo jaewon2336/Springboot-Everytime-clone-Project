@@ -64,6 +64,6 @@ public class TimetableController {
             e.printStackTrace();
         }
 
-        return "/timetable";
+        return "/user/timetable";
     }
 }

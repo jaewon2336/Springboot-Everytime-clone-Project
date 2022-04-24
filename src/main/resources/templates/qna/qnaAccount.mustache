@@ -1,0 +1,640 @@
+{{> /layout/header}}
+<style>
+    .test {
+        display: none;
+    }
+
+
+    .hidden_list {
+        display: none;
+        background-color: #F2F2F2;
+        border-bottom: 1px solid #d6d6d6;
+        color: black;
+        padding: 15px 20px;
+        font-size: 14px;
+        flex: 1;
+
+    }
+
+
+
+    .hidden_list_end {
+        display: none;
+        background-color: #F2F2F2;
+        border-top: 1px solid #d6d6d6;
+        color: black;
+        padding: 10px;
+    }
+
+    .font_color_red {
+        color: #c62917;
+        font-weight: bold;
+    }
+
+    .qna_account_list {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        background-image: url("/images/faqIcon.png");
+        background-repeat: no-repeat;
+        background-position: 98% 50%;
+        text-decoration: none;
+        height: 50px;
+        border-bottom: 1px solid #d6d6d6;
+        padding-left: 19px;
+    }
+
+    .qna_account_wrap_list {
+        font-size: 14px;
+        flex: 1;
+        display: flex;
+    }
+
+    .qna_account_list_end {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        background-image: url("/images/faqIcon.png");
+        background-repeat: no-repeat;
+        background-position: 98% 50%;
+        text-decoration: none;
+        height: 50px;
+        padding-left: 19px;
+    }
+
+    .qna_account_list:hover {
+        background-color: #f8f8f8;
+    }
+
+    .qna_account_wrap {
+        width: 780px;
+        background-color: white;
+        border: 1px solid #e3e3e3;
+    }
+</style>
+
+
+<body class="my_bg_secondary">
+
+    <div class="container my_mt_xl_2 my_mb_md_2">
+        <div class="qna_container">
+            <div class="qna_menu my_mr_md_3">
+                <div class="qna_menu_title my_mb_sm_2 my_bg_primary">문의하기</div>
+                <div class="qna_menu_lists">
+                    <a class="qna_menu_list my_ph_md_2" href="">
+                        <div class="my_qna_menu_font my_active">문의하기</div>
+
+                    </a>
+                    <a class="qna_menu_list my_ph_md_2" href="">
+                        <div class="my_qna_menu_font">커뮤니티이용규칙</div>
+                    </a>
+                    <a class="qna_menu_list my_ph_md_2" href="">
+                        <div class="my_qna_menu_font">개인정보처리방침</div>
+                    </a>
+                    <a class="qna_menu_list my_ph_md_2" href="">
+                        <div class="my_qna_menu_font">서비스 이용 약관</div>
+                    </a>
+                </div>
+            </div>
+            <div class="qna_account_wrap">
+
+                <div class="qna_account_wrap_list">
+                    <a id="color-change1" class="qna_account_list"
+                        href="javascript:doDisplay1(); javascript:autoClose1();  javascript:autoClose2();  javascript:autoClose3();  javascript:autoClose4();  javascript:autoClose5();  javascript:autoClose6();  javascript:autoClose7();  javascript:autoClose8();  javascript:autoClose9();  javascript:autoClose10();  javascript:autoClose11();  javascript:autoClose12();">
+                        학교/캠퍼스가 바뀌었는데 변경할 수 없나요? </a>
+                </div>
+
+
+                <div id="myDIV1" class="hidden_list">
+                    회원가입 시 선택한 학교/캠퍼스는 가입 이후 변경할 수 없습니다. 다른 학교/캠퍼스로 변경을 원하실 경우, 현재
+                    사용하시는 계정을 탈퇴하신 후 새로운 학교/캠퍼스로 다시 회원가입을 해주시기 바랍니다.
+
+                </div>
+
+
+
+                <div class="qna_account_wrap_list">
+                    <a id="color-change2" class="qna_account_list"
+                        href="javascript:doDisplay2(); javascript:autoClose1();  javascript:autoClose2();  javascript:autoClose3();  javascript:autoClose4();  javascript:autoClose5();  javascript:autoClose6();  javascript:autoClose7();  javascript:autoClose8();  javascript:autoClose9();  javascript:autoClose10();  javascript:autoClose11();  javascript:autoClose12();">대학교
+                        재학생, 졸업생이 아닌데
+                        이용할 수 있나요?</a>
+                </div>
+
+
+                <div id="myDIV2" class="hidden_list">
+                    에브리타임은 대한민국 대학교 재학생 및 졸업생을 위한 서비스입니다. 대한민국 대학교의 재학생 및 졸업생이 아닐 경우,
+                    이용이 불가능합니다.</div>
+
+
+
+                <div class="qna_account_wrap_list">
+                    <a id="color-change3" class="qna_account_list"
+                        href="javascript:doDisplay3(); javascript:autoClose1();  javascript:autoClose2();  javascript:autoClose3();  javascript:autoClose4();  javascript:autoClose5();  javascript:autoClose6();  javascript:autoClose7();  javascript:autoClose8();  javascript:autoClose9();  javascript:autoClose10();  javascript:autoClose11();  javascript:autoClose12();">아이디를
+                        여러개 만들 수는
+                        없나요?</a>
+                </div>
+
+
+                <div id="myDIV3" class="hidden_list">
+
+                    에브리타임은 1인 1계정 원칙에 따라, 가장 최근에 재학·졸업한 캠퍼스에 하나의 계정만을 만들 수 있습니다.
+                </div>
+
+
+
+                <div class="qna_account_wrap_list">
+                    <a id="color-change4" class="qna_account_list"
+                        href="javascript:doDisplay4(); javascript:autoClose1();  javascript:autoClose2();  javascript:autoClose3();  javascript:autoClose4();  javascript:autoClose5();  javascript:autoClose6();  javascript:autoClose7();  javascript:autoClose8();  javascript:autoClose9();  javascript:autoClose10();  javascript:autoClose11();  javascript:autoClose12();">아이디/비밀번호를
+                        잃어버렸어요.</a>
+                </div>
+
+                <div id="myDIV4" class="hidden_list">
+
+                    에브리타임은 개인정보처리방침과 개인정보보호법에 따라 개인정보를 개인에게 직접 알려드릴 수 없습니다. 아이디/비밀번호
+                    찾기를 통해 계정을 직접 찾으실 수 있습니다.
+
+                    만약 이메일 분실 등으로 아이디/비밀번호를 찾기 어려우실 경우, 계정을 새로 만드셔서 이용해주셔야 합니다. 이 경우, 기존 계정의 모든 정보는 복구되지 않습니다.
+
+                </div>
+
+
+                <div class="qna_account_wrap_list">
+                    <a id="color-change5" class="qna_account_list"
+                        href="javascript:doDisplay5();  javascript:autoClose1();  javascript:autoClose2();  javascript:autoClose3();  javascript:autoClose4();  javascript:autoClose5();  javascript:autoClose6();  javascript:autoClose7();  javascript:autoClose8();  javascript:autoClose9();  javascript:autoClose10();  javascript:autoClose11();  javascript:autoClose12();">이름,
+                        학번, 이메일 등
+                        개인정보
+                        변경은
+                        어떻게 하나요?</a>
+                </div>
+
+                <div id="myDIV5" class="hidden_list">
+
+                    이름 : 아래 사유를 제외하고 변경이 불가능합니다. 만약 본인의 개인정보가 아닌 타인(부모님, 친척 등)의 정보로
+                    회원가입을 하셨을 경우, 탈퇴 후 재가입을 해주시기 바랍니다.
+
+                    각 사유에 해당하는 자료를 문의하기로 전달해주시기 바랍니다. 주민등록번호, 타인의 개인정보 등 불필요한 개인정보는 모두 마스킹해주시기 바랍니다.
+                    개명 시 : 개명 전·후 이름을 모두 확인할 수 있는 기본증명서 또는 주민등록초본
+                    영문명을 한글로 변경 시: 영어·한글 이름을 모두 확인할 수 있는 영주증, 외국인등록증 등 신분증
+                    학번 : 회원가입 시 입력한 입학년도는 계정 설정을 통한 변경이 불가능합니다. 잘못 입력하셨을 경우, 문의하기로 전달해주시기 바랍니다.
+
+                    이메일 : 홈 탭 우측 상단의 [내 정보] > [계정]에서 변경하실 수 있습니다.
+
+                </div>
+
+                <div class="qna_account_wrap_list">
+                    <a id="color-change6" class="qna_account_list"
+                        href="javascript:doDisplay6(); javascript:autoClose1();  javascript:autoClose2();  javascript:autoClose3();  javascript:autoClose4();  javascript:autoClose5();  javascript:autoClose6();  javascript:autoClose7();  javascript:autoClose8();  javascript:autoClose9();  javascript:autoClose10();  javascript:autoClose11();  javascript:autoClose12();">닉네임,
+                        프로필 이미지 등
+                        프로필
+                        변경은
+                        어떻게 하나요?</a>
+                </div>
+
+                <div id="myDIV6" class="hidden_list">
+
+                    홈 탭 우측 상단의 [내 정보] > [커뮤니티]에서 변경하실 수 있습니다.</div>
+
+
+                <div class="qna_account_wrap_list">
+                    <a id="color-change7" class="qna_account_list"
+                        href="javascript:doDisplay7(); javascript:autoClose1();  javascript:autoClose2();  javascript:autoClose3();  javascript:autoClose4();  javascript:autoClose5();  javascript:autoClose6();  javascript:autoClose7();  javascript:autoClose8();  javascript:autoClose9();  javascript:autoClose10();  javascript:autoClose11();  javascript:autoClose12();">닉네임이
+                        변경되지 않아요. 언제
+                        다시
+                        변경할
+                        수 있나요?</a>
+                </div>
+
+                <div id="myDIV7" class="hidden_list">
+
+                    닉네임 변경은 악용을 막기 위해, 변경 후 30일이 지나야 다시 변경할 수 있습니다. 닉네임 변경 절차는 자동시스템을
+                    통하므로, 요청에 의한 처리가 불가능합니다.
+
+                </div>
+
+                <div class="qna_account_wrap_list">
+                    <a id="color-change8" class="qna_account_list"
+                        href="javascript:doDisplay8();  javascript:autoClose1();  javascript:autoClose2();  javascript:autoClose3();  javascript:autoClose4();  javascript:autoClose5();  javascript:autoClose6();  javascript:autoClose7();  javascript:autoClose8();  javascript:autoClose9();  javascript:autoClose10();  javascript:autoClose11();  javascript:autoClose12();">암호
+                        잠금은 어떤
+                        기능인가요?</a>
+                </div>
+
+                <div id="myDIV8" class="hidden_list">
+
+                    암호 잠금을 설정할 경우, 에브리타임 앱 실행 시 암호를 입력해야만 에브리타임을 이용할 수 있습니다. 암호 대신
+                    지문, Face ID 등을 대체 수단으로 이용할 수도 있습니다.
+
+                </div>
+
+                <div class="qna_account_wrap_list">
+                    <a id="color-change9" class="qna_account_list"
+                        href="javascript:doDisplay9(); javascript:autoClose1();  javascript:autoClose2();  javascript:autoClose3();  javascript:autoClose4();  javascript:autoClose5();  javascript:autoClose6();  javascript:autoClose7();  javascript:autoClose8();  javascript:autoClose9();  javascript:autoClose10();  javascript:autoClose11();  javascript:autoClose12();">타인이
+                        내 계정을 사용하는 것
+                        같아요.</a>
+                </div>
+
+                <div id="myDIV9" class="hidden_list">
+
+                    비밀번호를 변경할 경우, 로그인 되어있는 다른 기기에서 모두 로그아웃됩니다. PC로 에브리타임에 접속하신 뒤, 오른쪽
+                    위 [내 정보]에서 비밀번호를 변경하실 수 있습니다.
+
+                </div>
+
+                <div class="qna_account_wrap_list">
+                    <a id="color-change10" class="qna_account_list"
+                        href="javascript:doDisplay10(); javascript:autoClose1();  javascript:autoClose2();  javascript:autoClose3();  javascript:autoClose4();  javascript:autoClose5();  javascript:autoClose6();  javascript:autoClose7();  javascript:autoClose8();  javascript:autoClose9();  javascript:autoClose10();  javascript:autoClose11();  javascript:autoClose12();">탈퇴는
+                        어떻게
+                        하나요?</a>
+                </div>
+
+                <div id="myDIV10" class="hidden_list">
+
+                    로그인 후 [내 정보] > [기타] > 회원 탈퇴에서 가능합니다.</div>
+
+
+                <div class="qna_account_wrap_list">
+                    <a id="color-change11" class="qna_account_list"
+                        href="javascript:doDisplay11(); javascript:autoClose1();  javascript:autoClose2();  javascript:autoClose3();  javascript:autoClose4();  javascript:autoClose5();  javascript:autoClose6();  javascript:autoClose7();  javascript:autoClose8();  javascript:autoClose9();  javascript:autoClose10();  javascript:autoClose11();  javascript:autoClose12();">탈퇴
+                        후 재가입은 바로
+                        가능한가요?</a>
+                </div>
+
+                <div id="myDIV11" class="hidden_list">
+
+                    탈퇴 후 재가입을 반복할 경우 시스템에 의해 재가입이 제한됩니다. 만약 탈퇴 페이지에서 재가입 제한 날짜가 보여질
+                    경우, 해당 날짜가 지나야만 재가입을 할 수 있습니다. 회원가입은 자동시스템을 통하므로, 요청에 의한 처리가 불가능합니다.</div>
+
+                <div class="qna_account_wrap_list">
+                    <a id="color-change12" class="qna_account_list_end"
+                        href="javascript:doDisplay12(); javascript:autoClose1();  javascript:autoClose2();  javascript:autoClose3();  javascript:autoClose4();  javascript:autoClose5();  javascript:autoClose6();  javascript:autoClose7();  javascript:autoClose8();  javascript:autoClose9();  javascript:autoClose10();  javascript:autoClose11();  javascript:autoClose12();">게시판/커뮤니티
+                        관리자여서
+                        탈퇴가
+                        되지
+                        않아요.</a>
+                </div>
+
+                <div id="myDIV12" class="hidden_list" style="border-top: 1px solid #d6d6d6; border-bottom: 0;">
+
+                    에브리타임에 관리 중인 게시판이 있거나, 캠퍼스픽에 관리 중인 커뮤니티가 있는 경우,
+                    게시판/커뮤니티를 삭제하거나
+                    관리자 권한을 다른 이용자에게 양도하신 후, 탈퇴해주시기 바랍니다.</div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+</body>
+<script>
+
+
+
+
+    function doDisplay1() {
+        var con1 = document.getElementById("myDIV1");
+        if (con1.style.display == 'none') {
+            con1.style.display = 'block';
+
+            $("#color-change1").addClass("font_color_red");
+
+        } else {
+            $("#color-change1").removeClass("font_color_red");
+            con1.style.display = 'none';
+        }
+    }
+
+
+    function doDisplay2() {
+        var con2 = document.getElementById("myDIV2");
+        if (con2.style.display == 'none') {
+            con2.style.display = 'block';
+            $("#color-change2").addClass("font_color_red");
+        } else {
+            $("#color-change2").removeClass("font_color_red");
+            con2.style.display = 'none';
+        }
+    }
+
+    function doDisplay3() {
+        var con3 = document.getElementById("myDIV3");
+        if (con3.style.display == 'none') {
+            con3.style.display = 'block';
+            $("#color-change3").addClass("font_color_red");
+        } else {
+            $("#color-change3").removeClass("font_color_red");
+            con3.style.display = 'none';
+        }
+    }
+
+    function doDisplay4() {
+        var con4 = document.getElementById("myDIV4");
+        if (con4.style.display == 'none') {
+            con4.style.display = 'block';
+            $("#color-change4").addClass("font_color_red");
+        } else {
+            $("#color-change4").removeClass("font_color_red");
+            con4.style.display = 'none';
+        }
+    }
+
+    function doDisplay5() {
+        var con5 = document.getElementById("myDIV5");
+        if (con5.style.display == 'none') {
+            con5.style.display = 'block';
+            $("#color-change5").addClass("font_color_red");
+        } else {
+            $("#color-change5").removeClass("font_color_red");
+            con5.style.display = 'none';
+        }
+    }
+
+    function doDisplay6() {
+        var con6 = document.getElementById("myDIV6");
+        if (con6.style.display == 'none') {
+            con6.style.display = 'block';
+            $("#color-change6").addClass("font_color_red");
+        } else {
+            $("#color-change6").removeClass("font_color_red");
+            con6.style.display = 'none';
+        }
+    }
+
+    function doDisplay7() {
+        var con7 = document.getElementById("myDIV7");
+        if (con7.style.display == 'none') {
+            con7.style.display = 'block';
+            $("#color-change7").addClass("font_color_red");
+        } else {
+            $("#color-change7").removeClass("font_color_red");
+            con7.style.display = 'none';
+        }
+    }
+
+    function doDisplay8() {
+        var con8 = document.getElementById("myDIV8");
+        if (con8.style.display == 'none') {
+            con8.style.display = 'block';
+            $("#color-change8").addClass("font_color_red");
+        } else {
+            $("#color-change8").removeClass("font_color_red");
+            con8.style.display = 'none';
+        }
+    }
+
+    function doDisplay9() {
+        var con9 = document.getElementById("myDIV9");
+        if (con9.style.display == 'none') {
+            con9.style.display = 'block';
+            $("#color-change9").addClass("font_color_red");
+        } else {
+            $("#color-change9").removeClass("font_color_red");
+            con9.style.display = 'none';
+        }
+    }
+
+    function doDisplay10() {
+        var con10 = document.getElementById("myDIV10");
+        if (con10.style.display == 'none') {
+            con10.style.display = 'block';
+            $("#color-change10").addClass("font_color_red");
+        } else {
+            $("#color-change10").removeClass("font_color_red");
+            con10.style.display = 'none';
+        }
+    }
+
+    function doDisplay11() {
+        var con11 = document.getElementById("myDIV11");
+        if (con11.style.display == 'none') {
+            con11.style.display = 'block';
+            $("#color-change11").addClass("font_color_red");
+        } else {
+            $("#color-change11").removeClass("font_color_red");
+            con11.style.display = 'none';
+        }
+    }
+    var bDisplay = false;
+    function doDisplay12() {
+        var con12 = document.getElementById("myDIV12");
+        if (con12.style.display == 'none') {
+            con12.style.display = 'block';
+            $("#color-change12").addClass("font_color_red");
+        } else {
+            $("#color-change12").removeClass("font_color_red");
+            con12.style.display = 'none';
+        }
+    }
+
+    function autoClose1() {
+        var con1 = document.getElementById("myDIV1");
+        var con2 = document.getElementById("myDIV2");
+        var con3 = document.getElementById("myDIV3");
+        var con4 = document.getElementById("myDIV4");
+        var con5 = document.getElementById("myDIV5");
+        var con6 = document.getElementById("myDIV6");
+        var con7 = document.getElementById("myDIV7");
+        var con8 = document.getElementById("myDIV8");
+        var con9 = document.getElementById("myDIV9");
+        var con10 = document.getElementById("myDIV10");
+        var con11 = document.getElementById("myDIV11");
+        var con12 = document.getElementById("myDIV12");
+        if (con2.style.display == 'block' || con3.style.display == 'block' || con4.style.display == 'block' || con5.style.display == 'block' || con6.style.display == 'block' || con7.style.display == 'block' || con8.style.display == 'block' || con9.style.display == 'block' || con10.style.display == 'block' || con11.style.display == 'block' || con12.style.display == 'block') {
+            con1.style.display = 'none';
+            $("#color-change1").removeClass("font_color_red");
+        }
+    }
+    function autoClose2() {
+        var con1 = document.getElementById("myDIV1");
+        var con2 = document.getElementById("myDIV2");
+        var con3 = document.getElementById("myDIV3");
+        var con4 = document.getElementById("myDIV4");
+        var con5 = document.getElementById("myDIV5");
+        var con6 = document.getElementById("myDIV6");
+        var con7 = document.getElementById("myDIV7");
+        var con8 = document.getElementById("myDIV8");
+        var con9 = document.getElementById("myDIV9");
+        var con10 = document.getElementById("myDIV10");
+        var con11 = document.getElementById("myDIV11");
+        var con12 = document.getElementById("myDIV12");
+        if (con1.style.display == 'block' || con3.style.display == 'block' || con4.style.display == 'block' || con5.style.display == 'block' || con6.style.display == 'block' || con7.style.display == 'block' || con8.style.display == 'block' || con9.style.display == 'block' || con10.style.display == 'block' || con11.style.display == 'block' || con12.style.display == 'block') {
+            con2.style.display = 'none';
+            $("#color-change2").removeClass("font_color_red");
+        }
+    } function autoClose3() {
+        var con1 = document.getElementById("myDIV1");
+        var con2 = document.getElementById("myDIV2");
+        var con3 = document.getElementById("myDIV3");
+        var con4 = document.getElementById("myDIV4");
+        var con5 = document.getElementById("myDIV5");
+        var con6 = document.getElementById("myDIV6");
+        var con7 = document.getElementById("myDIV7");
+        var con8 = document.getElementById("myDIV8");
+        var con9 = document.getElementById("myDIV9");
+        var con10 = document.getElementById("myDIV10");
+        var con11 = document.getElementById("myDIV11");
+        var con12 = document.getElementById("myDIV12");
+        if (con2.style.display == 'block' || con1.style.display == 'block' || con4.style.display == 'block' || con5.style.display == 'block' || con6.style.display == 'block' || con7.style.display == 'block' || con8.style.display == 'block' || con9.style.display == 'block' || con10.style.display == 'block' || con11.style.display == 'block' || con12.style.display == 'block') {
+            con3.style.display = 'none';
+            $("#color-change3").removeClass("font_color_red");
+        }
+    } function autoClose4() {
+        var con1 = document.getElementById("myDIV1");
+        var con2 = document.getElementById("myDIV2");
+        var con3 = document.getElementById("myDIV3");
+        var con4 = document.getElementById("myDIV4");
+        var con5 = document.getElementById("myDIV5");
+        var con6 = document.getElementById("myDIV6");
+        var con7 = document.getElementById("myDIV7");
+        var con8 = document.getElementById("myDIV8");
+        var con9 = document.getElementById("myDIV9");
+        var con10 = document.getElementById("myDIV10");
+        var con11 = document.getElementById("myDIV11");
+        var con12 = document.getElementById("myDIV12");
+        if (con2.style.display == 'block' || con3.style.display == 'block' || con1.style.display == 'block' || con5.style.display == 'block' || con6.style.display == 'block' || con7.style.display == 'block' || con8.style.display == 'block' || con9.style.display == 'block' || con10.style.display == 'block' || con11.style.display == 'block' || con12.style.display == 'block') {
+            con4.style.display = 'none';
+            $("#color-change4").removeClass("font_color_red");
+        }
+    } function autoClose5() {
+        var con1 = document.getElementById("myDIV1");
+        var con2 = document.getElementById("myDIV2");
+        var con3 = document.getElementById("myDIV3");
+        var con4 = document.getElementById("myDIV4");
+        var con5 = document.getElementById("myDIV5");
+        var con6 = document.getElementById("myDIV6");
+        var con7 = document.getElementById("myDIV7");
+        var con8 = document.getElementById("myDIV8");
+        var con9 = document.getElementById("myDIV9");
+        var con10 = document.getElementById("myDIV10");
+        var con11 = document.getElementById("myDIV11");
+        var con12 = document.getElementById("myDIV12");
+        if (con2.style.display == 'block' || con3.style.display == 'block' || con4.style.display == 'block' || con1.style.display == 'block' || con6.style.display == 'block' || con7.style.display == 'block' || con8.style.display == 'block' || con9.style.display == 'block' || con10.style.display == 'block' || con11.style.display == 'block' || con12.style.display == 'block') {
+            con5.style.display = 'none';
+            $("#color-change5").removeClass("font_color_red");
+        }
+    } function autoClose6() {
+        var con1 = document.getElementById("myDIV1");
+        var con2 = document.getElementById("myDIV2");
+        var con3 = document.getElementById("myDIV3");
+        var con4 = document.getElementById("myDIV4");
+        var con5 = document.getElementById("myDIV5");
+        var con6 = document.getElementById("myDIV6");
+        var con7 = document.getElementById("myDIV7");
+        var con8 = document.getElementById("myDIV8");
+        var con9 = document.getElementById("myDIV9");
+        var con10 = document.getElementById("myDIV10");
+        var con11 = document.getElementById("myDIV11");
+        var con12 = document.getElementById("myDIV12");
+        if (con2.style.display == 'block' || con3.style.display == 'block' || con4.style.display == 'block' || con5.style.display == 'block' || con1.style.display == 'block' || con7.style.display == 'block' || con8.style.display == 'block' || con9.style.display == 'block' || con10.style.display == 'block' || con11.style.display == 'block' || con12.style.display == 'block') {
+            con6.style.display = 'none';
+            $("#color-change6").removeClass("font_color_red");
+        }
+    } function autoClose7() {
+        var con1 = document.getElementById("myDIV1");
+        var con2 = document.getElementById("myDIV2");
+        var con3 = document.getElementById("myDIV3");
+        var con4 = document.getElementById("myDIV4");
+        var con5 = document.getElementById("myDIV5");
+        var con6 = document.getElementById("myDIV6");
+        var con7 = document.getElementById("myDIV7");
+        var con8 = document.getElementById("myDIV8");
+        var con9 = document.getElementById("myDIV9");
+        var con10 = document.getElementById("myDIV10");
+        var con11 = document.getElementById("myDIV11");
+        var con12 = document.getElementById("myDIV12");
+        if (con2.style.display == 'block' || con3.style.display == 'block' || con4.style.display == 'block' || con5.style.display == 'block' || con6.style.display == 'block' || con1.style.display == 'block' || con8.style.display == 'block' || con9.style.display == 'block' || con10.style.display == 'block' || con11.style.display == 'block' || con12.style.display == 'block') {
+            con7.style.display = 'none';
+            $("#color-change7").removeClass("font_color_red");
+        }
+    } function autoClose8() {
+        var con1 = document.getElementById("myDIV1");
+        var con2 = document.getElementById("myDIV2");
+        var con3 = document.getElementById("myDIV3");
+        var con4 = document.getElementById("myDIV4");
+        var con5 = document.getElementById("myDIV5");
+        var con6 = document.getElementById("myDIV6");
+        var con7 = document.getElementById("myDIV7");
+        var con8 = document.getElementById("myDIV8");
+        var con9 = document.getElementById("myDIV9");
+        var con10 = document.getElementById("myDIV10");
+        var con11 = document.getElementById("myDIV11");
+        var con12 = document.getElementById("myDIV12");
+        if (con2.style.display == 'block' || con3.style.display == 'block' || con4.style.display == 'block' || con5.style.display == 'block' || con6.style.display == 'block' || con7.style.display == 'block' || con1.style.display == 'block' || con9.style.display == 'block' || con10.style.display == 'block' || con11.style.display == 'block' || con12.style.display == 'block') {
+            con8.style.display = 'none';
+            $("#color-change8").removeClass("font_color_red");
+        }
+    } function autoClose9() {
+        var con1 = document.getElementById("myDIV1");
+        var con2 = document.getElementById("myDIV2");
+        var con3 = document.getElementById("myDIV3");
+        var con4 = document.getElementById("myDIV4");
+        var con5 = document.getElementById("myDIV5");
+        var con6 = document.getElementById("myDIV6");
+        var con7 = document.getElementById("myDIV7");
+        var con8 = document.getElementById("myDIV8");
+        var con9 = document.getElementById("myDIV9");
+        var con10 = document.getElementById("myDIV10");
+        var con11 = document.getElementById("myDIV11");
+        var con12 = document.getElementById("myDIV12");
+        if (con2.style.display == 'block' || con3.style.display == 'block' || con4.style.display == 'block' || con5.style.display == 'block' || con6.style.display == 'block' || con7.style.display == 'block' || con8.style.display == 'block' || con1.style.display == 'block' || con10.style.display == 'block' || con11.style.display == 'block' || con12.style.display == 'block') {
+            con9.style.display = 'none';
+            $("#color-change9").removeClass("font_color_red");
+        }
+    } function autoClose10() {
+        var con1 = document.getElementById("myDIV1");
+        var con2 = document.getElementById("myDIV2");
+        var con3 = document.getElementById("myDIV3");
+        var con4 = document.getElementById("myDIV4");
+        var con5 = document.getElementById("myDIV5");
+        var con6 = document.getElementById("myDIV6");
+        var con7 = document.getElementById("myDIV7");
+        var con8 = document.getElementById("myDIV8");
+        var con9 = document.getElementById("myDIV9");
+        var con10 = document.getElementById("myDIV10");
+        var con11 = document.getElementById("myDIV11");
+        var con12 = document.getElementById("myDIV12");
+        if (con2.style.display == 'block' || con3.style.display == 'block' || con4.style.display == 'block' || con5.style.display == 'block' || con6.style.display == 'block' || con7.style.display == 'block' || con8.style.display == 'block' || con9.style.display == 'block' || con1.style.display == 'block' || con11.style.display == 'block' || con12.style.display == 'block') {
+            con10.style.display = 'none';
+            $("#color-change10").removeClass("font_color_red");
+        }
+    } function autoClose11() {
+        var con1 = document.getElementById("myDIV1");
+        var con2 = document.getElementById("myDIV2");
+        var con3 = document.getElementById("myDIV3");
+        var con4 = document.getElementById("myDIV4");
+        var con5 = document.getElementById("myDIV5");
+        var con6 = document.getElementById("myDIV6");
+        var con7 = document.getElementById("myDIV7");
+        var con8 = document.getElementById("myDIV8");
+        var con9 = document.getElementById("myDIV9");
+        var con10 = document.getElementById("myDIV10");
+        var con11 = document.getElementById("myDIV11");
+        var con12 = document.getElementById("myDIV12");
+        if (con2.style.display == 'block' || con3.style.display == 'block' || con4.style.display == 'block' || con5.style.display == 'block' || con6.style.display == 'block' || con7.style.display == 'block' || con8.style.display == 'block' || con9.style.display == 'block' || con10.style.display == 'block' || con1.style.display == 'block' || con12.style.display == 'block') {
+            con11.style.display = 'none';
+            $("#color-change11").removeClass("font_color_red");
+        }
+    } function autoClose12() {
+        var con1 = document.getElementById("myDIV1");
+        var con2 = document.getElementById("myDIV2");
+        var con3 = document.getElementById("myDIV3");
+        var con4 = document.getElementById("myDIV4");
+        var con5 = document.getElementById("myDIV5");
+        var con6 = document.getElementById("myDIV6");
+        var con7 = document.getElementById("myDIV7");
+        var con8 = document.getElementById("myDIV8");
+        var con9 = document.getElementById("myDIV9");
+        var con10 = document.getElementById("myDIV10");
+        var con11 = document.getElementById("myDIV11");
+        var con12 = document.getElementById("myDIV12");
+        if (con2.style.display == 'block' || con3.style.display == 'block' || con4.style.display == 'block' || con5.style.display == 'block' || con6.style.display == 'block' || con7.style.display == 'block' || con8.style.display == 'block' || con9.style.display == 'block' || con10.style.display == 'block' || con11.style.display == 'block' || con1.style.display == 'block') {
+            con12.style.display = 'none';
+            $("#color-change12").removeClass("font_color_red");
+        }
+    }
+
+</script>
+
+</html>
+{{> /layout/footer}}

@@ -1,0 +1,522 @@
+{{> /layout/header}}
+
+<style>
+    * {
+        /* border: 1px solid black; */
+    }
+
+    .timetable_bg {
+        background-color: #f8f8f8;
+    }
+
+    .my_timetable_box {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        /* background-color: aqua; */
+        border: 1px solid #d6d6d6;
+    }
+
+    .table_head {
+        display: flex;
+        width: 100%;
+        height: 45px;
+        background-color: #f2f2f2;
+    }
+
+    .table_body {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .table_row {
+        display: flex;
+        border-top: 1px solid #e3e3e3;
+        height: 55px;
+    }
+
+    .my_hours {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex: 1;
+        border-right: 2px solid #d6d6d6;
+    }
+
+    .my_time {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex: 1;
+        border-left: 1px solid #d6d6d6;
+    }
+
+    .cols {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex: 2;
+        border-right: 1px solid #d6d6d6;
+    }
+
+    .timetable_font {
+        font-size: 15px;
+        color: #a6a6a6;
+    }
+
+    .timetable_font_sm {
+        font-size: 14px;
+        color: #a6a6a6;
+    }
+
+    .my_mv_xl_1 {
+        margin: 50px 0;
+    }
+</style>
+
+
+<div class="my_main_body my_mt_xl_1 timetable_bg">
+    <div class="container my_mv_xl_1">
+
+        <div class="my_timetable_box">
+            <!-- 헤드 시작 -->
+            <div class="table_head">
+                <div class="my_hours">
+                    <div class="my_hidden">요일</div>
+                </div>
+                <div class="cols">
+                    <div class="timetable_font">월</div>
+                </div>
+                <div class="cols">
+                    <div class="timetable_font">화</div>
+                </div>
+                <div class="cols">
+                    <div class="timetable_font">수</div>
+                </div>
+                <div class="cols">
+                    <div class="timetable_font">목</div>
+                </div>
+                <div class="cols">
+                    <div class="timetable_font">금</div>
+                </div>
+            </div>
+            <!-- 헤드 끝 -->
+
+            <!-- 바디 시작 -->
+            <div class="table_body">
+
+                <!-- 바디 1행 시작 -->
+                <div class="table_row">
+                    <div class="my_hours">
+                        <div class="timetable_font_sm">1교시 (09:00)</div>
+                    </div>
+                    <div id="mon-9" class="cols">
+                        <div class="timetable_font_sm"></div>
+                    </div>
+                    <div id="tue-9" class="cols">
+                        <div class="timetable_font_sm"></div>
+                    </div>
+                    <div id="wed-9" class="cols">
+                        <div class="timetable_font_sm"></div>
+                    </div>
+                    <div id="thu-9" class="cols">
+                        <div class="timetable_font_sm"></div>
+                    </div>
+                    <div id="fri-9" class="cols">
+                        <div class="timetable_font_sm"></div>
+                    </div>
+                </div>
+                <!-- 바디 1행 끝 -->
+                <!-- 바디 2행 시작 -->
+                <div class="table_row">
+                    <div class="my_hours">
+                        <div class="timetable_font_sm">2교시 (10:00)</div>
+                    </div>
+                    <div id="mon-10" class="cols">
+                        <div class="timetable_font_sm"></div>
+                    </div>
+                    <div id="tue-10" class="cols">
+                        <div class="timetable_font_sm"></div>
+                    </div>
+                    <div id="wed-10" class="cols">
+                        <div class="timetable_font_sm"></div>
+                    </div>
+                    <div id="thu-10" class="cols">
+                        <div class="timetable_font_sm"></div>
+                    </div>
+                    <div id="fri-10" class="cols">
+                        <div class="timetable_font_sm"></div>
+                    </div>
+                </div>
+                <!-- 바디 2행 끝 -->
+                <!-- 바디 3행 시작 -->
+                <div class="table_row">
+                    <div class="my_hours">
+                        <div class="timetable_font_sm">3교시 (11:00)</div>
+                    </div>
+                    <div id="mon-11" class="cols">
+                        <div class="timetable_font_sm"></div>
+                    </div>
+                    <div id="tue-11" class="cols">
+                        <div class="timetable_font_sm"></div>
+                    </div>
+                    <div id="wed-11" class="cols">
+                        <div class="timetable_font_sm"></div>
+                    </div>
+                    <div id="thu-11" class="cols">
+                        <div class="timetable_font_sm"></div>
+                    </div>
+                    <div id="fri-11" class="cols">
+                        <div class="timetable_font_sm"></div>
+                    </div>
+                </div>
+                <!-- 바디 3행 끝 -->
+                <!-- 바디 4행 시작 -->
+                <div class="table_row">
+                    <div class="my_hours">
+                        <div class="timetable_font_sm">4교시 (12:00)</div>
+                    </div>
+                    <div id="mon-12" class="cols">
+                        <div class="timetable_font_sm"></div>
+                    </div>
+                    <div id="tue-12" class="cols">
+                        <div class="timetable_font_sm"></div>
+                    </div>
+                    <div id="wed-12" class="cols">
+                        <div class="timetable_font_sm"></div>
+                    </div>
+                    <div id="thu-12" class="cols">
+                        <div class="timetable_font_sm"></div>
+                    </div>
+                    <div id="fri-12" class="cols">
+                        <div class="timetable_font_sm"></div>
+                    </div>
+                </div>
+                <!-- 바디 4행 끝 -->
+                <!-- 바디 5행 시작 -->
+                <div class="table_row">
+                    <div class="my_hours">
+                        <div class="timetable_font_sm">5교시 (13:00)</div>
+                    </div>
+                    <div id="mon-13" class="cols">
+                        <div class="timetable_font_sm"></div>
+                    </div>
+                    <div id="tue-13" class="cols">
+                        <div class="timetable_font_sm"></div>
+                    </div>
+                    <div id="wed-13" class="cols">
+                        <div class="timetable_font_sm"></div>
+                    </div>
+                    <div id="thu-13" class="cols">
+                        <div class="timetable_font_sm"></div>
+                    </div>
+                    <div id="fri-13" class="cols">
+                        <div class="timetable_font_sm"></div>
+                    </div>
+                </div>
+                <!-- 바디 5행 끝 -->
+                <!-- 바디 6행 시작 -->
+                <div class="table_row">
+                    <div class="my_hours">
+                        <div class="timetable_font_sm">6교시 (14:00)</div>
+                    </div>
+                    <div id="mon-14" class="cols">
+                        <div class="timetable_font_sm"></div>
+                    </div>
+                    <div id="tue-14" class="cols">
+                        <div class="timetable_font_sm"></div>
+                    </div>
+                    <div id="wed-14" class="cols">
+                        <div class="timetable_font_sm"></div>
+                    </div>
+                    <div id="thu-14" class="cols">
+                        <div class="timetable_font_sm"></div>
+                    </div>
+                    <div id="fri-14" class="cols">
+                        <div class="timetable_font_sm"></div>
+                    </div>
+                </div>
+                <!-- 바디 6행 끝 -->
+                <!-- 바디 7행 시작 -->
+                <div class="table_row">
+                    <div class="my_hours">
+                        <div class="timetable_font_sm">7교시 (15:00)</div>
+                    </div>
+                    <div id="mon-15" class="cols">
+                        <div class="timetable_font_sm"></div>
+                    </div>
+                    <div id="tue-15" class="cols">
+                        <div class="timetable_font_sm"></div>
+                    </div>
+                    <div id="wed-15" class="cols">
+                        <div class="timetable_font_sm"></div>
+                    </div>
+                    <div id="thu-15" class="cols">
+                        <div class="timetable_font_sm"></div>
+                    </div>
+                    <div id="fri-15" class="cols">
+                        <div class="timetable_font_sm"></div>
+                    </div>
+                </div>
+                <!-- 바디 7행 끝 -->
+                <!-- 바디 8행 시작 -->
+                <div class="table_row">
+                    <div class="my_hours">
+                        <div class="timetable_font_sm">8교시 (16:00)</div>
+                    </div>
+                    <div id="mon-16" class="cols">
+                        <div class="timetable_font_sm"></div>
+                    </div>
+                    <div id="tue-16" class="cols">
+                        <div class="timetable_font_sm"></div>
+                    </div>
+                    <div id="wed-16" class="cols">
+                        <div class="timetable_font_sm"></div>
+                    </div>
+                    <div id="thu-16" class="cols">
+                        <div class="timetable_font_sm"></div>
+                    </div>
+                    <div id="fri-16" class="cols">
+                        <div class="timetable_font_sm"></div>
+                    </div>
+                </div>
+                <!-- 바디 8행 끝 -->
+                <!-- 바디 9행 시작 -->
+                <div class="table_row">
+                    <div id="mon-17" class="my_hours">
+                        <div class="timetable_font_sm">9교시 (17:00)</div>
+                    </div>
+                    <div id="mon-17" class="cols">
+                        <div class="timetable_font_sm"></div>
+                    </div>
+                    <div id="tue-17" class="cols">
+                        <div class="timetable_font_sm"></div>
+                    </div>
+                    <div id="wed-17" class="cols">
+                        <div class="timetable_font_sm"></div>
+                    </div>
+                    <div id="thu-17" class="cols">
+                        <div class="timetable_font_sm"></div>
+                    </div>
+                    <div id="fri-17" class="cols">
+                        <div class="timetable_font_sm"></div>
+                    </div>
+                </div>
+                <!-- 바디 9행 끝 -->
+                <!-- 바디 10행 시작 -->
+                <div class="table_row">
+                    <div class="my_hours">
+                        <div class="timetable_font_sm">10교시 (18:00)</div>
+                    </div>
+                    <div id="mon-18" class="cols">
+                        <div class="timetable_font_sm"></div>
+                    </div>
+                    <div id="tue-18" class="cols">
+                        <div class="timetable_font_sm"></div>
+                    </div>
+                    <div id="wed-18" class="cols">
+                        <div class="timetable_font_sm"></div>
+                    </div>
+                    <div id="thu-18" class="cols">
+                        <div class="timetable_font_sm"></div>
+                    </div>
+                    <div id="fri-18" class="cols">
+                        <div class="timetable_font_sm"></div>
+                    </div>
+                </div>
+                <!-- 바디 10행 끝 -->
+            </div>
+            <!-- 바디 끝 -->
+        </div>
+    </div>
+
+    {{#userEntity}}
+    <button class="btn btn-outline-danger" data-toggle="modal" data-target="#myModal">등록</button>
+    {{/userEntity}}
+
+    <!-- The Modal -->
+    <div class="modal fade" id="myModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">새 수업 추가</h4>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <table>
+                        <input id="userId" type="hidden" value="{{userId}}">
+                        <tr>
+                            <td>과목명</td>
+                            <td><select id="courseName" class="form-control ml-4">
+                                    {{#timetableResDto.courses}}
+                                    <option>{{name}}</option>
+                                    {{/timetableResDto.courses}}
+                                </select></td>
+                        </tr>
+                        <tr>
+                            <td>교수명</td>
+                            <td><select id="professorName" class="form-control ml-4">
+                                    {{#timetableResDto.professors}}
+                                    <option>{{name}}</option>
+                                    {{/timetableResDto.professors}}
+                                </select></td>
+                        </tr>
+                        <tr>
+                            <td>시간</td>
+                            <td>
+
+                                <div class="form-row ml-4">
+                                    <select id="weekday" name="weekday" class="form-control col-md-3 mr-3">
+                                        <option id="day" name="day" value="mon">월</option>
+                                        <option id="day" name="day" value="tue">화</option>
+                                        <option id="day" name="day" value="wed">수</option>
+                                        <option id="day" name="day" value="thu">목</option>
+                                        <option id="day" name="day" value="fri">금</option>
+                                    </select>
+                                    <select id="startTime" name="startTime" class="form-control col-md-3 mr-2">
+                                        <option value="9">9</option>
+                                        <option value="10">10</option>
+                                        <option value="11">11</option>
+                                        <option value="12">12</option>
+                                        <option value="13">13</option>
+                                        <option value="14">14</option>
+                                        <option value="15">15</option>
+                                        <option value="16">16</option>
+                                        <option value="17">17</option>
+                                        <option value="18">18</option>
+                                    </select>~
+                                    <select id="endTime" name="endTime" class="form-control col-md-3 ml-2">
+                                        <option value="9">9</option>
+                                        <option value="10">10</option>
+                                        <option value="11">11</option>
+                                        <option value="12">12</option>
+                                        <option value="13">13</option>
+                                        <option value="14">14</option>
+                                        <option value="15">15</option>
+                                        <option value="16">16</option>
+                                        <option value="17">17</option>
+                                        <option value="18">18</option>
+                                    </select>
+
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>장소</td>
+                            <td>
+                                <select id="classroom" class="form-control ml-4">
+                                    {{#timetableResDto.courses}}
+                                    <option>{{classroom}}</option>
+                                    {{/timetableResDto.courses}}
+                                </select>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button id="saveBtn" type="button" class="btn btn-danger" data-dismiss="modal">저장</button>
+                </div>
+
+                <input id="timetablesJson" type="hidden" value="{{timetablesJson}}">
+                <!---->
+            </div>
+        </div>
+    </div>
+
+
+
+    <script>
+
+        let timetables = JSON.parse($("#timetablesJson").val());
+
+        console.log(timetables);
+
+        timetables.forEach((t) => {
+            drawUserTimetable(t);
+        });
+
+        const colors = ["red", "grey", "orange", "green", "yellow", "antiquewhite", "cornflowerblue"];
+
+        $("#saveBtn").click(() => {
+            saveTimetable();
+        });
+
+        async function saveTimetable() {
+
+            let id = $("#userId").val();
+
+            let data = {
+                userId: $("#userId").val(),
+                courseName: $("#courseName").val(),
+                professorName: $("#professorName").val(),
+                weekday: $("#weekday").val(),
+                startTime: $("#startTime").val(),
+                endTime: $("#endTime").val(),
+                classroom: $("#classroom").val()
+            }
+
+            console.log(data);
+
+            // 1. 해당 값 JSON.stringify(data)으로 fetch 통신해서 insert 하기 (POST 통신)
+            let response = await fetch(`/user/${id}/timetable`, {
+                headers: {
+                    'Content-Type': 'application/json;charset=utf-8'
+                },
+                method: 'POST',
+                body: JSON.stringify(data)
+            });
+
+            let responseParse = await response.json();
+
+            // 2. 성공하면 화면 변경
+            if (responseParse == 1) {
+                alert("성공");
+                setCourse(data)
+            } else {
+                alert("실패");
+            }
+        }
+
+        function setCourse(data) {
+            let num = Math.floor(Math.random() * 7); // 0~6
+
+            // 1. 과목명 data.courseTime 원래는 시작시간이였음
+            let temp = `${data.professorName} <br/> ${data.courseName} <br/> ${data.classroom}`;
+            $(`#${data.weekday}-${Number(data.startTime)}`).html(temp);
+
+            let time = $("#endTime").val() - $("#startTime").val();
+            console.log(time);
+
+            // 2. 색상
+            for (i = 0; i < time; i++) {
+                $(`#${data.weekday}-${Number(data.startTime) + i}`).css("background-color", colors[num]);
+            }
+        }
+
+        function drawUserTimetable(timetable) {
+            console.log("나호출됨?");
+            const colorst = ["red", "grey", "orange", "green", "yellow", "antiquewhite", "cornflowerblue"];
+            let n = Math.floor(Math.random() * 7); // 0~6
+
+            // 1. 과목명 data.courseTime 원래는 시작시간이였음
+            let temp = `${timetable.professor.name} <br/> ${timetable.course.name} <br/> ${timetable.course.classroom}`;
+            $(`#${timetable.course.weekday}-${Number(timetable.course.startTime)}`).html(temp);
+
+            let time = timetable.course.endTime - timetable.course.startTime;
+            console.log(time);
+            console.log(timetable.course.weekday);
+
+            console.log(`${timetable.course.weekday} - ${Number(timetable.course.startTime)}`);
+            // 2. 색상
+            for (i = 0; i < time; i++) {
+                $(`#${timetable.course.weekday}-${Number(timetable.course.startTime) + i}`).css("background-color", colorst[n]);
+            }
+        }
+    </script>
+
+</div>

@@ -77,7 +77,7 @@ async function scrap() {
     let responseParse = await response.json();
 
     if (response.status == 200) {
-       alert("스크랩 완료");
+        alert("스크랩 완료");
     } else {
         alert("이미 스크랩한 게시글입니다");
     }
@@ -98,6 +98,7 @@ async function scrapUp() {
     let responseParse = await response.json();
     if (response.status == 200) {
         $("#scrap-count").text(responseParse.scrapCount);
+        console.log("dddd" + responseParse.scrapCount);
     } else {
         alert("이미 스크랩한 게시글입니다");
     }
