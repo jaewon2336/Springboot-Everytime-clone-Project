@@ -71,6 +71,35 @@
     margin: 0px 4px;
 }
 
+.my_header_icon_no_auth_login_box {
+    display: flex;
+    align-items: center;
+    height: 40px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #444444;
+    padding: 0 12px;
+    border: 1px solid #d6d6d6;
+    border-radius: 12px;
+    margin: 0px 4px;
+    text-decoration-line: none;
+}
+
+.my_header_icon_no_auth_join_box {
+    display: flex;
+    align-items: center;
+    height: 40px;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    background-color: #C62917;
+    padding: 0 12px;
+    border: 1px solid #d6d6d6;
+    border-radius: 12px;
+    margin: 0px 4px;
+    text-decoration-line: none;
+}
+
 .my_header_icon_box img {
     margin: 7px 8px;
 }
