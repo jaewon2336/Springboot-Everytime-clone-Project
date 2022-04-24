@@ -109,14 +109,12 @@ public class UserController {
 
     @GetMapping("/s/user/{id}/post")
     public String myPostList(@PathVariable Integer id, Model model) {
+        List<Post> orderByLikeCountPosts = postService.실시간인기글();
+        model.addAttribute("hotPosts", orderByLikeCountPosts);
+
         List<Post> posts = postService.내가쓴글(id);
         model.addAttribute("posts", posts);
         return "/user/myPostList";
-    }
-
-    @GetMapping("/s/user/{id}/scrap")
-    public String myScrapList(@PathVariable Integer id) {
-        return "/user/myScrapList";
     }
 
     @GetMapping("/s/user/delete-account")

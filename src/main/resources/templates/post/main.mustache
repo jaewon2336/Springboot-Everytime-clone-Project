@@ -111,8 +111,9 @@
 
                         <div class="box_small_list"><a class="myarticle" href="/s/user/{{principal.id}}/post">내가 쓴 글</a>
                         </div>
-                        <div class="box_small_list"><a class="mycommentarticle" href="">댓글 단 글</a></div>
-                        <div class="box_small_list"><a class="myscrap" href="/s/{{principal.id}}/my-scrap">내 스크랩</a>
+                        <div class="box_small_list"><a class="mycommentarticle"
+                                href="/s/user/{{principal.id}}/comment">댓글 단 글</a></div>
+                        <div class="box_small_list"><a class="myscrap" href="/s/user/{{principal.id}}/scrap">내 스크랩</a>
                         </div>
 
                     </div>
@@ -154,6 +155,7 @@
                                         <time>{{formatCreateDate}}</time>
                                         <ul class="status">
                                             <li class="vote active">{{likeCount}}</li>
+                                            <li class="comment active">{{commentCount}}</li>
                                         </ul>
                                     </div>
                                 </a>
@@ -173,6 +175,7 @@
                                         <time>{{formatCreateDate}}</time>
                                         <ul class="status">
                                             <li class="vote active">{{likeCount}}</li>
+                                            <li class="comment active">{{commentCount}}</li>
                                         </ul>
                                     </div>
                                 </a>
@@ -194,6 +197,7 @@
                                         <time>{{formatCreateDate}}</time>
                                         <ul class="status">
                                             <li class="vote active">{{likeCount}}</li>
+                                            <li class="comment active">{{commentCount}}</li>
                                         </ul>
                                     </div>
                                 </a>
@@ -213,6 +217,7 @@
                                         <time>{{formatCreateDate}}</time>
                                         <ul class="status">
                                             <li class="vote active">{{likeCount}}</li>
+                                            <li class="comment active">{{commentCount}}</li>
                                         </ul>
                                     </div>
                                 </a>
@@ -234,6 +239,7 @@
                                         <time>{{formatCreateDate}}</time>
                                         <ul class="status">
                                             <li class="vote active">{{likeCount}}</li>
+                                            <li class="comment active">{{commentCount}}</li>
                                         </ul>
                                     </div>
                                 </a>
@@ -253,6 +259,7 @@
                                         <time>{{formatCreateDate}}</time>
                                         <ul class="status">
                                             <li class="vote active">{{likeCount}}</li>
+                                            <li class="comment active">{{commentCount}}</li>
                                         </ul>
                                     </div>
                                 </a>
@@ -274,6 +281,7 @@
                                         <time>{{formatCreateDate}}</time>
                                         <ul class="status">
                                             <li class="vote active">{{likeCount}}</li>
+                                            <li class="comment active">{{commentCount}}</li>
                                         </ul>
                                     </div>
                                 </a>
@@ -293,6 +301,7 @@
                                         <time>{{formatCreateDate}}</time>
                                         <ul class="status">
                                             <li class="vote active">{{likeCount}}</li>
+                                            <li class="comment active">{{commentCount}}</li>
                                         </ul>
                                     </div>
                                 </a>
@@ -314,6 +323,7 @@
                                         <time>{{formatCreateDate}}</time>
                                         <ul class="status">
                                             <li class="vote active">{{likeCount}}</li>
+                                            <li class="comment active">{{commentCount}}</li>
                                         </ul>
                                     </div>
                                 </a>
@@ -346,7 +356,7 @@
                                 <time>{{formatCreateDate}}</time>
                                 <div class="status">
                                     <li class="vote active">{{likeCount}}</li>
-                                    <li class="comment active">4</li>
+                                    <li class="comment active">{{commentCount}}</li>
                                 </div>
                             </div>
                         </a>
@@ -362,7 +372,7 @@
                                 <time>{{formatCreateDate}}</time>
                                 <div class="status">
                                     <li class="vote active">{{likeCount}}</li>
-                                    <li class="comment active">4</li>
+                                    <li class="comment active">{{commentCount}}</li>
                                 </div>
                             </div>
                         </a>

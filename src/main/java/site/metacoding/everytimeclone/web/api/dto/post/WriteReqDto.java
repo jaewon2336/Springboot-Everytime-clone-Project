@@ -15,6 +15,8 @@ public class WriteReqDto {
     private String thumnail;
     private Integer boardNo;
     private Integer likeCount;
+    private Integer commentCount;
+    private Integer scrapCount;
     private boolean anonyCheck;
     private String hashTag;
 
@@ -26,8 +28,9 @@ public class WriteReqDto {
         post.setThumnail(thumnail);
         post.setUser(principal);
         post.setBoardNo(boardNo);
-        post.setLikeCount(0);
-        post.setScrapCount(0);
+        post.setLikeCount(likeCount);
+        post.setCommentCount(commentCount);
+        post.setScrapCount(scrapCount);
         post.setAnonyCheck(anonyCheck);
         post.setHashTag(hashTag);
 

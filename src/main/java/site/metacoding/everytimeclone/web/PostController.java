@@ -138,7 +138,6 @@ public class PostController {
             comments.add(dto);
         }
 
-        model.addAttribute("commentCount", comments.size()); // 댓글 개수 모델에 담아가기
         model.addAttribute("comments", comments);
         model.addAttribute("detailResDto", detailResDto);
 

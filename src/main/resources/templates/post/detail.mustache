@@ -6,7 +6,7 @@
         <div>
             <div class="my_post_border my_p_md_1">
                 <!-- 게시판타이틀박스 -->
-                <div class="my_board_title">자유게시판</div>
+                <div id="my-board-title" class="my_board_title"></div>
                 <input id="boardNo" type="hidden" value="{{detailResDto.post.boardNo}}">
             </div>
 
@@ -44,8 +44,8 @@
                         <div class="my_board_content">{{detailResDto.post.content}}</div>
                         <ul class="my_post_detail_flex_left my_p_0">
                             <li id="like-count" class="my_post_count_vote">{{detailResDto.post.likeCount}}</li>
-                            <li class="my_post_count_comment">{{commentCount}}</li>
-                            <li id="scrap-count" class="my_post_count_scrap"></li>
+                            <li class="my_post_count_comment">{{detailResDto.post.commentCount}}</li>
+                            <li id="scrap-count" class="my_post_count_scrap">{{detailResDto.post.scrapCount}}</li>
                         </ul>
                         <div class="my_post_buttons">
                             <button class="my_btn_vote">공감</button>

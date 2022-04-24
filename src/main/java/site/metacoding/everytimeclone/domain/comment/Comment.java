@@ -13,6 +13,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
@@ -41,6 +43,7 @@ public class Comment {
     @ManyToOne
     private User user;
 
+    @JsonIgnoreProperties({ "comments" }) // messageConverter에게 알려주는 어노테이션
     @JoinColumn(name = "postId")
     @ManyToOne
     private Post post;

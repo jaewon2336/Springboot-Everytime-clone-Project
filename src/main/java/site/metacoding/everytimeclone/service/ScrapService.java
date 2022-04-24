@@ -43,6 +43,7 @@ public class ScrapService {
         if (postOp.isPresent()) {
             Post postEntity = postOp.get();
             postEntity.setScrapCount(post.getScrapCount() + 1);
+
             return postEntity;
         } else {
             throw new RuntimeException("이미 스크랩한 글입니다");

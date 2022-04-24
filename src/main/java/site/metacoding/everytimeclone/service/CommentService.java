@@ -1,5 +1,6 @@
 package site.metacoding.everytimeclone.service;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.stereotype.Service;
@@ -19,6 +20,10 @@ public class CommentService {
     private final CommentRepository commentRepository;
     private final PostRepository postRepository;
 
+    public List<Comment> 댓글가져오기(Integer id) {
+        return commentRepository.findByUserId(id);
+    }
+
     public Integer 댓글수가져오기(Integer id) {
         return commentRepository.countComments(id);
     }
@@ -28,7 +33,11 @@ public class CommentService {
         Optional<Post> postOp = postRepository.findById(postId);
 
         if (postOp.isPresent()) {
-            comment.setPost(postOp.get());
+            Post postEntity = postOp.get();
+            comment.setPost(postEntity);
+
+            Integer commentCount = postEntity.getComments().size();
+            postEntity.setCommentCount(commentCount + 1);
         } else {
             throw new RuntimeException("없는 게시글에 댓글을 작성할 수 없습니다.");
         }

@@ -61,7 +61,7 @@ public class Post {
     private Integer boardNo;
 
     private Integer likeCount;
-
+    private Integer commentCount;
     private Integer scrapCount;
 
     // @JsonIgnoreProperties({ "post" }) // messageConverter에게 알려주는 어노테이션

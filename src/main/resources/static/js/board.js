@@ -30,6 +30,7 @@ async function write() {
         content: $("#content").val(),
         boardNo: $("#board-no").val(),
         likeCount: 0,
+        commentCount: 0,
         scrapCount: 0,
         anonyCheck: $("#anony").hasClass("my_btn_active"),
         hashTag: null
