@@ -208,9 +208,4 @@ public class PostController {
         return "/qna/usageContract";
     }
 
-    @GetMapping("/user/certificate-registration")
-    public String certificateForm() {
-        return "/user/certificateRegistrationForm";
-    }
-
 }

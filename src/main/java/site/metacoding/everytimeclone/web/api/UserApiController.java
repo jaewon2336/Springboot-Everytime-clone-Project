@@ -7,6 +7,7 @@ import javax.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -20,6 +21,7 @@ import site.metacoding.everytimeclone.service.UserService;
 import site.metacoding.everytimeclone.util.Script;
 import site.metacoding.everytimeclone.util.UtilValid;
 import site.metacoding.everytimeclone.util.email.EmailUtil;
+import site.metacoding.everytimeclone.web.api.dto.user.DelAccountReqDto;
 import site.metacoding.everytimeclone.web.api.dto.user.EmailUpdateDto;
 import site.metacoding.everytimeclone.web.api.dto.user.LoginDto;
 import site.metacoding.everytimeclone.web.api.dto.user.NicknameUpdateDto;
@@ -109,6 +111,25 @@ public class UserApiController {
         UtilValid.요청에러처리(bindingResult);
         userService.닉네임수정(id, nicknameUpdateDto);
         return new ResponseEntity<>(1, HttpStatus.OK);
+    }
+
+    @DeleteMapping("/s/user/{id}/delete-account")
+    public ResponseEntity<?> deleteAccount(@PathVariable Integer id) {
+        userService.회원탈퇴(id);
+        session.invalidate();
+        return new ResponseEntity<>(1, HttpStatus.OK);
+    }
+
+    @PostMapping("/s/user/password-check")
+    public ResponseEntity<?> passwordCheck(@RequestBody DelAccountReqDto delAccountReqDto) {
+        User principal = (User) session.getAttribute("principal");
+        boolean isPresent = userService.로그인(principal.getUsername(), delAccountReqDto.getPassword());
+        if (isPresent == true) {
+            return new ResponseEntity<>(1, HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(-1, HttpStatus.OK);
+        }
+
     }
 
 }

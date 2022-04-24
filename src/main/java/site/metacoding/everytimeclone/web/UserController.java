@@ -8,6 +8,7 @@ import javax.validation.Valid;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -106,7 +107,12 @@ public class UserController {
 
     @GetMapping("/s/user/{id}/scrap")
     public String myScrapList(@PathVariable Integer id) {
-        return "user/myScrapList";
+        return "/user/myScrapList";
+    }
+
+    @GetMapping("/s/user/delete-account")
+    public String deleteAccount() {
+        return "/user/deleteAccountForm";
     }
 
 }

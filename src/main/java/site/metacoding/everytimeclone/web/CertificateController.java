@@ -18,9 +18,9 @@ public class CertificateController {
     private final CertificateService certificateService;
     private final HttpSession session;
 
-    @GetMapping("/s/qna/qna-school-form")
-    public String reigsterForm() {
-        return "/qna/qnaSchool";
+    @GetMapping("/s/user/certificate-registration")
+    public String certificateForm() {
+        return "/certificate/certificateForm";
     }
 
     @PostMapping("/s/qna/qna-school-register")

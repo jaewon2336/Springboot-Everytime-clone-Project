@@ -2,9 +2,8 @@ package site.metacoding.everytimeclone.service;
 
 import java.util.Optional;
 
-import javax.transaction.Transactional;
-
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import lombok.RequiredArgsConstructor;
 import site.metacoding.everytimeclone.domain.user.User;
@@ -56,7 +55,16 @@ public class UserService {
         }
     }
 
-    public User 유저네임보내주기(String email) {
+    public Boolean 로그인(String username, String password) {
+        Optional<User> userOp = userRepository.mLogin(username, password);
+        if (userOp.isPresent()) {
+            return true;
+        } else {
+            throw new CustomApiException("없는사용자입니다.");
+        }
+    }
+
+    public User 유저네임보내주기(String email) { // 유저네임 찾기
 
         Optional<User> userOp = userRepository.findByEmail(email);
 
@@ -139,6 +147,11 @@ public class UserService {
         } else {
             throw new RuntimeException("존재하지 않는 사용자입니다.");
         }
+    }
+
+    @Transactional
+    public void 회원탈퇴(Integer id) {
+        userRepository.deleteById(id);
     }
 
 }
