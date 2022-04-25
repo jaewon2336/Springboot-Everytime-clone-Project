@@ -1,3 +1,4 @@
+
 ![에브리타임로고](https://blog.kakaocdn.net/dn/It7e9/btrAjoZ2y58/GNPEJHOTQqqRPepNLrvgg1/img.png) 
 
 # 에브리타임 클론코딩
@@ -5,7 +6,7 @@
 
 
 ## 프로젝트 5조
-- 정재원(팀장) https://github.com/jaewon2336
+- 정재원(팀장) 
 - 김정민
 - 허희주
 
@@ -108,11 +109,9 @@ testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
 # 모델링 연관관계
 
-- The workspace synchronization will sync all your files, folders and settings automatically. This will allow you to fetch your workspace on any other device.
-	> To start syncing your workspace, just sign in with Google in the menu.
+![ERD](https://blog.kakaocdn.net/dn/tVVh2/btrAj5zyWVI/OwFd10wKxascPFsej58jK0/img.png)
 
-- The file synchronization will keep one file of the workspace synced with one or multiple files in **Google Drive**, **Dropbox** or **GitHub**.
-	> Before starting to sync files, you must link an account in the **Synchronize** sub-menu.
+
 
 # 트렐로
 
@@ -131,6 +130,7 @@ https://github.com/jaewon2336/Everytime-timetable-Test
 https://github.com/jaewon2336/jpa-paging-search  
 https://github.com/jaewon2336/Everytime-Back  
 https://github.com/jaewon2336/Everytime-Front  
+https://github.com/orangefield/Springboot-File-Upload-Sample  
  
 # 보완할 점
 
