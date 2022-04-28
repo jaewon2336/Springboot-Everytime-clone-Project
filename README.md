@@ -1,5 +1,5 @@
 
-![에브리타임로고](https://blog.kakaocdn.net/dn/It7e9/btrAjoZ2y58/GNPEJHOTQqqRPepNLrvgg1/img.png) 
+<img src = "https://blog.kakaocdn.net/dn/bgaNox/btrAheqdnVX/FUcX3krKTkr6akxv62kE3k/img.png" width="1000" height="500" />
 
 # 에브리타임 클론코딩
 
@@ -20,16 +20,23 @@
 ## ⚒️기술스택
 
 ### Backend
-![Backend](https://blog.kakaocdn.net/dn/c8yWWS/btrAj32zSBY/FYIwJA4FDOEfkmEKu9NMKK/img.png)
+|<img src = "https://blog.kakaocdn.net/dn/cKtAuQ/btrAIO5fzCU/NVWnU8UlhL93kq81Ve87uK/img.png" width="150" height="150" />|
+|:--:|
+|SpringBoot  |
 
 ### Frontend
-![Frontend](https://blog.kakaocdn.net/dn/df4PTO/btrAfDRCkTU/SY8HKKBkCb38m022LedY70/img.png)
+|<img src = "https://blog.kakaocdn.net/dn/cj5mLL/btrAJSMQt43/yfpTni01hZgrvKHmUdVjk1/img.png" width="150" height="150" />|<img src = "https://blog.kakaocdn.net/dn/eG2w1k/btrAD5NJ1dy/YwmkEkygLgmKevkYNgWiPk/img.png" width="150" height="150" />|<img src = "https://blog.kakaocdn.net/dn/dJtW2R/btrAIfhLlRL/cTJDpEZlRWh9m9QczAkGqK/img.png" width="150" height="150" />|<img src = "https://blog.kakaocdn.net/dn/biJtm8/btrAGfWUCEm/wLv8P9GuJP55PI0AWxOyS1/img.png" width="150" height="150" />|<img src = "https://blog.kakaocdn.net/dn/m3Phc/btrAGgBsKbm/FNYpkhIrVweUUEH4h5tsWK/img.png" width="150" height="150" />|
+|:--:|:--:|:--:|:--:|:--:|
+|HTML5|CSS|jQuery|Bootstrap|JavaScript|
 
 ### 협업도구
-![협업도구](https://blog.kakaocdn.net/dn/bW558B/btrAnFGDJMN/9SRL2ct3mK7H1VjGz2vklK/img.png)
-
+|<img src = "https://blog.kakaocdn.net/dn/eyjfrN/btrAKvXV0RA/zkyytdkZy7ESd85knYRDq1/img.png" width="150" height="150" />|<img src = "https://blog.kakaocdn.net/dn/mEK9t/btrAHjxWZX3/iEGILm2rWSrOKsfilmPUA1/img.png" width="150" height="150" />|<img src = "https://blog.kakaocdn.net/dn/b8aff2/btrAIfCbRi8/q2jxorX8z17gF4jFbKvFak/img.png" width="150" height="150" />|
+|:--:|:--:|:--:|
+|Git|Github|Trello|
 ### 데이터베이스
-![데이터베이스](https://blog.kakaocdn.net/dn/HCu1I/btrAlgN8D4O/tXaA07gws3htCkDZjpb6kK/img.png)
+|<img src = "https://blog.kakaocdn.net/dn/5J8iY/btrAHiseB54/P1Pkgmigz1aANiQLg0Aip0/img.png" width="150" height="150" />|<img src = "https://blog.kakaocdn.net/dn/ccYmmf/btrAGfJoswn/gVqLJkEUq6WgY1MwOEopD1/img.png" width="150" height="150" />|
+|:--:|:--:|
+|MariaDB|MySQL|
 
 ### 의존성
 ```java
