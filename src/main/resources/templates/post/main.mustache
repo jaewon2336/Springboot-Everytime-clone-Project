@@ -55,7 +55,12 @@
                         <a href="#">강의평가</a>
                     </li>
                     <li id="my_menu_grade">
-                        <a href="#">학점계산기</a>
+                        {{#principal}}
+                        <a href="/s/user/{{principal.id}}/calculator">학점계산기</a>
+                        {{/principal}}
+                        {{^principal}}
+                        <a href="/user/login-form">학점계산기</a>
+                        {{/principal}}
                     </li>
 
                 </div>

@@ -164,8 +164,12 @@ public class PostController {
         return "post/updateForm";
     }
 
-    // 문의하기 게시판 이동
+    @GetMapping("/s/user/{id}/calculator")
+    public String calculator(@PathVariable Integer id) {
+        return "/user/carculator";
+    }
 
+    // 문의하기 게시판 이동
     @GetMapping("/qna/main")
     public String qnaForm() {
         return "/qna/qnaForm";
